@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <trg-sit>
-  <datum>20.9.2019</datum>
+  <datum>13.6.2025</datum>
+  <pristroj>topcon</pristroj>
   <skupina>1</skupina>
-  <stanovisko>1001</stanovisko>
+  <stanovisko>1004</stanovisko>
 
   <mericka-ceta>
     <meric>Andrej Babis</meric>
@@ -13,14 +14,14 @@
     <centracni-osnova>
       <cil id="1002" smer="200.1234"/>
       <cil id="1003" smer="15.7398"/>
-      <cil id="1004" smer="305.7122"/>
+      <cil id="1001" smer="305.7122"/>
       <ex-cil smer="305.7122" delka="3.456"/>
       <centr smer="217.1915" delka="4.117"/>
     </centracni-osnova>
     <!-- prumerna hodnota ze vsech laboratornich jednotek -->
     <uhel id-leva="1002" id-prava="1003" pocet-lj="2">34.5678</uhel>
-    <uhel id-leva="1003" id-prava="1004" pocet-lj="2">51.9248</uhel>
-    <uhel id-leva="1002" id-prava="1004" pocet-lj="2">86.4926</uhel>
+    <uhel id-leva="1003" id-prava="1001" pocet-lj="2">51.9248</uhel>
+    <uhel id-leva="1002" id-prava="1001" pocet-lj="2">86.4926</uhel>
     <!-- mereni na Slunce pro urceni azimutu; leve rameno - cil, prave rameno - Slunce -->
     <azimut id="1002" uhel="71.6659" cas-utc="08:13:45.1"/>
     <azimut id="1004" uhel="22.5691" cas-utc="08:16:20.5"/>
@@ -30,21 +31,23 @@
     <centracni-osnova>
       <cil id="1002" smer="7.7237"/>
       <cil id="1003" smer="298.4396"/>
-      <cil id="1004" smer="250.4436"/>
+      <cil id="1001" smer="250.4436"/>
       <ex-cil smer="106.3040" delka="5.114"/>
       <centr smer="217.1915" delka="4.572"/>
     </centracni-osnova>
     <uhel id-leva="1002" id-prava="1003" pocet-lj="2">34.5615</uhel>
-    <uhel id-leva="1003" id-prava="1004" pocet-lj="2">51.9300</uhel>
-    <uhel id-leva="1002" id-prava="1004" pocet-lj="2">86.4915</uhel>
+    <uhel id-leva="1003" id-prava="1001" pocet-lj="2">51.9300</uhel>
+    <uhel id-leva="1002" id-prava="1001" pocet-lj="2">86.4915</uhel>
   </exc-stanovisko-observace>
 
   <!-- merene delky -->
   <delky-observace>
-    <delka id2="1002" h1="1.434" h2="1.595" t1="8.1" t2="10.5" p1="705.1" p2="699.3" vlhko1="75" vlhko2="77">4356.781</delka>
-    <delka id2="1003" h1="1.434" h2="1.387" t1="8.1" t2="9.9" p1="705.1" p2="698.9" vlhko1="75" vlhko2="78">2514.852</delka>
-    <delka id2="1004" h1="1.405" h2="1.505" t1="9.9" t2="8.1" p1="698.9" p2="705.1" vlhko1="78" vlhko2="75">2514.799</delka>
-    <!-- atd. -->
+    <delka id2="1002" h1="1.562" h2="1.593" t1="17.0" t2="15.5" tw1="-274" tw2="13.5" p1="-922" p2="713" vlhko1="51" vlhko2="-1">5581.479</delka>
+    <delka id2="1003" h1="1.562" h2="1.583" t1="17.0" t2="15.0" tw1="-274" tw2="11.5" p1="-922" p2="722" vlhko1="51" vlhko2="-1">2570.492</delka>
+    <delka id2="1001" h1="1.562" h2="1.520" t1="17.0" t2="17.0" tw1="-274" tw2="13.0" p1="-922" p2="702" vlhko1="51" vlhko2="-1">6415.599</delka>
+    <delka id2="1001" h1="1.562" h2="1.520" t1="16.8" t2="19.3" tw1="-274" tw2="14.0" p1="-922" p2="702" vlhko1="53" vlhko2="-1">6415.592</delka>
+    <delka id2="1003" h1="1.562" h2="1.583" t1="16.8" t2="17.5" tw1="-274" tw2="12.0" p1="-922" p2="722" vlhko1="53" vlhko2="-1">2570.485</delka>
+    <delka id2="1002" h1="1.562" h2="1.593" t1="16.8" t2="21.0" tw1="-274" tw2="16.5" p1="-922" p2="714" vlhko1="53" vlhko2="-1">5581.489</delka>
   </delky-observace>
 
   <!-- observace z ulohy GYRO budou uvedeny pouze v zapisniku pro bod 1001-Stvanice -->

@@ -6,8 +6,9 @@ function data = parse_trgsit_xml(xmlFile)
 
     % Základní metadata
     data.datum = char(root.getElementsByTagName('datum').item(0).getTextContent);
+    data.pristroj = char(root.getElementsByTagName('pristroj').item(0).getTextContent);
     data.skupina = str2double(root.getElementsByTagName('skupina').item(0).getTextContent);
-    data.stanovisko = char(root.getElementsByTagName('stanovisko').item(0).getTextContent);
+    data.stanovisko = str2double(root.getElementsByTagName('stanovisko').item(0).getTextContent);
 
     % Měřičská četa
     merici = root.getElementsByTagName('meric');
@@ -40,11 +41,13 @@ function data = parse_trgsit_xml(xmlFile)
     delky = root.getElementsByTagName('delka');
     for i = 0:delky.getLength-1
         el = delky.item(i);
-        d.id2 = char(el.getAttribute('id2'));
+        d.id2 = str2double(el.getAttribute('id2'));
         d.h1 = str2double(el.getAttribute('h1'));
         d.h2 = str2double(el.getAttribute('h2'));
         d.t1 = str2double(el.getAttribute('t1'));
         d.t2 = str2double(el.getAttribute('t2'));
+        d.tw1 = str2double(el.getAttribute('tw1'));
+        d.tw2 = str2double(el.getAttribute('tw2'));
         d.p1 = str2double(el.getAttribute('p1'));
         d.p2 = str2double(el.getAttribute('p2'));
         d.vlhko1 = str2double(el.getAttribute('vlhko1'));
@@ -52,7 +55,7 @@ function data = parse_trgsit_xml(xmlFile)
         d.delka = str2double(el.getTextContent);
         data.delky(i+1) = d;
     end
-       if strcmp(data.stanovisko, '1001')
+       if data.stanovisko == 1001
             % GYRO observace
             gyro = root.getElementsByTagName('gyro-observace');
             if gyro.getLength > 0
