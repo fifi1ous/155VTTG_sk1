@@ -47,27 +47,4 @@
     <!-- atd. -->
   </delky-observace>
 
-  <!-- observace z ulohy GYRO budou uvedeny pouze v zapisniku pro bod 1001-Stvanice -->
-  <gyro-observace id="1005">
-    <datum>19.9.2019</datum>
-    <observace>
-      <meric>Milos Zeman</meric>
-      <azimut id="1003">234.5678</azimut>
-      <azimut-centr>159.7891</azimut-centr>
-      <delka-centr>3.783</delka-centr>
-    </observace>
-    <observace>
-      <meric>Franta Mrazek</meric>
-      <azimut id="1003">234.5668</azimut>
-      <azimut-centr>159.7851</azimut-centr>
-      <delka-centr>3.783</delka-centr>
-    </observace>
-    <observace>
-      <meric>Jiri Ovcacek</meric>
-      <azimut id="1003">234.5701</azimut>
-      <azimut-centr>159.7899</azimut-centr>
-      <delka-centr>3.783</delka-centr>
-    </observace>
-    <!-- atd. -->
-  </gyro-observace>
 </trg-sit>
