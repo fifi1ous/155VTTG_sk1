@@ -1,0 +1,27 @@
+% program   : RTKPOST ver.demo5 b34d
+% inp file  : C:\Users\Martina\Documents\Vyuka_TGD\Data_TRG\DEN3\zelena\ZE43K.25o
+% inp file  : C:\Users\Martina\Documents\Vyuka_TGD\Data_TRG\DEN3\tsta166a00.25o
+% inp file  : C:\Users\Martina\Documents\Vyuka_TGD\Data_TRG\DEN3\csum166a00.25n
+% inp file  : C:\Users\Martina\Documents\Vyuka_TGD\Data_TRG\DEN3\csum166a00.25g
+% obs start : 2025/06/15 13:50:35.0 GPST (week2371  49835.0s)
+% obs end   : 2025/06/15 14:30:45.0 GPST (week2371  52245.0s)
+% pos mode  : Static
+% freqs     : L1+L2/E5b
+% solution  : Forward
+% elev mask : 15.0 deg
+% dynamics  : on
+% tidecorr  : off
+% ionos opt : Broadcast
+% tropo opt : Saastamoinen
+% ephemeris : Broadcast
+% navi sys  : GPS GLONASS Galileo BDS
+% amb res   : Continuous
+% amb glo   : OFF
+% val thres : 3.0
+% antenna1  : TRMR2           NONE  ( 0.0000  0.0000  1.2100)
+% antenna2  : TPSCR.G5        TPSH  ( 0.0000  0.0000  0.0000)
+% ref pos   : 50.162332970   16.947761364   603.4697
+%
+% (lat/lon/height=WGS84/ellipsoidal,Q=1:fix,2:float,3:sbas,4:dgps,5:single,6:ppp,ns=# of satellites)
+%  GPST                  latitude(deg) longitude(deg)  height(m)   Q  ns   sdn(m)   sde(m)   sdu(m)  sdne(m)  sdeu(m)  sdun(m) age(s)  ratio
+2025/06/15 13:50:35.000   50.219690777   16.925238705   828.3884   1  15   0.0004   0.0004   0.0008   0.0002  -0.0004  -0.0002   0.00    5.7
