@@ -11,16 +11,16 @@
 
   <exc-stanovisko-observace>
     <centracni-osnova>
-      <cil id="1002" smer="200.1234"/>
-      <cil id="1003" smer="15.7398"/>
-      <cil id="1004" smer="305.7122"/>
-      <ex-cil smer="305.7122" delka="3.456"/>
-      <centr smer="217.1915" delka="4.117"/>
+      <cil id="1001" smer="0.0000"/>
+      <cil id="1003" smer="60.1846"/>
+      <cil id="1004" smer="75.2218"/>
+      <ex-cil smer="75.2218" delka="5.248"/>
+      <centr smer="86.7076" delka="5.542"/>
     </centracni-osnova>
     <!-- prumerna hodnota ze vsech laboratornich jednotek -->
-    <uhel id-leva="1002" id-prava="1003" pocet-lj="2">34.5678</uhel>
-    <uhel id-leva="1003" id-prava="1004" pocet-lj="2">51.9248</uhel>
-    <uhel id-leva="1002" id-prava="1004" pocet-lj="2">86.4926</uhel>
+    <uhel id-leva="1001" id-prava="1003" pocet-lj="3">60.1844</uhel>
+    <uhel id-leva="1001" id-prava="1004" pocet-lj="3">75.2223</uhel>
+    <uhel id-leva="1003" id-prava="1004" pocet-lj="3">15.0373</uhel>
     <!-- mereni na Slunce pro urceni azimutu; leve rameno - cil, prave rameno - Slunce -->
     <azimut id="1002" uhel="71.6659" cas-utc="08:13:45.1"/>
     <azimut id="1004" uhel="22.5691" cas-utc="08:16:20.5"/>

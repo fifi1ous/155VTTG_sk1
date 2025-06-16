@@ -19,7 +19,7 @@
 % MERENA DATA:
 % ------------
 % hz-smer cile v I. a II.poloze [gon]
-hzcilm = [82.4467 282.4465];
+hzcilm = [325.5952 125.5945];
 % hz-smer a cas SELC na Slunce [gon h min s]
 hzsunm = [
     356.7775  8 10 2.25; %  levy okraj  I.p
