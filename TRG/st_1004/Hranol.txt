@@ -1,0 +1,7 @@
+pro délky měřené přístrojem Leica:
+Pro excentricity měřené na minihranol (+17,5mm) platí: správná délka = měřená + 17,5 mm.
+Pro délky měřené na hranol Zeiss (+28 mm) platí: správná délka = měřená + 28 mm.
+
+pro délky měřené přístrojem Topcon:
+Pro excentricity měřené na minihranol platí: správná délka = měřená - 16,9 mm.
+Pro délky měřené na hranol Zeiss platí: správná délka = měřená - 2 mm.
