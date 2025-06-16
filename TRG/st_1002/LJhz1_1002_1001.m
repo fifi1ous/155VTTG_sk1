@@ -1,7 +1,7 @@
 % merena data astronomicke orientace na Slunce 
 %         v jedne laboratorni jednotce
 % --------------------------------------------
-% jmeno: Filip Roučka
+% jmeno: Michal Kovář
 % -----------
 % format dat:
 % -----------
@@ -18,13 +18,13 @@
 % ------------
 % MERENA DATA:
 % ------------
-% hz-smer cile v I. a II.poloze [gon]
-hzcilm = [325.5952 125.5945];
+% hz-smer cile v I. a II.poloze [gon] - 1004
+hzcilm = [250.3715 50.3715];
 % hz-smer a cas SELC na Slunce [gon h min s]
 hzsunm = [
-    195.6462  15 44 28.87; %  levy okraj  I.p
-    196.7565  15 45 21.35; % pravy okraj II.p
-    196.1543  15 46 36.37; %  levy okraj  I.p
-    197.3113  15 47 18.90];% pravy okraj II.p
+    200.9366  16 03 32.37; %  levy okraj  I.p
+    202.0887  16 04 48.75; % pravy okraj II.p
+    202.0397  16 10 44.40; %  levy okraj  I.p
+    203.8535  16 11 34.50];% pravy okraj II.p
 
 %

@@ -18,7 +18,7 @@
 % ------------
 % MERENA DATA:
 % ------------
-% hz-smer cile v I. a II.poloze [gon]
+% hz-smer cile v I. a II.poloze [gon] - 1004
 hzcilm = [325.5952 125.5946];
 % hz-smer a cas SELC na Slunce [gon h min s]
 hzsunm = [
