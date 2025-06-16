@@ -1,0 +1,27 @@
+% program   : RTKPOST ver.demo5 b34d
+% inp file  : C:\Users\Martina\Documents\Vyuka_TGD\Data_TRG\gpsdata_trg\1001163f.20o
+% inp file  : C:\Users\Martina\Documents\Vyuka_TGD\Data_TRG\gpsdata_trg\STAM.20o
+% inp file  : C:\Users\Martina\Documents\Vyuka_TGD\Data_TRG\gpsdata_trg\csum162x00.20n
+% inp file  : C:\Users\Martina\Documents\Vyuka_TGD\Data_TRG\gpsdata_trg\csum162x00.20g
+% obs start : 2020/06/11 05:07:05.0 GPST (week2109 364025.0s)
+% obs end   : 2020/06/11 05:27:20.0 GPST (week2109 365240.0s)
+% pos mode  : Static
+% freqs     : L1+L2/E5b
+% solution  : Forward
+% elev mask : 15.0 deg
+% dynamics  : on
+% tidecorr  : off
+% ionos opt : Broadcast
+% tropo opt : Saastamoinen
+% ephemeris : Broadcast
+% navi sys  : GPS GLONASS Galileo BDS
+% amb res   : Continuous
+% amb glo   : OFF
+% val thres : 3.0
+% antenna1  : TPSHIPER_PLUS   NONE  ( 0.0000  0.0000  1.4100)
+% antenna2  : TPSCR3_GGD      CONE  ( 0.0000  0.0000  0.0000)
+% ref pos   : 50.162333002   16.947761314   603.4462
+%
+% (lat/lon/height=WGS84/ellipsoidal,Q=1:fix,2:float,3:sbas,4:dgps,5:single,6:ppp,ns=# of satellites)
+%  GPST                  latitude(deg) longitude(deg)  height(m)   Q  ns   sdn(m)   sde(m)   sdu(m)  sdne(m)  sdeu(m)  sdun(m) age(s)  ratio
+2020/06/11 05:07:05.000   50.168009160   16.900870156   877.0778   1  12   0.0005   0.0004   0.0010  -0.0003   0.0002  -0.0004   0.00   26.8
