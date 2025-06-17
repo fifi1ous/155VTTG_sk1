@@ -101,7 +101,7 @@ classdef mereni_z
                     RT=RTU(id==u(n));
                     int=T(id==u(n));
                     int=[int(1)-15,int(end)+15];
-                    obj.graf(int,RT,Cas,p(n,:),u(n),n)
+                    obj.graf(int,RT,Cas,p(n,:),u(n),u(n))
                 end
             end
         end
