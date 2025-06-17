@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trg-sit>
+  <datum>13.6.2025</datum>
+  <skupina>1</skupina>
+  <stanovisko>1002</stanovisko>
+
+  <mericka-ceta>
+    <meric>Michal Kovář</meric>
+    <meric>Filip Roučka</meric>
+  </mericka-ceta>
+
+  <exc-stanovisko-observace>
+    <centracni-osnova>
+      <cil id="1001" smer="0.0000"/>
+      <cil id="1003" smer="60.1846"/>
+      <cil id="1004" smer="75.2218"/>
+      <ex-cil smer="75.2218" delka="5.248"/>
+      <centr smer="86.7076" delka="5.542"/>
+    </centracni-osnova>
+    <!-- prumerna hodnota ze vsech laboratornich jednotek -->
+    <uhel id-leva="1001" id-prava="1003" pocet-lj="3">60.1844</uhel>
+    <uhel id-leva="1001" id-prava="1004" pocet-lj="3">75.2223</uhel>
+    <uhel id-leva="1003" id-prava="1004" pocet-lj="3">15.0373</uhel>
+    <!-- mereni na Slunce pro urceni azimutu; leve rameno - cil, prave rameno - Slunce -->
+    <azimut id="1002" uhel="71.6659" cas-utc="08:13:45.1"/>
+    <azimut id="1004" uhel="22.5691" cas-utc="08:16:20.5"/>
+  </exc-stanovisko-observace>
+
+  <exc-stanovisko-observace>  <!-- nove excetricke stanovisko na bode 1001-->
+    <centracni-osnova>
+      <cil id="1002" smer="7.7237"/>
+      <cil id="1003" smer="298.4396"/>
+      <cil id="1004" smer="250.4436"/>
+      <ex-cil smer="106.3040" delka="5.114"/>
+      <centr smer="217.1915" delka="4.572"/>
+    </centracni-osnova>
+    <uhel id-leva="1002" id-prava="1003" pocet-lj="2">34.5615</uhel>
+    <uhel id-leva="1003" id-prava="1004" pocet-lj="2">51.9300</uhel>
+    <uhel id-leva="1002" id-prava="1004" pocet-lj="2">86.4915</uhel>
+  </exc-stanovisko-observace>
+
+  <!-- merene delky -->
+  <delky-observace>
+    <delka id2="1002" h1="1.434" h2="1.595" t1="8.1" t2="10.5" p1="705.1" p2="699.3" vlhko1="75" vlhko2="77">4356.781</delka>
+    <delka id2="1003" h1="1.434" h2="1.387" t1="8.1" t2="9.9" p1="705.1" p2="698.9" vlhko1="75" vlhko2="78">2514.852</delka>
+    <delka id2="1004" h1="1.405" h2="1.505" t1="9.9" t2="8.1" p1="698.9" p2="705.1" vlhko1="78" vlhko2="75">2514.799</delka>
+    <!-- atd. -->
+  </delky-observace>
+
+</trg-sit>
