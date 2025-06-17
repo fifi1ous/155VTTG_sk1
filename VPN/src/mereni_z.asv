@@ -49,8 +49,12 @@ classdef mereni_z
             
             
             gr=RTU+dg;
-            dgr=zeros(1,length(RTU));
-    
+            dgr=zeros(1,length(RTU)-1);
+     
+            for n=1:length(dgr)
+                dgr(n)=gr(n)-gr(n+1);
+            end
+         
 
             r = [];
             for n = 1:length(u1)
@@ -58,9 +62,7 @@ classdef mereni_z
             end
             r = r(1);
 
-            for n = 0:length(dgr)-1
-                dgr(n+1)=gr(r)-gr(n+1);
-            end
+            for n = 1:le
 
             pdgr=mean(abs(dgr));
 
@@ -68,7 +70,7 @@ classdef mereni_z
             Hp=mean(abs(H));
 
             
-            TabPostup=table(id',T2',T',TEMP',RTU1',RTU',dg',gr',[dgr'],round([H'],1));
+            TabPostup=table(id',T2',T',TEMP',RTU1',RTU',dg',gr',[dgr';0],round([H';0],1));
             TabPostup.Properties.VariableNames={'Číslo bodu','Absolutní čas','Relativní čas','Teplota','Průměrné čtení','Relativní tíhové údaje','Oprava z chodu gravimetru','Opravené relativní tíhové údaje','Tíhové rozdíly','Výškový rozdíl ~0.1m'};
             TabPostup.Properties.Description = 'Zpracování měření pomocí relativního gravimetru:';
             TabPostup.Properties.VariableUnits = {'-','min','min','°C','dílek','mGal','mGal','mGal','mGal','m'};
