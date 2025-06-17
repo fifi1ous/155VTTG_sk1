@@ -9,3 +9,4 @@ data = parse_trgsit_xml("trg_format_dat.xml");
 [S,U,ro1,eps] = jtsk2kar(ss(1),ss(1));
     
 
+r = find(ss(:,1)==1002);
