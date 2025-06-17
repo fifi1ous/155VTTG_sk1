@@ -20,17 +20,20 @@ classdef mereni_z
             T=T2-T2(1);
             % p,P,gr,dgr,pdgr,H,Hp
             u=unique(id);
-            p=zeros(length(u),3);
+            p=[];
+            u1 = [];
             for n=1:length(u)
-                if length(id==u(n)) > 1
-                    p(n,1:2) = polyfit(T(id==u(n)), RTU(id==u(n)), 1);
-                    if p(n,1)>0
-                        p(n,3)=1;
-                    elseif p(n,1)<0
-                        p(n,3)=-1;
+                if sum(id==u(n)) > 1
+                    p1 = polyfit(T(id==u(n)), RTU(id==u(n)), 1);
+                    if p1(1)>0
+                        p2=1;
+                    elseif p1(1)<0
+                        p2=-1;
                     else
-                        p(n,3)=0;
+                        p2=0;
                     end
+                    p = [p;[p1,p2]];
+                    u1 = [u1;u(n)];
                 end
             end
             
@@ -46,19 +49,26 @@ classdef mereni_z
             
             
             gr=RTU+dg;
-            dgr=zeros(1,length(RTU)-1);
-     
-            for n=1:length(dgr)
-                dgr(n)=gr(n)-gr(n+1);
+            dgr=zeros(1,length(RTU));
+    
+
+            r = [];
+            for n = 1:length(u1)
+                r = [r,find(id == u1(n))];
             end
-         
+            r = r(1);
+
+            for n = 0:length(dgr)-1
+                dgr(n+1)=gr(r)-gr(n+1);
+            end
+
             pdgr=mean(abs(dgr));
 
             H=dgr/VGR;
             Hp=mean(abs(H));
 
             
-            TabPostup=table(id',T2',T',TEMP',RTU1',RTU',dg',gr',[dgr';0],round([H';0],1));
+            TabPostup=table(id',T2',T',TEMP',RTU1',RTU',dg',gr',[dgr'],round([H'],1));
             TabPostup.Properties.VariableNames={'Číslo bodu','Absolutní čas','Relativní čas','Teplota','Průměrné čtení','Relativní tíhové údaje','Oprava z chodu gravimetru','Opravené relativní tíhové údaje','Tíhové rozdíly','Výškový rozdíl ~0.1m'};
             TabPostup.Properties.Description = 'Zpracování měření pomocí relativního gravimetru:';
             TabPostup.Properties.VariableUnits = {'-','min','min','°C','dílek','mGal','mGal','mGal','mGal','m'};
@@ -68,7 +78,7 @@ classdef mereni_z
             TabVysledky.Properties.Description = 'Výsledky gravimetrického měřní, pouze pro dva body, jinak potřeba manuálně dopočítat';
             TabVysledky.Properties.VariableUnits= {'mGal/min','mGal','m'};
 
-            TabChod=table(u',p(:,1),p(:,2));
+            TabChod=table(u1,p(:,1),p(:,2));
             TabChod.Properties.VariableNames={'Číslo bodu','a','b'};
             TabChod.Properties.Description='Výsledné parametry proložených přímek na bodech';
             TabChod.Properties.VariableUnits= {'-','mGal/min','mGal'};
@@ -84,14 +94,14 @@ classdef mereni_z
             p=zeros(length(u),2);
             
             for n=1:length(u)
-                if length(id==u(n)) > 1
+                if sum(id==u(n)) > 1
                     Q=T(id==u(n));
                     p(n,:) = polyfit(T(id==u(n)), RTU(id==u(n)), 1);
                     Cas=T(id==u(n));
                     RT=RTU(id==u(n));
                     int=T(id==u(n));
                     int=[int(1)-15,int(end)+15];
-                    obj.graf(int,RT,Cas,p(n,:),u(n),n)
+                    obj.graf(int,RT,Cas,p(n,:),u(n),u(n))
                 end
             end
         end
