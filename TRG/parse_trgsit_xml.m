@@ -1,24 +1,34 @@
 function data = parse_trgsit_xml(xmlFile)
-% PARSE_TRGSIT_XML Načte a pasuje XML na matlab structure
+% PARSE_TRGSIT_XML Načte a parsuje XML na matlab structure
 
     doc = xmlread(xmlFile);
     root = doc.getDocumentElement;
 
     % Základní metadata
     data.datum = char(root.getElementsByTagName('datum').item(0).getTextContent);
-    data.skupina = str2double(root.getElementsByTagName('skupina').item(0).getTextContent);
+    data.skupina = char(root.getElementsByTagName('skupina').item(0).getTextContent);
     data.stanovisko = char(root.getElementsByTagName('stanovisko').item(0).getTextContent);
+    data.pristroj = char(root.getElementsByTagName('pristroj').item(0).getTextContent);
 
     % Měřičská četa
-    merici = root.getElementsByTagName('meric');
-    for i = 0:merici.getLength-1
-        data.mericka_ceta{i+1} = char(merici.item(i).getTextContent);
+    cetaNodes = root.getElementsByTagName('mericka-ceta');
+    
+    if cetaNodes.getLength > 0
+        ceta = cetaNodes.item(0);  % Předpokládáme jednu měřičskou četu
+        merici = ceta.getElementsByTagName('meric');
+        
+        for i = 0:merici.getLength - 1
+            jmeno = strtrim(char(merici.item(i).getTextContent));
+            data.mericka_ceta(i+1).jmeno = jmeno;
+        end
+    else
+        data.mericka_ceta = struct([]);
     end
 
     % Úhly
-    uhely = root.getElementsByTagName('uhel');
-    for i = 0:uhely.getLength-1
-        el = uhely.item(i);
+    uhly = root.getElementsByTagName('uhel');
+    for i = 0:uhly.getLength-1
+        el = uhly.item(i);
         data.uhel(i+1).id_leva = char(el.getAttribute('id-leva'));
         data.uhel(i+1).id_prava = char(el.getAttribute('id-prava'));
         data.uhel(i+1).pocet_lj = str2double(el.getAttribute('pocet-lj'));
