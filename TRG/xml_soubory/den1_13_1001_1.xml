@@ -23,8 +23,14 @@
     <uhel id-leva="1004" id-prava="1002" pocet-lj="3">59.6360</uhel>
     <uhel id-leva="1004" id-prava="1003" pocet-lj="3">22.9514</uhel>
     <!-- mereni na Slunce pro urceni azimutu; leve rameno - cil, prave rameno - Slunce -->
-    <azimut id="1004" uhel="62.3809" cas-utc="06:13:45.1"/>
-    <azimut id="1004" uhel="62.3774" cas-utc="06:16:20.5"/>
+    <azimut id="1004" uhel="91.3944" cas-utc="09:37:35.4"/>
+    <azimut id="1004" uhel="93.1741" cas-utc="09:41:26.7"/>
+    <azimut id="1004" uhel="96.8369" cas-utc="09:49:09.5"/>
+    <azimut id="1004" uhel="98.3112" cas-utc="09:52:11.3"/>
+    <azimut id="1004" uhel="155.8691" cas-utc="11:38:30.8"/>
+    <azimut id="1004" uhel="157.5584" cas-utc="11:41:48.4"/>
+    <azimut id="1004" uhel="160.9554" cas-utc="11:48:32.5"/>
+    <azimut id="1004" uhel="163.2882" cas-utc="11:53:16.2"/>
   </exc-stanovisko-observace>
 
   <delky-observace>
@@ -41,25 +47,25 @@
     <observace>
       <meric>Tereza Cernohousova</meric>
       <azimut id="1003">68.0095</azimut>
-      <azimut-centr>??.????</azimut-centr>
+      <azimut-centr>45.0734</azimut-centr>
       <delka-centr>2.282</delka-centr>
     </observace>
     <observace>
       <meric>Magda Soukupova</meric>
       <azimut id="1003">68.0161</azimut>
-      <azimut-centr>??.????</azimut-centr>
+      <azimut-centr>45.0973</azimut-centr>
       <delka-centr>2.282</delka-centr>
     </observace>
     <observace>
       <meric>Tomas Zbiral</meric>
       <azimut id="1003">68.0180</azimut>
-      <azimut-centr>??.????</azimut-centr>
+      <azimut-centr>45.0738</azimut-centr>
       <delka-centr>2.291</delka-centr>
     </observace>
     <observace>
       <meric>Adela Rabasova</meric>
       <azimut id="1003">68.0838</azimut>
-      <azimut-centr>??.????</azimut-centr>
+      <azimut-centr>45.1018</azimut-centr>
       <delka-centr>2.291</delka-centr>
     </observace>
     <datum>16.6.2025</datum>
@@ -91,13 +97,13 @@
       <meric>Krystof Sedlak</meric>
       <azimut id="1003">68.0159</azimut>
       <azimut-centr>38.8473</azimut-centr>
-      <delka-centr>?.???</delka-centr>
+      <delka-centr>3.000</delka-centr>
     </observace>
     <observace>
       <meric>Michal Kovar</meric>
       <azimut id="1003">68.8205</azimut>
       <azimut-centr>38.8205</azimut-centr>
-      <delka-centr>?.???</delka-centr>
+      <delka-centr>3.000</delka-centr>
     </observace>
   </gyro-observace>
 </trg-sit>

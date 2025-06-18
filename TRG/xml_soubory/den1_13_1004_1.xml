@@ -23,8 +23,14 @@
     <uhel id-leva="1002" id-prava="1003" pocet-lj="3">19.0362</uhel>
     <uhel id-leva="1003" id-prava="1001" pocet-lj="3">45.9796</uhel>
     <!-- mereni na Slunce pro urceni azimutu; leve rameno - cil, prave rameno - Slunce -->
-    <azimut id="1002" uhel="183.9245" cas-utc="08:13:45.1"/>
-    <azimut id="1002" uhel="183.9586" cas-utc="08:16:20.5"/>
+    <azimut id="1002" uhel="47.2729" cas-utc="12:36:07.4"/>
+    <azimut id="1002" uhel="48.2315" cas-utc="12:38:34.2"/>
+    <azimut id="1002" uhel="49.3000" cas-utc="12:41:18.9"/>
+    <azimut id="1002" uhel="50.0451" cas-utc="12:43:15.9"/>
+    <azimut id="1002" uhel="51.4902" cas-utc="12:47:03.4"/>
+    <azimut id="1002" uhel="52.5134" cas-utc="12:49:44.2"/>
+    <azimut id="1002" uhel="53.7937" cas-utc="12:52:57.7"/>
+    <azimut id="1002" uhel="54.5210" cas-utc="12:55:17.4"/>
   </exc-stanovisko-observace>
 
   <delky-observace>
