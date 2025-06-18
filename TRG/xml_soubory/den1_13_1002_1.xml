@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trg-sit>
+  <datum>13.6.2025</datum>
+  <pristroj>leica</pristroj>
+  <skupina>13</skupina>
+  <stanovisko>1002</stanovisko>
+
+  <mericka-ceta>
+    <meric>Michal Kovář</meric>
+    <meric>Filip Roučka</meric>
+  </mericka-ceta>
+
+  <exc-stanovisko-observace>
+    <centracni-osnova>
+      <cil id="1001" smer="0.0000"/>
+      <cil id="1003" smer="60.1846"/>
+      <cil id="1004" smer="75.2218"/>
+      <ex-cil smer="29.7071" delka="5.248"/>
+      <centr smer="86.7076" delka="5.542"/>
+    </centracni-osnova>
+    <!-- prumerna hodnota ze vsech laboratornich jednotek -->
+    <uhel id-leva="1001" id-prava="1003" pocet-lj="3">60.1844</uhel>
+    <uhel id-leva="1001" id-prava="1004" pocet-lj="3">75.2223</uhel>
+    <uhel id-leva="1003" id-prava="1004" pocet-lj="3">15.0373</uhel>
+    <!-- mereni na Slunce pro urceni azimutu; leve rameno - cil, prave rameno - Slunce -->
+    <azimut id="1001" uhel="296.2060" cas-utc="15:35:59.9"/>
+    <azimut id="1004" uhel="3.8760" cas-utc="15:16:20.5"/>
+  </exc-stanovisko-observace>
+
+  <delky-observace>
+    <delka id2="1001" h1="1.615" h2="1.520" t1="17.5" t2="17.0" tw1="14" tw2="14.0" p1="714" p2="702" vlhko1="-1" vlhko2="-1">5907.436</delka>
+    <delka id2="1003" h1="1.615" h2="1.583" t1="17.5" t2="15.1" tw1="14" tw2="10.6" p1="714" p2="722" vlhko1="-1" vlhko2="-1">3221.352</delka>
+    <delka id2="1004" h1="1.615" h2="1.533" t1="17.5" t2="17.4" tw1="14" tw2="-274" p1="714" p2="-922" vlhko1="-1" vlhko2="51">5581.439</delka>
+    <delka id2="1001" h1="1.615" h2="1.520" t1="20.0" t2="19.5" tw1="16" tw2="14.0" p1="714" p2="702" vlhko1="-1" vlhko2="-1">5907.429</delka>
+    <delka id2="1003" h1="1.615" h2="1.583" t1="20.0" t2="15.0" tw1="16" tw2="12.5" p1="714" p2="721" vlhko1="-1" vlhko2="-1">3221.353</delka>
+    <delka id2="1004" h1="1.615" h2="1.533" t1="20.0" t2="17.7" tw1="16" tw2="-274" p1="714" p2="-923" vlhko1="-1" vlhko2="50">5581.436</delka>
+  </delky-observace>
+</trg-sit>

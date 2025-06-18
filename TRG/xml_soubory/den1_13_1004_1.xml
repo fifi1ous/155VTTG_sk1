@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trg-sit>
+  <datum>13.6.2025</datum>
+  <pristroj>topcon</pristroj>
+  <skupina>13</skupina>
+  <stanovisko>1004</stanovisko>
+
+  <mericka-ceta>
+    <meric>Adela Rabasova</meric>
+    <meric>Tomas Zbiral</meric>
+  </mericka-ceta>
+
+  <exc-stanovisko-observace>
+    <centracni-osnova>
+      <cil id="1001" smer="65.0169"/>
+      <cil id="1002" smer="0.0000"/>
+      <cil id="1003" smer="19.0379"/>
+      <ex-cil smer="41.6757" delka="8.373"/>
+      <centr smer="39.2179" delka="3.056"/>
+    </centracni-osnova>
+    <!-- prumerna hodnota ze vsech laboratornich jednotek -->
+    <uhel id-leva="1002" id-prava="1001" pocet-lj="3">65.0163</uhel>
+    <uhel id-leva="1002" id-prava="1003" pocet-lj="3">19.0362</uhel>
+    <uhel id-leva="1003" id-prava="1001" pocet-lj="3">45.9796</uhel>
+    <!-- mereni na Slunce pro urceni azimutu; leve rameno - cil, prave rameno - Slunce -->
+    <azimut id="1002" uhel="183.9245" cas-utc="08:13:45.1"/>
+    <azimut id="1002" uhel="183.9586" cas-utc="08:16:20.5"/>
+  </exc-stanovisko-observace>
+
+  <delky-observace>
+    <delka id2="1002" h1="1.562" h2="1.593" t1="17.0" t2="15.5" tw1="-274" tw2="13.5" p1="-922" p2="713" vlhko1="51" vlhko2="-1">5581.479</delka>
+    <delka id2="1003" h1="1.562" h2="1.583" t1="17.0" t2="15.0" tw1="-274" tw2="11.5" p1="-922" p2="722" vlhko1="51" vlhko2="-1">2570.492</delka>
+    <delka id2="1001" h1="1.562" h2="1.520" t1="17.0" t2="17.0" tw1="-274" tw2="13.0" p1="-922" p2="702" vlhko1="51" vlhko2="-1">6415.599</delka>
+    <delka id2="1001" h1="1.562" h2="1.520" t1="16.8" t2="19.3" tw1="-274" tw2="14.0" p1="-922" p2="702" vlhko1="53" vlhko2="-1">6415.592</delka>
+    <delka id2="1003" h1="1.562" h2="1.583" t1="16.8" t2="17.5" tw1="-274" tw2="12.0" p1="-922" p2="722" vlhko1="53" vlhko2="-1">2570.485</delka>
+    <delka id2="1002" h1="1.562" h2="1.595" t1="16.8" t2="21.0" tw1="-274" tw2="16.5" p1="-922" p2="714" vlhko1="53" vlhko2="-1">5581.489</delka>
+  </delky-observace>
+</trg-sit>

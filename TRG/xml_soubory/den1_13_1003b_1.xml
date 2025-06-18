@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trg-sit>
+  <datum>13.6.2025</datum>
+  <pristroj>leica</pristroj>
+  <skupina>13</skupina>
+  <stanovisko>1003b</stanovisko>
+
+  <mericka-ceta>
+    <meric>Krystof Sedlak</meric>
+    <meric>Magda Soukupova</meric>
+  </mericka-ceta>
+
+  <exc-stanovisko-observace>
+    <centracni-osnova>
+      <cil id="1001" smer="111.9275"/>
+      <cil id="1002" smer="8.7232"/>
+      <cil id="1004" smer="243.1613"/>
+      <ex-cil smer="341.3881" delka="9.161"/>
+      <centr smer="361.6803" delka="3.099"/>
+    </centracni-osnova>
+    <!-- prumerna hodnota ze vsech laboratornich jednotek -->
+    <uhel id-leva="1001" id-prava="1004" pocet-lj="3">131.2344</uhel>
+    <uhel id-leva="1002" id-prava="1001" pocet-lj="3">103.2034</uhel>
+    <uhel id-leva="1004" id-prava="1002" pocet-lj="3">165.5629</uhel>
+    <uhel id-leva="1005" id-prava="1001" pocet-lj="2">16.3341</uhel>
+    <!-- mereni na Slunce pro urceni azimutu; leve rameno - cil, prave rameno - Slunce -->
+    <azimut id="1001" uhel="263.3351" cas-utc="08:13:45.1"/>
+    <azimut id="1001" uhel="263.3168" cas-utc="08:16:20.5"/>
+  </exc-stanovisko-observace>
+
+  <delky-observace>
+    <delka id2="1001" h1="1.605" h2="1.520" t1="15.0" t2="17.0" tw1="12.0" tw2="12.5" p1="722" p2="702" vlhko1="-1" vlhko2="-1">4794.045</delka>
+    <delka id2="1002" h1="1.605" h2="1.593" t1="15.0" t2="14.7" tw1="12.0" tw2="13.5" p1="722" p2="713" vlhko1="-1" vlhko2="-1">3221.332</delka>
+    <delka id2="1001" h1="1.605" h2="1.533" t1="15.0" t2="16.4" tw1="12.0" tw2="-274" p1="722" p2="-922" vlhko1="-1" vlhko2="53">2570.443</delka>
+    <delka id2="1001" h1="1.605" h2="1.520" t1="19.5" t2="19.5" tw1="13.5" tw2="13.5" p1="721" p2="702" vlhko1="-1" vlhko2="-1">4794.030</delka>
+    <delka id2="1002" h1="1.605" h2="1.595" t1="19.5" t2="19.5" tw1="13.5" tw2="15.0" p1="721" p2="714" vlhko1="-1" vlhko2="-1">3221.349</delka>
+    <delka id2="1004" h1="1.605" h2="1.533" t1="19.5" t2="17.1" tw1="13.5" tw2="-274" p1="721" p2="-923" vlhko1="-1" vlhko2="46">2570.439</delka>
+  </delky-observace>
+</trg-sit>

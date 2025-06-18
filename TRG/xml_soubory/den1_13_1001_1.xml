@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trg-sit>
+  <datum>13.6.2025</datum>
+  <pristroj>topcon</pristroj>
+  <skupina>13</skupina>
+  <stanovisko>1001</stanovisko>
+
+  <mericka-ceta>
+    <meric>Tereza Cernohousova</meric>
+    <meric>Matyas Pokorny</meric>
+  </mericka-ceta>
+
+  <exc-stanovisko-observace>
+    <centracni-osnova>
+      <cil id="1002" smer="59.6372"/>
+      <cil id="1003" smer="22.9517"/>
+      <cil id="1004" smer="0.0000"/>
+      <ex-cil smer="299.6840" delka="6.904"/>
+      <centr smer="165.0339" delka="3.835"/>
+    </centracni-osnova>
+    <!-- prumerna hodnota ze vsech laboratornich jednotek -->
+    <uhel id-leva="1003" id-prava="1002" pocet-lj="3">36.6853</uhel>
+    <uhel id-leva="1004" id-prava="1002" pocet-lj="3">59.6360</uhel>
+    <uhel id-leva="1004" id-prava="1003" pocet-lj="3">22.9514</uhel>
+    <!-- mereni na Slunce pro urceni azimutu; leve rameno - cil, prave rameno - Slunce -->
+    <azimut id="1004" uhel="62.3809" cas-utc="06:13:45.1"/>
+    <azimut id="1004" uhel="62.3774" cas-utc="06:16:20.5"/>
+  </exc-stanovisko-observace>
+
+  <delky-observace>
+    <delka id2="1004" h1="1.517" h2="1.533" t1="19.5" t2="15.5" tw1="13.6" tw2="-274" p1="702" p2="-923" vlhko1="-1" vlhko2="55">6412.319</delka>
+    <delka id2="1003" h1="1.517" h2="1.583" t1="19.5" t2="16.0" tw1="13.6" tw2="12.0" p1="702" p2="722" vlhko1="-1" vlhko2="-1">4791.735</delka>
+    <delka id2="1002" h1="1.517" h2="1.595" t1="19.5" t2="18.0" tw1="13.6" tw2="13.0" p1="702" p2="714" vlhko1="-1" vlhko2="-1">5907.151</delka>
+    <delka id2="1004" h1="1.517" h2="1.533" t1="19.0" t2="16.1" tw1="12.0" tw2="-274" p1="702" p2="-923" vlhko1="-1" vlhko2="42">-1</delka>
+    <delka id2="1003" h1="1.517" h2="1.583" t1="19.0" t2="20.9" tw1="12.0" tw2="12.5" p1="702" p2="722" vlhko1="-1" vlhko2="-1">-1</delka>
+    <delka id2="1002" h1="1.517" h2="1.595" t1="19.0" t2="19.0" tw1="12.0" tw2="14.5" p1="702" p2="714" vlhko1="-1" vlhko2="-1">-1</delka>
+  </delky-observace>
+
+  <gyro-observace id="1005">
+    <datum>14.6.2025</datum>
+    <observace>
+      <meric>Tereza Cernohousova</meric>
+      <azimut id="1003">68.0095</azimut>
+      <azimut-centr>??.????</azimut-centr>
+      <delka-centr>2.282</delka-centr>
+    </observace>
+    <observace>
+      <meric>Magda Soukupova</meric>
+      <azimut id="1003">68.0161</azimut>
+      <azimut-centr>??.????</azimut-centr>
+      <delka-centr>2.282</delka-centr>
+    </observace>
+    <observace>
+      <meric>Tomas Zbiral</meric>
+      <azimut id="1003">68.0180</azimut>
+      <azimut-centr>??.????</azimut-centr>
+      <delka-centr>2.291</delka-centr>
+    </observace>
+    <observace>
+      <meric>Adela Rabasova</meric>
+      <azimut id="1003">68.0838</azimut>
+      <azimut-centr>??.????</azimut-centr>
+      <delka-centr>2.291</delka-centr>
+    </observace>
+    <datum>16.6.2025</datum>
+    <observace>
+      <meric>Josef Borik</meric>
+      <azimut id="1003">67.9887</azimut>
+      <azimut-centr>38.8314</azimut-centr>
+      <delka-centr>2.999</delka-centr>
+    </observace>
+    <observace>
+      <meric>Matej Klimes</meric>
+      <azimut id="1003">67.9927</azimut>
+      <azimut-centr>38.8362</azimut-centr>
+      <delka-centr>3.000</delka-centr>
+    </observace>
+    <observace>
+      <meric>Filip Roucka</meric>
+      <azimut id="1003">67.9992</azimut>
+      <azimut-centr>38.8431</azimut-centr>
+      <delka-centr>3.001</delka-centr>
+    </observace>
+    <observace>
+      <meric>Matyas Pokorny</meric>
+      <azimut id="1003">68.0215</azimut>
+      <azimut-centr>38.8574</azimut-centr>
+      <delka-centr>3.001</delka-centr>
+    </observace>
+    <observace>
+      <meric>Krystof Sedlak</meric>
+      <azimut id="1003">68.0159</azimut>
+      <azimut-centr>38.8473</azimut-centr>
+      <delka-centr>?.???</delka-centr>
+    </observace>
+    <observace>
+      <meric>Michal Kovar</meric>
+      <azimut id="1003">68.8205</azimut>
+      <azimut-centr>38.8205</azimut-centr>
+      <delka-centr>?.???</delka-centr>
+    </observace>
+  </gyro-observace>
+</trg-sit>
