@@ -12,17 +12,43 @@ function data = parse_trgsit_xml(xmlFile)
 
     % Měřičská četa
     cetaNodes = root.getElementsByTagName('mericka-ceta');
-    
     if cetaNodes.getLength > 0
-        ceta = cetaNodes.item(0);  % Předpokládáme jednu měřičskou četu
+        ceta = cetaNodes.item(0);
         merici = ceta.getElementsByTagName('meric');
-        
         for i = 0:merici.getLength - 1
-            jmeno = strtrim(char(merici.item(i).getTextContent));
-            data.mericka_ceta(i+1).jmeno = jmeno;
+            data.mericka_ceta(i+1).jmeno = strtrim(char(merici.item(i).getTextContent));
         end
     else
         data.mericka_ceta = struct([]);
+    end
+
+    % Centracni-osnova ---
+    coNodes = root.getElementsByTagName('centracni-osnova');
+    if coNodes.getLength > 0
+        co = coNodes.item(0);
+        % načíst jednotlivé 'cil'
+        cils = co.getElementsByTagName('cil');
+        for i = 0:cils.getLength-1
+            el = cils.item(i);
+            data.centracni_osnova.cil(i+1).id = char(el.getAttribute('id'));
+            data.centracni_osnova.cil(i+1).smer = str2double(el.getAttribute('smer'));
+        end
+        % načíst 'ex-cil'
+        exCils = co.getElementsByTagName('ex-cil');
+        for i = 0:exCils.getLength-1
+            el = exCils.item(i);
+            data.centracni_osnova.ex_cil(i+1).smer = str2double(el.getAttribute('smer'));
+            data.centracni_osnova.ex_cil(i+1).delka = str2double(el.getAttribute('delka'));
+        end
+        % načíst 'centr'
+        centrs = co.getElementsByTagName('centr');
+        for i = 0:centrs.getLength-1
+            el = centrs.item(i);
+            data.centracni_osnova.centr(i+1).smer = str2double(el.getAttribute('smer'));
+            data.centracni_osnova.centr(i+1).delka = str2double(el.getAttribute('delka'));
+        end
+    else
+        data.centracni_osnova = struct('cil',[], 'ex_cil',[], 'centr',[]);
     end
 
     % Úhly
@@ -39,7 +65,7 @@ function data = parse_trgsit_xml(xmlFile)
     azimuty = root.getElementsByTagName('azimut');
     for i = 0:azimuty.getLength-1
         el = azimuty.item(i);
-        if el.hasAttribute('id') % jen ty obecné, ne z gyro
+        if el.hasAttribute('id')
             data.azimut(i+1).id = char(el.getAttribute('id'));
             data.azimut(i+1).uhel = str2double(el.getAttribute('uhel'));
             data.azimut(i+1).cas_utc = char(el.getAttribute('cas-utc'));
@@ -62,23 +88,23 @@ function data = parse_trgsit_xml(xmlFile)
         d.delka = str2double(el.getTextContent);
         data.delky(i+1) = d;
     end
-       if strcmp(data.stanovisko, '1001')
-            % GYRO observace
-            gyro = root.getElementsByTagName('gyro-observace');
-            if gyro.getLength > 0
-                g = gyro.item(0);
-                data.gyro.id = char(g.getAttribute('id'));
-                data.gyro.datum = char(g.getElementsByTagName('datum').item(0).getTextContent);
-                
-                obsList = g.getElementsByTagName('observace');
-                for i = 0:obsList.getLength-1
-                    obs = obsList.item(i);
-                    o.meric = char(obs.getElementsByTagName('meric').item(0).getTextContent);
-                    o.azimut = str2double(obs.getElementsByTagName('azimut').item(0).getTextContent);
-                    o.azimut_centr = str2double(obs.getElementsByTagName('azimut-centr').item(0).getTextContent);
-                    o.delka_centr = str2double(obs.getElementsByTagName('delka-centr').item(0).getTextContent);
-                    data.gyro.observace(i+1) = o;
-                end
+
+    % Gyro (pokud je stanovisko 1001)
+    if strcmp(data.stanovisko, '1001')
+        gyro = root.getElementsByTagName('gyro-observace');
+        if gyro.getLength > 0
+            g = gyro.item(0);
+            data.gyro.id = char(g.getAttribute('id'));
+            data.gyro.datum = char(g.getElementsByTagName('datum').item(0).getTextContent);
+            obsList = g.getElementsByTagName('observace');
+            for i = 0:obsList.getLength-1
+                obs = obsList.item(i);
+                o.meric = char(obs.getElementsByTagName('meric').item(0).getTextContent);
+                o.azimut = str2double(obs.getElementsByTagName('azimut').item(0).getTextContent);
+                o.azimut_centr = str2double(obs.getElementsByTagName('azimut-centr').item(0).getTextContent);
+                o.delka_centr = str2double(obs.getElementsByTagName('delka-centr').item(0).getTextContent);
+                data.gyro.observace(i+1) = o;
             end
-       end
+        end
+    end
 end
