@@ -35,7 +35,7 @@ function [delta]=CentracniZmena(psi_s1c2, psi_s1c1, psi_s1t1, e_s1t1, e_s1c1, ..
    sigma_s1t1 = sigma_s1c2 - omega_t1s1c2;
    sigma_t1s1 = sigma_s1t1 + pi;
    if sigma_t1s1 > 2*pi
-     sigma_t1s1 -= 2*pi;
+     sigma_t1s1 = sigma_t1s1 - 2*pi;
    end
 
    x_s1 = e_s1t1 * cos(sigma_t1s1);
@@ -53,7 +53,7 @@ function [delta]=CentracniZmena(psi_s1c2, psi_s1c1, psi_s1t1, e_s1t1, e_s1c1, ..
    sigma_s2t2 = sigma_s2c1 + omega_c1s2t2;
    sigma_t2s2 = sigma_s2t2 + pi;
    if sigma_t1s1 > 2*pi
-     sigma_t1s1 -= 2*pi;
+     sigma_t1s1 = sigma_t1s1 - 2*pi;
    end
 
    x_s2 = s_t1t2 + (e_s2t2 * cos(sigma_t2s2));
@@ -82,7 +82,7 @@ function [delta]=CentracniZmena(psi_s1c2, psi_s1c1, psi_s1t1, e_s1t1, e_s1c1, ..
      sigma_s1t1 = sigma_s1c2 - omega_t1s1c2;
      sigma_t1s1 = sigma_s1t1 + pi;
      if sigma_t1s1 > 2*pi
-       sigma_t1s1 -= 2*pi;
+       sigma_t1s1 = sigma_t1s1 - 2*pi;
      end
 
      x_s1 = e_s1t1 * cos(sigma_t1s1);
@@ -100,7 +100,7 @@ function [delta]=CentracniZmena(psi_s1c2, psi_s1c1, psi_s1t1, e_s1t1, e_s1c1, ..
      sigma_s2t2 = sigma_s2c1 + omega_c1s2t2;
      sigma_t2s2 = sigma_s2t2 + pi;
      if sigma_t1s1 > 2*pi
-       sigma_t1s1 -= 2*pi;
+       sigma_t1s1 = sigma_t1s1 - 2*pi;
      end
 
      x_s2 = s_t1t2 + (e_s2t2 * cos(sigma_t2s2));
