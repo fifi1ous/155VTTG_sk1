@@ -16,6 +16,99 @@ Dále byl pro každý oddíl vypočten aritmetický průměr převýšení:
 \[
 \Delta h_{\diameter} = \frac{\Delta h_{\text{TAM}} + \Delta h_{\text{ZPĚT}}}{2}
 \]
-V případě, že rozdíl převýšení ve směrech „tam“ a „zpět“ překročil tuto mezní hodnotu, bylo měření vyhodnoceno jako nevyhovující.\cite{zadani}
+V případě, že rozdíl převýšení ve směrech „tam“ a „zpět“ překročil tuto mezní hodnotu, bylo měření vyhodnoceno jako nevyhovující.\cite{zadani}\\
+Pro posouzení přesnosti nivelace se počítá směrodatná odchylka kilometrová
+\[
+  m_0 = \frac{1}{2}\,\sqrt{\frac{\sum\rho^2}{R}}
+\]
+kde \( R \) je délka oddílu v km a \(\rho\) rozdíly převýšení „tam“ vs. „zpět“ v jednotlivých oddílech.\\
+Směrodatná odchylka celého pořadu podle délky [km]
+\[
+  m_h = m_0 \,\sqrt{L}
+\]
+kde \(L\) je celková délka pořadu v kilometrech.\\
+Mezní kilometrová směrodatná odchylka pro II. řád
+\[
+  m_0 = 0{,}45 + \frac{0{,}80}{\sqrt{n}}\quad [\mathrm{mm}]
+\]
+kde \(n\) je počet oddílů nivelace.
 
 \subsection{Tíhové měření}
+
+Naměřená data (čas \(T_i\), vnitřní teplota \(t_i\), čtení přístroje \(S_i\)) byla zpracována v těchto krocích:
+
+\begin{itemize}
+  \item \textbf{Přepočet dílků přístroje na mGal:}
+    \[
+      gr''_i = C\,S_i,
+      \quad C = 4{,}379\;\text{mGal/dílek}.
+    \]
+  \item \textbf{Výpočet chodu přístroje (drift):}
+    \[
+      \delta g_{\mathrm{drift},i}
+        = \frac{\overline{gr''}_{\mathrm{end}} - \overline{gr''}_{\mathrm{start}}}
+               {T_{\mathrm{end}} - T_{\mathrm{start}}}
+          \,\bigl(T_i - T_{\mathrm{start}}\bigr).
+    \]
+  \item \textbf{Aplikace driftové korekce:}
+    \[
+      gr'_i = gr''_i + \delta g_{\mathrm{drift},i}.
+    \]
+  \item \textbf{Výpočet rozdílů tíhového zrychlení mezi sousedními body:}
+    \[
+      \delta g_{AB} = g_B - g_A.
+    \]
+  \item \textbf{Výpočet absolutního tíhového zrychlení:}
+    \[
+      g_i = g_{\mathrm{ref}}
+          + \bigl(gr'_i - \overline{gr''}_{\mathrm{start}}\bigr),
+    \]
+    kde \(g_{\mathrm{ref}}\) je referenční hodnota z prvních měření na bodě 3408.01. Přičtením \(\delta g_{AB}\) k referenční hodnotě se získají absolutní hodnoty \(g_i\) pro ostatní body.
+\end{itemize}
+
+
+\subsection{Výpočet Normálních (Moloděnského) výšek}
+
+Přibližné výšky bodů byly vypočítány pomocí nivelovaného převýšení (h):
+
+\[
+H_n = H_1+\sum_{i=1}^n h_i
+\]
+Kde \( H \) představuje kumulativní součet výšek jednotlivých bodů \( h \).
+\subsection*{Normální ortometrická korekce \( c_{\gamma AB} \)}
+Normální ortometrická korekce byla vypočtena jako: 
+\[
+c_{\gamma AB} = -0.0000254 \cdot H_s \cdot \Delta B \cdot 0.001
+\]
+kde \(H_s\) je střední výška mezi dvěma body a \(\Delta B\) je rozdíl zeměpisné šířky.
+\subsection*{Korekce z tíhových anomálií \( c_{\Delta g AB} \)}
+Korekce z tíhových anomálií byla vypočítána podle následujícího postupu:
+
+\begin{itemize}
+    \item \textbf{Výpočet normálního tíhového zrychlení z Helmertova vzorce}: 
+    \[
+    \gamma_0 = 978030 \left(1 + 0.005302 \cdot \sin^2(B) - 0.000007 \cdot \sin^2(2B) \right) \cdot 10^{-5}
+    \]
+    \item \textbf{Výpočet Fayovy tíhové anomálie}:
+    \[
+    \Delta g_F = g + 0.3086 \cdot 10^{-5} \cdot H - \gamma_0
+    \]
+    \item \textbf{Průměrná tíhová anomálie mezi nivelovanými body}:
+    \[
+    \Delta g_{F_{AB}} = \frac{\Delta g_F{_{1}} + \Delta g_{F_{2}}}{2}
+    \]
+    \item \textbf{Korekce z tíhové anomálie}:
+    \[
+    c_{\Delta g AB} = 0.0010193 \cdot 10^5 \cdot \Delta g_{F_{AB}} \cdot H_{\text{niv}} \cdot 0.001
+    \]
+\end{itemize}
+
+\subsection*{Výpočet normální Moloděnského výšky}
+Po výpočtu všech korekcí byla normální převýšení určena podle vztahu:
+\[
+h_Q = H_{2} + c_{\gamma AB} + c_{\Delta g AB}
+\]
+A celková normální výška byla získána kumulativním součtem všech korekcí:
+\[
+H_Q = H_{2} + \sum c_{\gamma AB} + \sum c_{\Delta g AB}
+\]
