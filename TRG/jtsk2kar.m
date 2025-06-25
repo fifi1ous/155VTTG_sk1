@@ -1,19 +1,17 @@
-function [S,D,ro1,eps] = jtsk2kar(Y,X)
+function [S,D,R,D_] = jtsk2kar(Y,X)
+    %% Constants
     ro = pi/180;
-    fi0 = 49.5*ro;
-    S0 = 78.5*ro;
-    a = 6377397.15508;
-    e2 = 0.006674372230622;
-    e = sqrt(e2);
-    R = a*sqrt(1-e2)/(1-e2*sin(fi0)^2);
-    ro0 = 0.9999*R/tan(S0);
-    alfa = sqrt(1+e2*cos(fi0)^4/(1-e2));
-    U0 = asin(sin(fi0)/alfa);
-    k = (((1-e*sin(fi0))/(1+e*sin(fi0)))^(alfa*e/2)*tan(fi0/2 + pi/4)^alfa)/tan(U0/2 + pi/4);
-    n = sin(S0);
-    Uq = 59.71186025*ro;
+    S0 = (78 + 30/60)*ro;
+    r = 6380703.6105;
+
+    R0 = 0.9999*r*(cos(S0)/sin(S0));
     
-    ro1 = sqrt(X^2+Y^2);
-    eps = atan(Y/X);
-    S = 2*atan((ro0/ro1)^(1/n)*tan(S0/2 + pi/4)) - pi/2; D = eps/sin(S0);
+    n=sin(S0);
+    %%
+
+    R = sqrt(X^2+Y^2);
+    D_ = atan2(Y,X);
+
+    S = 2*(atan(tan(S0/2+pi/4)*(R0/R)^(1/n))-pi/4);
+    D = D_/sin(S0);
 end

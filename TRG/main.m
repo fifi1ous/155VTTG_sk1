@@ -1,4 +1,6 @@
 clc; clear; format long G
+%% načtení přibližných souřadnic
+ss = load("pribl_sour_jtsk.txt");
 
 %% Načtení a zpracování XML souborů s daty
 % Cesta ke složce se soubory
@@ -40,11 +42,10 @@ disp('Soubory načteny a zpracovány');
 %% Centrace směrů
 
 %% Převod směrů do roviny Křovákova zobrazení
-ss = load("pribl_sour_jtsk.txt");
 [S,U,ro1,eps] = jtsk2kar(ss(1),ss(1));
     
 
-r = find(ss(:,1)==1002);
+
 
 %% Výpočet astronomických azimutů
 
