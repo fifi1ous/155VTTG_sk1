@@ -1,4 +1,4 @@
-\section{Postup zpracováni}
+\section{Postup zpracování}
 
 \subsection{Nivelační měření}
 
@@ -7,7 +7,7 @@ Převýšení mezi přestavovými body bylo spočteno přímo digitálním nivel
 \Delta h = \frac{(B_1 + B_2) - (F_1 + F_2)}{2}
 \]
 kde \( B_1, B_2 \) jsou zadní odečty a \( F_1, F_2 \) přední odečty.\\
-V rámci zpracování byla provedena kontrola přesnosti měření porovnáním rozdílu převýšení mezi směrem „tam“ a „zpět“ v každém oddílu. Tento rozdíl byl testován vůči mezní hodnotě přesnosti dle ČSN pro VPN, která je dána vztahem:
+V rámci zpracování byla provedena kontrola přesnosti měření porovnáním rozdílu převýšení mezi směrem „tam“ a „zpět“ v každém oddílu. Tento rozdíl byl testován vůči mezní hodnotě přesnosti dle ČSN pro VPN, která je dána vztahem \cite{skorepa}:
 \[
 \Delta_M = 2,25 \cdot \sqrt{R}
 \]
@@ -35,33 +35,33 @@ kde \(n\) je počet oddílů nivelace.
 
 \subsection{Tíhové měření}
 
-Naměřená data (čas \(T_i\), vnitřní teplota \(t_i\), čtení přístroje \(S_i\)) byla zpracována v těchto krocích:
+Naměřená data (čas \(T_i\), vnitřní teplota \(t_i\), čtení přístroje \(S_i\)) byla zpracována v těchto krocích \cite{gravi}:
 
 \begin{itemize}
   \item \textbf{Přepočet dílků přístroje na mGal:}
     \[
       gr''_i = C\,S_i,
-      \quad C = 4{,}379\;\text{mGal/dílek}.
+      \quad C = 4{,}379\;\text{mGal/dílek}
     \]
   \item \textbf{Výpočet chodu přístroje (drift):}
     \[
       \delta g_{\mathrm{drift},i}
         = \frac{\overline{gr''}_{\mathrm{end}} - \overline{gr''}_{\mathrm{start}}}
                {T_{\mathrm{end}} - T_{\mathrm{start}}}
-          \,\bigl(T_i - T_{\mathrm{start}}\bigr).
+          \,\bigl(T_i - T_{\mathrm{start}}\bigr)
     \]
   \item \textbf{Aplikace driftové korekce:}
     \[
-      gr'_i = gr''_i + \delta g_{\mathrm{drift},i}.
+      gr'_i = gr''_i + \delta g_{\mathrm{drift},i}
     \]
   \item \textbf{Výpočet rozdílů tíhového zrychlení mezi sousedními body:}
     \[
-      \delta g_{AB} = g_B - g_A.
+      \delta g_{AB} = g_B - g_A
     \]
   \item \textbf{Výpočet absolutního tíhového zrychlení:}
     \[
       g_i = g_{\mathrm{ref}}
-          + \bigl(gr'_i - \overline{gr''}_{\mathrm{start}}\bigr),
+          + \bigl(gr'_i - \overline{gr''}_{\mathrm{start}}\bigr)
     \]
     kde \(g_{\mathrm{ref}}\) je referenční hodnota z prvních měření na bodě 3408.01. Přičtením \(\delta g_{AB}\) k referenční hodnotě se získají absolutní hodnoty \(g_i\) pro ostatní body.
 \end{itemize}
@@ -74,7 +74,7 @@ Přibližné výšky bodů byly vypočítány pomocí nivelovaného převýšen�
 \[
 H_n = H_1+\sum_{i=1}^n h_i
 \]
-Kde \( H \) představuje kumulativní součet výšek jednotlivých bodů \( h \).
+Kde \( H_n \) představuje kumulativní součet výšek jednotlivých bodů \( h \).
 \subsection*{Normální ortometrická korekce \( c_{\gamma AB} \)}
 Normální ortometrická korekce byla vypočtena jako: 
 \[
@@ -112,3 +112,12 @@ A celková normální výška byla získána kumulativním součtem všech korek
 \[
 H_Q = H_{2} + \sum c_{\gamma AB} + \sum c_{\Delta g AB}
 \]
+
+\subsection{Výpočet Bouguerovy anomálie \(B_a\)}
+Do nivelačních údajů každého výškového bodu bylo třeba uvést kromě absolutního a normálního tíhového zrychlení ještě hodnotu Bouguerovy anomálie v Postupimské tíhové soustavě, která byla vypočtena jako:
+\[
+B_a = g - \gamma_0 + (0.3086 - 0.1119)\cdot H_Q + 14 mGal
+\]
+
+\subsection{Sestavení nivelačních údajů}
+Na závěr celého zpracování byly vytvořeny nivelační údaje bodů pomocí formuláře, u bodů 33.1 a 34 aktualizované, pro nové body 35.1 a 36.1 nové údaje. Formuláře nivelačních údajů byly vyplněny dle vzoru \cite{skorepa}. V údajích byly obsaženy délky oddílů a celkového pořadu od počátku, nová nadmořská výška bodů (u bodu 33.1 převzatá ze současně platných údajů), místopisný náčrt a popis bodu a jeho okolí, údaje o umístění v podrobnosti od okresu až do parcelního čísla včetně identifikace vlastníka parcely, druh nivelační značky, stupeň, druh a autor stabilizace bodu, přibližné souřadnice v S-JTSK, přibližná zeměpisná délka a šířka a tíhové údaje, tedy absolutní a normální tíhové zrychlení a Bouguerova anomálie.
