@@ -29,7 +29,7 @@ Směrodatná odchylka celého pořadu podle délky [km]
 kde \(L\) je celková délka pořadu v kilometrech.\\
 Mezní kilometrová směrodatná odchylka pro II. řád
 \[
-  m_0 = 0{,}45 + \frac{0{,}80}{\sqrt{n}}\quad [\mathrm{mm}]
+  \overline{m_0} = 0{,}45 + \frac{0{,}80}{\sqrt{n}}\quad [\mathrm{mm}]
 \]
 kde \(n\) je počet oddílů nivelace.
 
@@ -43,14 +43,14 @@ Naměřená data (čas \(T_i\), vnitřní teplota \(t_i\), čtení přístroje \
       gr''_i = C\,S_i,
       \quad C = 4{,}379\;\text{mGal/dílek}
     \]
-  \item \textbf{Výpočet chodu přístroje (drift):}
+  \item \textbf{Výpočet chodu přístroje:}
     \[
       \delta g_{\mathrm{drift},i}
         = \frac{\overline{gr''}_{\mathrm{end}} - \overline{gr''}_{\mathrm{start}}}
                {T_{\mathrm{end}} - T_{\mathrm{start}}}
           \,\bigl(T_i - T_{\mathrm{start}}\bigr)
     \]
-  \item \textbf{Aplikace driftové korekce:}
+  \item \textbf{Aplikace korekce z chodu:}
     \[
       gr'_i = gr''_i + \delta g_{\mathrm{drift},i}
     \]
@@ -63,7 +63,7 @@ Naměřená data (čas \(T_i\), vnitřní teplota \(t_i\), čtení přístroje \
       g_i = g_{\mathrm{ref}}
           + \bigl(gr'_i - \overline{gr''}_{\mathrm{start}}\bigr)
     \]
-    kde \(g_{\mathrm{ref}}\) je referenční hodnota z prvních měření na bodě 3408.01. Přičtením \(\delta g_{AB}\) k referenční hodnotě se získají absolutní hodnoty \(g_i\) pro ostatní body.
+    kde \(g_{\mathrm{ref}}\) je referenční hodnota na bodě 3408.01. Přičtením \(\delta g_{AB}\) k referenční hodnotě se získají absolutní hodnoty \(g_i\) pro ostatní body.
 \end{itemize}
 
 
