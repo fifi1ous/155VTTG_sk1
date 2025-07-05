@@ -1,4 +1,4 @@
-\section{Vysledky}
+\section{Výsledky}
 
 \subsection{Nivelační měření}
 
@@ -10,11 +10,71 @@
         \hline
         \textbf{Oddíl} & \textbf{Sestav} & d [m] & $h_{\text{\tiny{TAM}}}$ [m] & $h_{\text{\tiny{ZPĚT}}}$ [m] & $\Delta$ [mm] & $\Delta_M$ [mm] & $\Delta_M$>$\Delta$ & $h_{\diameter}$ [m] \\
         \hline \hline
-        35.1–36.1 & 8  & 294,000 & 12,2223 & -12,2221 & 0,2 & 1,22 & ANO & 12,2222\\ \hline
-        34.1–35.1 & 16 & 596,250 & 21,6124 & -21,6126 & 0,2 & 1,74 & ANO & 21,6125\\ \hline 
+        35.1–36.1 & 8  & 294,000 & 12,2223 & -12,2221 & 0,2 & 1,22 & ANO & 12,22220\\ \hline
+        34.1–35.1 & 16 & 596,250 & 21,6124 & -21,6126 & 0,2 & 1,74 & ANO & 21,61250\\ \hline 
         33.1–34.1 & 16 & 585,750 & 17,4958 & -17,4961 & 0,3 & 1,72 & ANO & 17,49595\\ \hline
     \end{tabular}
 \end{table}
 
+směrodatná odchylka kilometrová
+\[
+  m_0 = \frac{1}{2}\,\sqrt{\frac{\sum\rho^2}{R}}= 0,1697 mm
+\]
 
 \subsection{Tíhové měření}
+
+\begin{table}[H]
+  \centering
+  \textit{Tabulka 2: Výsledky gravimetrických měření}
+  \begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+    \textbf{Bod} & \textbf{Měření 1} & \textbf{Měření 2} & \textbf{Měření 3} & \textbf{Průměr} \\
+    & {[mGal]} & {[mGal]} & {[mGal]} & {[mGal]} \\ 
+    \hline\hline
+    3408.01 & 980938,5930 & 980938,5930 & 980938,5930 & 980938,5930 \\ \hline
+    34   & 980934,7739 & 980935,4490 & 980934,6096 & 980934,9442 \\ \hline
+    35.1 & 980931,0715 & 980931,1590 & 980931,0757 & 980931,1021\\ \hline
+    36.1 & 980929,3383 & 980929,2262 & 980929,2031 & 980929,2559\\ \hline
+  \end{tabular}
+\end{table}
+
+\setstretch{1.2} % řádkování
+\hspace{1 cm}
+
+\subsection{Výsledné výšky}
+
+\begin{table}[H]
+  \centering
+  \textit{Tabulka 3: Výsledky normálních výšek a korekcí pro body úseku (33.1–36.1).}
+  \begin{tabular}{|c|c|c|c|c|c|c|}
+    \hline
+    \textbf{Bod} & \textbf{\(H\) [m]} & \textbf{\(H_Q\) [m]} & \textbf{\(h\) [m]} & \textbf{\(h_Q\) [m]} & \textbf{\(c_{\gamma AB}\) [mm]} & \textbf{\(c_{\Delta g AB}\) [mm]} \\
+    \hline\hline
+    33.1 & 616.595000 & 616.595000 & 0.000000 & 0.000000 &  0.000000 & 0.000000 \\
+    34 & 634.090950 & 634.091485 & 17.495950 & 17.496485 & -0.274788 & 0.809437 \\
+    35.1 & 655.703450 & 655.704786 & 21.612500 & 21.613301 & -0.240474 & 1.041593 \\
+    36.1 & 667.925650 & 667.927451 & 12.222200 & 12.222665 & -0.149522 & 0.615010 \\
+    \hline
+  \end{tabular}
+  \label{tab:norm_vysky_33_36}
+\end{table}
+
+\subsection{Výsledné hodnoty v nivelačních údajích bodů}
+
+\begin{table}[H]
+  \centering
+  \textit{Tabulka 4: Výsledné hodnoty uvedené v nivelačních údajích bodů 33.1 až 36.1.}
+  \begin{tabular}{|c|c|c|c|c|c|c|c|}
+    \hline
+    \textbf{Bod} & \textbf{\(Y\) [m]} & \textbf{\(X\) [m]} & \textbf{Zem. šířka} & \textbf{Zem. délka} & \textbf{\(\gamma_0\) [mGal]} & \textbf{\(B_a\) [mGal]} \\
+    \hline\hline
+    33.1 & 564186 & 1052085 & 50° 11' 58.8" & 16° 55' 8.3" & 981084.0365 & -10.1592 \\
+    34   & 564265 & 1051539 & 50° 12' 16,1" & 16° 55' 1,5" & 981084.4645 & -10.7945 \\
+    35.1 & 563939.756 & 1051037.407 & 50° 12' 30.781" & 16° 55' 9,928" & 981084.8276 & -10.7484 \\
+    36.1 & 563823.847 & 1050773.125 & 50° 12' 39.675" & 16° 55' 14.365" & 981085.0477 & -10.4104 \\
+    \hline
+  \end{tabular}
+  \label{tab:niv_udaje}
+\end{table}
+
+\textit{Pozn. Hodnoty absolutního tíhového zrychlení g jsou v nivelačních udajích také uváděny, zde ve výsledcích jsou uvedeny v části 5.2 Tíhové měření - Tabulka 2 - Pruměr. Body 3408.01 a 33.1 jsou z hlediska tíhového měření považovány za totožné.}
