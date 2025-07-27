@@ -4,6 +4,11 @@ function [uhel_centrovany] = ZcentrujUhel(uhel_meren, ...
         psi_s1c3, psi_s3c1, psi_s3c3, psi_s3t3, e_s3t3, e_s3c3, ...
         s_t1t2, s_t1t3)
 
+  % s1t1 - vzdálenost
+  % čísla kopce
+  % s - excentrické stanovisko
+  % c - excentricky cíl
+
   % 3 pravý, 2 levý, 1 stanovisko
 
     % Výpočet centrovaného směru na T2

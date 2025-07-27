@@ -18,10 +18,10 @@ function [Y,X] = findPoint(ss,point,sequence)
     r = find(ss(:,1)==point);
 
     if sequence == 1
-        Y = ss(r,1);
-        X = ss(r,2);
-    else
         Y = ss(r,2);
-        X = ss(r,1);
+        X = ss(r,3);
+    else
+        Y = ss(r,3);
+        X = ss(r,2);
     end
 end 

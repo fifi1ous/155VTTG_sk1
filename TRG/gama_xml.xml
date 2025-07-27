@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<!DOCTYPE gama-local SYSTEM "gama-local.dtd">
+<?xml version="1.0" encoding="utf-8"?>
+<gama-xml version="2.0">
+   <network angles="right-handed" axes-xy="sw">
+      <description>Volná síť, opěrné 1001,1002
+155VTTG - sk1,3 2025</description>
+      <parameters conf-pr="0.950" sigma-act="apriori" sigma-apr="1.000" tol-abs="1000.000"/>
+      <points-observations angle-stdev="10" azimuth-stdev="10" distance-stdev="5 3 1">
+         <point adj="XY" id="1001" x="1055386.29" y="565725.16"/>
+         <point adj="XY" id="1002" x="1058509.55" y="560713.10"/>
+         <point adj="xy" id="1003" x="1055296.05" y="560933.35"/>
+         <point adj="xy" id="1004" x="1053013.57" y="559765.56"/>
+         <point adj="xy" id="1004" x="1055721.09" y="562456.19"/>
+         <obs from="1001">
+            <angle bs="422" fs="402" val="128.6548"/>
+            <distance to=" 4002 " val="538.8400"/>
+            <azimuth to=" 4002 " val="122.8445"/>
+         </obs>
+         <obs from="1002">
+            <angle bs="4003" fs="4001" val="61.1804"/>
+            <distance to=" 4001 " val="538.8700"/>
+         </obs>
+      </points-observations>
+   </network>
+</gama-xml>
