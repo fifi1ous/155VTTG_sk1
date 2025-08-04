@@ -52,7 +52,7 @@ disp('Soubory načteny a zpracovány');
 
 %% Centrace směrů
 
-pocet_stanovisek = length(variables);       % Získání počtu stanovisek
+pocet_stanovisek = length(variables);
 id_azimut = '';
 
 stanoviska_IDs = zeros(1, pocet_stanovisek);
@@ -103,7 +103,7 @@ for i = 1:pocet_stanovisek
             smer_1*gon2rad, cil_1.smer*gon2rad, centr_1.smer*gon2rad, centr_1.delka, cil_1.delka, ...
             smer_2*gon2rad, cil_2.smer*gon2rad, centr_2.smer*gon2rad, centr_2.delka, cil_2.delka, ...
             delka_ss);
-
+            % Měřený úhel při měření centrační osnovy, , úhel na excentrický cíl, úhel na centr, délka na centr, délka na exentrický cíl 
         oprava = oprava / gon2rad;
         opravy_smeru = [opravy_smeru; st, st2, oprava];
     end
@@ -118,7 +118,7 @@ for i = 1:pocet_stanovisek
 
         idx1 = strcmp({pom_1.uhel.id_leva}, id_azimut);
         if any(idx1)
-            smer = pom_1.uhel(idx1).hodnota;
+            smer = 0;
         else
             idx1 = strcmp({pom_1.uhel.id_prava}, id_azimut);
             smer = pom_1.uhel(idx1).hodnota;
@@ -130,14 +130,18 @@ for i = 1:pocet_stanovisek
         for j = 1:gyro_azimut
             [~, oprava] = ZcentrujSmer(deg2rad(gyro_uhel{j}), ...
             deg2rad(gyro_uhel{j}), 0, 0, gyro_delka{j}, gyro_delka{j}, ...
-            0, cil_1.smer*gon2rad, centr_1.smer*gon2rad, centr_2.delka, cil_2.delka, ...
+            smer * gon2rad, cil_1.smer*gon2rad, centr_1.smer*gon2rad, centr_2.delka, cil_2.delka, ...
             delka_ss);
+                %měřený úhlel, úhel na excentrický cíl, úhel na centr - délka na excentrický cíl a centr jsou stejné, stejný bod
+                %měřený úhel na bod(záleží jestli je vlevo nebo v pravo), úhel na excentrický cíl, úhel na centr, 
             gyro_mereni(j).oprava = oprava;
         end
-        [~, oprava] = ZcentrujSmer(0, ...
-        0, cil_1.smer*gon2rad, centr_1.smer*gon2rad, centr_2.delka, cil_2.delka, ...
+        [~, oprava] = ZcentrujSmer(smer*gon2rad, ...
+        smer * gon2rad, cil_1.smer*gon2rad, centr_1.smer*gon2rad, centr_2.delka, cil_2.delka, ...
         deg2rad(gyro_uhel{j}), 0, 0, gyro_delka{j}, gyro_delka{j}, ...
         delka_ss);
+            %měřený úhel na bod(záleží jestli je vlevo nebo v pravo), úhel na excentrický cíl, úhel na centr
+            %měřený úhlel, úhel na excentrický cíl, úhel na centr - délka na excentrický cíl a centr jsou stejné, stejný bod
         opravy_smeru = [opravy_smeru; st, str2num(id_azimut), oprava/ gon2rad];
     end
 end
