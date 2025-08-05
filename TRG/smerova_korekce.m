@@ -103,7 +103,7 @@ for i=1:r
             v(i,1)=s*(-1);
         elseif s==0&&m~=0
             v(i,2)=m*(-1);
-        else s==0&&m==0
+        else s==0&&m==0;
             v(i,3)=vt*(-1);
         end
     end

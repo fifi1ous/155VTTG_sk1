@@ -62,7 +62,10 @@ for i = 1:pocet_stanovisek
     stanoviska_IDs(i) = str2double(data.(variables(i)).stanovisko(1:4));
 end
 
+[S,U,ro1,eps] = jtsk2kar(ss(:,3),ss(:,2));
+
 opravy_smeru = [];
+redukce_JTSK = [];
 for i = 1:pocet_stanovisek
     pom_1 = data_structs{i};
     st = stanoviska_IDs(i);
@@ -71,7 +74,7 @@ for i = 1:pocet_stanovisek
     cil_1 = pom_1.centracni_osnova.ex_cil;
     centr_1 = pom_1.centracni_osnova.centr;
 
-    [Y_k1, X_k1] = findPoint(ss, st);
+    [ X_k1 , Y_k1] = findPoint(ss, st);
 
     ids = str2double({osnova_1.id});
     if isfield(pom_1, 'gyro')
@@ -79,6 +82,7 @@ for i = 1:pocet_stanovisek
         gyro_mereni = pom_1.gyro.observace;
     end
 
+    ind_st1 = find(st==ss(:,1));
     for j = 1:length(ids)
         idx_n = find(stanoviska_IDs == ids(j), 1);
         if isempty(idx_n), continue; end
@@ -86,7 +90,7 @@ for i = 1:pocet_stanovisek
         pom_2 = data_structs{idx_n};
         st2 = stanoviska_IDs(idx_n);
 
-        [Y_k2, X_k2] = findPoint(ss, st2);
+        [X_k2,Y_k2] = findPoint(ss, st2);
         delka_ss = hypot(Y_k2 - Y_k1, X_k2 - X_k1);
 
         osnova_2 = pom_2.centracni_osnova.cil;
@@ -99,13 +103,21 @@ for i = 1:pocet_stanovisek
         idx2 = strcmp({osnova_2.id}, sprintf('%04d', st));
         smer_2 = osnova_2(idx2).smer;
 
-        [~, oprava] = ZcentrujSmer(smer_1*gon2rad, ...
+        oprava = CentracniZmena( ...
             smer_1*gon2rad, cil_1.smer*gon2rad, centr_1.smer*gon2rad, centr_1.delka, cil_1.delka, ...
             smer_2*gon2rad, cil_2.smer*gon2rad, centr_2.smer*gon2rad, centr_2.delka, cil_2.delka, ...
             delka_ss);
             % Měřený úhel při měření centrační osnovy, , úhel na excentrický cíl, úhel na centr, délka na centr, délka na exentrický cíl 
         oprava = oprava / gon2rad;
         opravy_smeru = [opravy_smeru; st, st2, oprava];
+
+        %% Převod směrů do roviny Křovákova zobrazení
+        ind_st2 = find(st2==ss(:,1));
+        [Dij,~,~,~,~,~] = smerova_korekce(ss(ind_st1,2:3),ss(ind_st2,2:3),eps(ind_st1),eps(ind_st2), ...
+            ro1(ind_st2),ro1(ind_st1),S(ind_st1),S(ind_st2));
+
+        redukce_JTSK =  [redukce_JTSK;st,st2,Dij];
+
     end
 
     id_l = strcmp({pom_1.uhel.id_leva}, id_azimut);
@@ -113,7 +125,7 @@ for i = 1:pocet_stanovisek
     if any(id_l) || any(id_p)
         gyro_azimut = size(gyro_mereni,2);
 
-        [Y_k2, X_k2] = findPoint(ss, str2num(id_azimut));
+        [X_k2,Y_k2] = findPoint(ss, str2num(id_azimut));
         delka_ss = hypot(Y_k2 - Y_k1, X_k2 - X_k1);
 
         idx1 = strcmp({pom_1.uhel.id_leva}, id_azimut);
@@ -128,7 +140,7 @@ for i = 1:pocet_stanovisek
         gyro_delka = {gyro_mereni.delka_centr};
 
         for j = 1:gyro_azimut
-            [~, oprava] = ZcentrujSmer(deg2rad(gyro_uhel{j}), ...
+            oprava = CentracniZmena( ...
             deg2rad(gyro_uhel{j}), 0, 0, gyro_delka{j}, gyro_delka{j}, ...
             smer * gon2rad, cil_1.smer*gon2rad, centr_1.smer*gon2rad, centr_2.delka, cil_2.delka, ...
             delka_ss);
@@ -136,22 +148,25 @@ for i = 1:pocet_stanovisek
                 %měřený úhel na bod(záleží jestli je vlevo nebo v pravo), úhel na excentrický cíl, úhel na centr, 
             gyro_mereni(j).oprava = oprava;
         end
-        [~, oprava] = ZcentrujSmer(smer*gon2rad, ...
+        oprava = CentracniZmena( ...
         smer * gon2rad, cil_1.smer*gon2rad, centr_1.smer*gon2rad, centr_2.delka, cil_2.delka, ...
         deg2rad(gyro_uhel{j}), 0, 0, gyro_delka{j}, gyro_delka{j}, ...
         delka_ss);
             %měřený úhel na bod(záleží jestli je vlevo nebo v pravo), úhel na excentrický cíl, úhel na centr
             %měřený úhlel, úhel na excentrický cíl, úhel na centr - délka na excentrický cíl a centr jsou stejné, stejný bod
         opravy_smeru = [opravy_smeru; st, str2num(id_azimut), oprava/ gon2rad];
+
+
+        id_az = find(ss(:,1)==str2num(id_azimut));
+        [Dij,~,~,~,~,~] = smerova_korekce(ss(ind_st1,2:3),ss(id_az,2:3),eps(ind_st1),eps(id_az), ...
+                                          ro1(id_az),ro1(ind_st1),S(ind_st1),S(id_az));
+
+        redukce_JTSK =  [redukce_JTSK;st,str2num(id_azimut),Dij];
     end
+
+
 end
 
-
-
-
-%% Převod směrů do roviny Křovákova zobrazení
-[S,U,ro1,eps] = jtsk2kar(ss(1),ss(1));
-    
 
 
 
