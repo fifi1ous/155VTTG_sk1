@@ -1,0 +1,47 @@
+% Autor [2023]: Tereza Černohousová
+% Upravil [2023]: Matyáš Pokorný
+% Upravil [2024]: Filip Roučka
+% Upravil [2025]: Michal Kovář
+
+% Doporučené balíčky:
+% \usepackage[czech]{babel} % Pro podporu českého jazyka
+% \usepackage[utf8]{inputenc} % Nastavení kódování na UTF8
+% \usepackage[T1]{fontenc} % Zajištění správného kopírování textu s českou diakritikou
+% \usepackage{tikz} % Pro kreslení grafiky
+% \usepackage{hhline} % Pro pokročilé čáry v tabulkách
+% \usepackage{datetime} % Pro práci s datem
+
+\newgeometry{left=2cm, right=2cm, top=2cm, bottom=2cm}
+
+\newdateformat{czechdate}{\THEDAY. \THEMONTH. \THEYEAR} % Formátování data
+\renewcommand{\baselinestretch}{1.5} % Nastavení řádkování na 1.5
+\vspace*{\fill} % Posunutí tabulky více ke spodní části stránky
+
+\begin{center}
+\centering
+\tikz\node[draw=black,inner sep=2pt, anchor=center] {
+\begin{tabular}{|clllllll|}
+\hline
+\multicolumn{8}{|c|}{\vspace{-0.5cm}\small}\\
+\multicolumn{8}{|c|}{\Large\textbf{ČESKÉ VYSOKÉ UČENÍ TECHNICKÉ V PRAZE}}\\
+\multicolumn{8}{|c|}{\large FAKULTA STAVEBNÍ, OBOR GEODÉZIE A KARTOGRAFIE}\\
+\multicolumn{8}{|c|}{\large KATEDRA GEOMATIKY}\\
+\hhline{========}
+\multicolumn{8}{|l|}{\raggedright\small\textbf{Název předmětu:}} \\
+\multicolumn{8}{|c|}{\raggedright\textbf{VTTG - Výuka v terénu z teoretické geodézie}} \\
+\hline
+\multicolumn{1}{|l|}{\raggedright\small\textbf{Úloha:}} & \multicolumn{7}{|l|}{\raggedright\small\textbf{Název úlohy:}} \\
+\multicolumn{1}{|c|}{\raggedright\text{TRG}} & \multicolumn{7}{|c|}{\raggedright Triangulace a trilaterace na velké vzdálenosti} \\
+\hline
+\multicolumn{1}{|l|}{\raggedright\small\textbf{Akademický rok:}} & \multicolumn{1}{c|}{\raggedright\small\textbf{Semestr:}} & \multicolumn{1}{l|}{\raggedright\small\textbf{Skupina:}} & \multicolumn{1}{c|}{\raggedright\small\textbf{Vypracoval:}} & \multicolumn{1}{l|}{\raggedright\small\textbf{Datum:}} & \multicolumn{3}{l|}{\raggedright\small\textbf{Klasifikace:}} \\
+\multicolumn{1}{|l|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{c|}{Josef Bořík, Matěj Klimeš} & \multicolumn{1}{l|}{} & \multicolumn{3}{l|}{} \\
+\multicolumn{1}{|l|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{c|}{Michal Kovář, Matyáš Pokorný} & \multicolumn{1}{l|}{} & \multicolumn{3}{l|}{} \\
+\multicolumn{1}{|c|}{2024/2025} & \multicolumn{1}{c|}{letní} & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{Filip Roučka, Kryšof Sedlák} & \multicolumn{1}{l|}{\czechdate\today} & \multicolumn{3}{l|}{} \\
+\hline
+\end{tabular}
+};
+\end{center}
+\thispagestyle{empty}
+
+\renewcommand{\baselinestretch}{1} % Nastavení řádkování zpět na 1
+\newgeometry{left=25.4mm, right=25.4mm, top=25.4mm, bottom=25.4mm}
