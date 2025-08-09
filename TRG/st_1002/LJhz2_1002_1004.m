@@ -23,8 +23,8 @@ hzcilm = [325.5952 125.5945];
 % hz-smer a cas SELC na Slunce [gon h min s]
 hzsunm = [
     195.6462  15 44 28.87; %  levy okraj  I.p
-    196.7565  15 45 21.35; % pravy okraj II.p
+    396.7565  15 45 21.35; % pravy okraj II.p
     196.1543  15 46 36.37; %  levy okraj  I.p
-    197.3113  15 47 18.90];% pravy okraj II.p
+    397.3113  15 47 18.90];% pravy okraj II.p
 
 %

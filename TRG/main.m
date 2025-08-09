@@ -2,6 +2,29 @@ clc; clear; format long G
 %% načtení přibližných souřadnic
 ss = load("pribl_sour_jtsk.txt");
 
+% Předchozí den
+% S0  h min s
+S0 = [11 23 31.408];
+% Ra    h min s
+Ra = [23 33 1.8];
+% Dec    °   '  "
+Dec = [2 54 50];
+
+% Následující den
+% Ra    h min s
+Ra_ = [23 36 41.8];
+% Dec    °   '  "
+Dec_ = [2 31 11];
+
+% SELČ/SEČ
+sec = 0;
+
+q1 = 1.00273790935;
+n = 37;
+T2TT = 32.184;
+DUT1 = 0;
+
+
 gon2rad = pi/200; 
 %% Načtení a zpracování XML souborů s daty
 % Cesta ke složce se soubory
@@ -50,7 +73,7 @@ disp('Soubory načteny a zpracovány');
 
 
 
-%% Centrace směrů
+%% Centrace směrů, Redukce úhlů do roviny Křovákova zobrazení a výpočet astronomickéého azimutu
 
 pocet_stanovisek = length(variables);
 id_azimut = '';
@@ -66,6 +89,8 @@ end
 
 opravy_smeru = [];
 redukce_JTSK = [];
+ast_azimut = {};
+ast_azimut2 = {};
 for i = 1:pocet_stanovisek
     pom_1 = data_structs{i};
     st = stanoviska_IDs(i);
@@ -111,7 +136,7 @@ for i = 1:pocet_stanovisek
         oprava = oprava / gon2rad;
         opravy_smeru = [opravy_smeru; st, st2, oprava];
 
-        %% Převod směrů do roviny Křovákova zobrazení
+        % Převod směrů do roviny Křovákova zobrazení
         ind_st2 = find(st2==ss(:,1));
         [Dij,~,~,~,~,~] = smerova_korekce(ss(ind_st1,2:3),ss(ind_st2,2:3),eps(ind_st1),eps(ind_st2), ...
             ro1(ind_st2),ro1(ind_st1),S(ind_st1),S(ind_st2));
@@ -157,6 +182,7 @@ for i = 1:pocet_stanovisek
         opravy_smeru = [opravy_smeru; st, str2num(id_azimut), oprava/ gon2rad];
 
 
+        % Převod směrů do roviny Křovákova zobrazení
         id_az = find(ss(:,1)==str2num(id_azimut));
         [Dij,~,~,~,~,~] = smerova_korekce(ss(ind_st1,2:3),ss(id_az,2:3),eps(ind_st1),eps(id_az), ...
                                           ro1(id_az),ro1(ind_st1),S(ind_st1),S(id_az));
@@ -164,13 +190,43 @@ for i = 1:pocet_stanovisek
         redukce_JTSK =  [redukce_JTSK;st,str2num(id_azimut),Dij];
     end
 
+    % Výpočet astronomických azimutů
+    astro_azimut = pom_1.azimut;
+    id_astr = {astro_azimut.id};
+    angl_astr = {astro_azimut.uhel};
+    time_astr = {astro_azimut.cas_utc};
+    for j = 1:size(astro_azimut,2)
+        if ~isnan(angl_astr{j})
+            time = sscanf(time_astr{j}, '%d:%d:%f');
+            time = ((time(1) + time(2)/60 + time(3) /3600));
+            angle = 400 - angl_astr{j};
+            [sig_ast] = astronomical_azimuth([Y_k1,X_k1],time,angle,S0,Ra,Dec,Ra_,Dec_,sec,q1,n,T2TT,DUT1);
 
+            if ~rem(j,2) && j ~= 1
+                time_2 = (time + time_1)/2;
+                angle_2 = (angle + angle_1)/2;
+                sig_ast_2 = (sig_ast + sig_ast_1)/2;
+
+                h = floor(time_2);
+                m = floor((time_2 - h) * 60);
+                s = ((time_2 - h) * 60 - m) * 60;
+                txt = sprintf('%d:%d:%f', h, m, s);
+                ast_azimut = [ast_azimut;{pom_1.mericka_ceta(1).jmeno,pom_1.mericka_ceta(2).jmeno,pom_1.datum,txt,id_astr{j},angle_2 ,sig_ast/pi*200}];
+            end
+
+            ceta = pom_1.mericka_ceta(1);
+            angle_1 = angle;
+            time_1 = time;
+            sig_ast_1 = sig_ast;
+
+            ast_azimut2 = [ast_azimut2;{pom_1.mericka_ceta(1).jmeno,pom_1.mericka_ceta(2).jmeno,pom_1.datum,time_astr{j},id_astr{j},400 - angl_astr{j},sig_ast/pi*200}];
+        end
+    end
 end
 
-
-
-
 %% Výpočet astronomických azimutů
+
+
 
 %% Kompletace dat
 

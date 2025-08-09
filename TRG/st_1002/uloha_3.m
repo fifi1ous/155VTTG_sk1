@@ -12,11 +12,11 @@ hod2rad = pi/12;
 gon2rad = pi/200;
 deg2rad = pi/180;
 
-% stanovisko - č. 5
-st = [744940.536,   1040887.706];
+% stanovisko - č. 5  1055385.6	565724.2
+st = [565724.2,   1055385.6];
 
 % cíl - Norbert
-cl = [745838.34,   1042134.49];
+cl = [559764.8,   1053013.0];
 
 % Směrník
 sig_ss = atan2(cl(1)-st(1),cl(2)-st(2));
@@ -27,19 +27,19 @@ end
 % Měření 23.04.2025
 %23.04.2025
 % S0  h min s
-S0 = [14 5 10.119];
+S0 = [11 23 31.408];
 % Ra    h min s
-Ra23 = [2 3 30.3];
+Ra23 = [23 33 1.8];
 % Dec    °   '  "
-Dec23 = [12 32 35];
+Dec23 = [2 54 50];
 %24.04.2025
 % Ra    h min s
-Ra24 = [2 7 15.9];
+Ra24 = [23 36 41.8];
 % Dec    °   '  "
-Dec24 = [12 52 28];
+Dec24 = [2 31 11];
 
 % SELČ/SEČ
-sec = 2;
+sec = 0;
 
 q1 = 1.00273790935;
 n = 37;
@@ -47,7 +47,9 @@ T2TT = 32.184;
 DUT1 = 0;
 
 % Měření soubory
-mereni = {'LJhz1_14.m', 'LJhz2_14.m'};
+mereni = {'LJhz1_1002_1004.m', 'LJhz2_1002_1004.m'};
+
+[sig_ast] = astronomical_azimuth(st,9.6265,308.6056,S0,Ra23,Dec23,Ra24,Dec24,sec,q1,n,T2TT,DUT1)
 %% Conversion
 S0 = (S0(1) + S0(2)/60 + S0(3)/3600) * hod2rad;
 Ra23 = (Ra23(1) + Ra23(2)/60 + Ra23(3)/3600) * hod2rad;
