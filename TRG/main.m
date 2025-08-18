@@ -2,19 +2,19 @@ clc; clear; format long G
 %% načtení přibližných souřadnic
 ss = load("pribl_sour_jtsk.txt");
 
-% Předchozí den
+% Předchozí den 13.6.2025
 % S0  h min s
-S0 = [11 23 31.408];
+S0 = [17 26 14.531];
 % Ra    h min s
-Ra = [23 33 1.8];
+Ra = [5 26 15.7];
 % Dec    °   '  "
-Dec = [2 54 50];
+Dec = [23 12 42];
 
 % Následující den
 % Ra    h min s
-Ra_ = [23 36 41.8];
+Ra_ = [5 30 24.9];
 % Dec    °   '  "
-Dec_ = [2 31 11];
+Dec_ = [23 15 50];
 
 % SELČ/SEČ
 sec = 0;
@@ -195,31 +195,29 @@ for i = 1:pocet_stanovisek
     id_astr = {astro_azimut.id};
     angl_astr = {astro_azimut.uhel};
     time_astr = {astro_azimut.cas_utc};
-    for j = 1:size(astro_azimut,2)
+    for j = 1:2:size(astro_azimut,2)
         if ~isnan(angl_astr{j})
             time = sscanf(time_astr{j}, '%d:%d:%f');
             time = ((time(1) + time(2)/60 + time(3) /3600));
-            angle = 400 - angl_astr{j};
-            [sig_ast] = astronomical_azimuth([Y_k1,X_k1],time,angle,S0,Ra,Dec,Ra_,Dec_,sec,q1,n,T2TT,DUT1);
+            time_ = sscanf(time_astr{j+1}, '%d:%d:%f');
+            time_ = ((time_(1) + time_(2)/60 + time_(3) /3600));
 
-            if ~rem(j,2) && j ~= 1
-                time_2 = (time + time_1)/2;
-                angle_2 = (angle + angle_1)/2;
-                sig_ast_2 = (sig_ast + sig_ast_1)/2;
+            angle =  angl_astr{j};
+            angle_ = angl_astr{j+1};
 
-                h = floor(time_2);
-                m = floor((time_2 - h) * 60);
-                s = ((time_2 - h) * 60 - m) * 60;
-                txt = sprintf('%d:%d:%f', h, m, s);
-                ast_azimut = [ast_azimut;{pom_1.mericka_ceta(1).jmeno,pom_1.mericka_ceta(2).jmeno,pom_1.datum,txt,id_astr{j},angle_2 ,sig_ast/pi*200}];
-            end
 
-            ceta = pom_1.mericka_ceta(1);
-            angle_1 = angle;
-            time_1 = time;
-            sig_ast_1 = sig_ast;
+            [sig_ast_1] = astronomical_azimuth([Y_k1,X_k1],time,angle,S0,Ra,Dec,Ra_,Dec_,sec,q1,n,T2TT,DUT1);
+            ast_azimut2 = [ast_azimut2;{pom_1.mericka_ceta(1).jmeno,pom_1.mericka_ceta(2).jmeno,pom_1.datum,time_astr{j},id_astr{j},400 - angl_astr{j},sig_ast_1/pi*200}];
+            [sig_ast] = astronomical_azimuth([Y_k1,X_k1],time_,angle_,S0,Ra,Dec,Ra_,Dec_,sec,q1,n,T2TT,DUT1);
+            ast_azimut2 = [ast_azimut2;{pom_1.mericka_ceta(1).jmeno,pom_1.mericka_ceta(2).jmeno,pom_1.datum,time_astr{j+1},id_astr{j+1},400 - angl_astr{j+1},sig_ast/pi*200}];
 
-            ast_azimut2 = [ast_azimut2;{pom_1.mericka_ceta(1).jmeno,pom_1.mericka_ceta(2).jmeno,pom_1.datum,time_astr{j},id_astr{j},400 - angl_astr{j},sig_ast/pi*200}];
+           sig_ast = (sig_ast_1+sig_ast)/2;
+
+            h = floor(time);
+            m = floor((time - h) * 60);
+            s = ((time - h) * 60 - m) * 60;
+            txt = sprintf('%d:%d:%f', h, m, s);
+            ast_azimut = [ast_azimut;{pom_1.mericka_ceta(1).jmeno,pom_1.mericka_ceta(2).jmeno,pom_1.datum,txt,id_astr{j},angle ,sig_ast/pi*200}];
         end
     end
 end
