@@ -290,20 +290,16 @@ for i = 1:pocet_stanovisek
     observace = [observace,{obsst}];
 end
 
-stanovisko = 1005;
-red_JTSK = redukce_JTSK(redukce_JTSK(:,3) == stanovisko,4)*(-1);
-azimut = {gyro_mereni.azimut};
-opravy = {gyro_mereni.oprava};
-
-gyro = cell(size(gyro_mereni,2), 3);
+gyro = cell(size(gyro_mereni,1), 3);
 for i = 1:size(gyro_mereni,2)
-    gyro{i,1} = 'azimuth';
-    gyro{i,2} = 1003;
-    gyro{i,3} = azimut{i}/180*200 + opravy{i} + red_JTSK;
-end
-obsst = {stanovisko,{gyro}};
-observace = [observace,{obsst}];
+    stanovisko = 1005;
+    red_JTSK = redukce_JTSK(redukce_JTSK(:,3) == stanovisko,4)*(-1);
+    azimut = gyro_mereni.azimut
 
+    astr{j,1} = 'azimuth';
+    astr{j,2} = 1003;
+    astr{j,3} = gyro_mereni.azimut(i) + Oprava;
+end
 %% Vytvoření XML souboru pro vyrovnání v Gamě
 % vstupni parametry - upravit dle potreby
 % popis

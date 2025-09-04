@@ -63,44 +63,72 @@ for i = 1:size(pointsCellArray, 1)
 end
 
 
-    %% Observace
-    % Každá buňka: {from, measurements}, kde:
-    % measurements = {typ, to_id, hodnota; ...}
-    for i = 1:length(obsCellArray)
-        obsData = obsCellArray{i};
-        from = obsData{1};
-        measurements = obsData{2};
+%% Observace
+% Each obsCellArray{i} is: {from, measurements}
+% measurements is either an N×K cell (each row: {'angle', ...} or {'azimuth', ...})
+% or an N×1 cell where each entry is a 1×K cell row. Both are handled.
 
-        obs = doc.createElement('obs');
-        obs.setAttribute('from', num2str(from));
+for i = 1:numel(obsCellArray)
+    obsData = obsCellArray{i};
+    from = obsData{1};
+    measurements = obsData{2};
 
-        for j = 1:length(measurements)
-            m = measurements{j};  % m = {'angle', bs, fs, val, [optional stdev]}
-            mtype = strtrim(m{1});
+    % Ensure measurements is a 2D cell we can index by rows
+    % (If someone passed a column cell of cell-rows, unwrap on access below)
+    obs = doc.createElement('obs');
+    obs.setAttribute('from', num2str(from));
+
+    for j = 1:size(measurements,1)
+        mj = measurements(j,:);
+        if numel(mj) == 1 && iscell(mj{1})
+            m = mj{1};   % unwrap 1×K cell row
+        else
+            m = mj;      % already a row
+        end
+    
+        mtype = char(m{1});
+    
+        % if m is itself a cell row, just handle once
+        if size(m,1) == 1
+            rows = {m};
+        else
+            rows = m;   % multiple rows
+        end
+    
+        for k = 1:size(rows,1)
+            mk = rows(k,:);   % one measurement row
             el = doc.createElement(mtype);
-        
+    
             switch mtype
                 case 'angle'
-                    el.setAttribute('bs', num2str(m{2}));
-                    el.setAttribute('fs', num2str(m{3}));
-                    el.setAttribute('val', sprintf('%.4f', m{4}));
-                    if numel(m) >= 5
-                        el.setAttribute('stdev', sprintf('%.4f', m{5}));
+                    el.setAttribute('bs',  num2str(mk{2}));
+                    el.setAttribute('fs',  num2str(mk{3}));
+                    el.setAttribute('val', sprintf('%.4f', mk{4}));
+                    if numel(mk) >= 5 && ~isempty(mk{5})
+                        el.setAttribute('stdev', sprintf('%.4f', mk{5}));
                     end
+    
+                case 'azimuth'
+                    el.setAttribute('to',  num2str(mk{2}));
+                    el.setAttribute('val', sprintf('%.4f', mk{3}));
+                    if numel(mk) >= 4 && ~isempty(mk{4})
+                        el.setAttribute('stdev', sprintf('%.4f', mk{4}));
+                    end
+    
                 otherwise
-                    el.setAttribute('to', sprintf(' %d ', m{2}));
-                    el.setAttribute('val', sprintf('%.4f', m{3}));
-                    if numel(m) >= 4
-                        el.setAttribute('stdev', sprintf('%.4f', m{4}));
+                    el.setAttribute('to',  num2str(mk{2}));
+                    el.setAttribute('val', sprintf('%.4f', mk{3}));
+                    if numel(mk) >= 4 && ~isempty(mk{4})
+                        el.setAttribute('stdev', sprintf('%.4f', mk{4}));
                     end
             end
-        
+    
             obs.appendChild(el);
         end
-
-        po.appendChild(obs);
     end
 
+    po.appendChild(obs);
+end
     %% Uložení bez DOCTYPE
     tmpFile = [tempname, '.xml'];
     xmlwrite(tmpFile, doc);
