@@ -15,10 +15,11 @@ end
 % měřené dílky
 d = [data.delky.delka];
 % odkud se dané délky měřily
-stanovisko = data.stanovisko;
+stanovisko = str2num(data.stanovisko);
 CB_stroj = repmat(stanovisko, 1, 6);
 % kam se dané délky měřily
-CB_cile = [data.delky.id2];
+id2 = {data.delky.id2};           % všechna id2 z pole struktur
+CB_cile = str2double(string(id2));
 % oprava o konstantu hranolu
 d = d+konst_hr;
 % suchá teplota na stanovisku !!! My měli teploměr, který měřil vlhkost,
@@ -43,10 +44,10 @@ v_s = [data.delky.vlhko1];
 v_c = [data.delky.vlhko2];
 for i = 1:length(v_s)
     if v_s(i) == -1
-        v_s(i) = Vlhkost(t_s(i), t_s(i), p_s(i));
+        v_s(i) = Vlhkost(t_s(i), t_ws(i), p_s(i));
     end
     if v_c(i) == -1
-        v_c(i) = Vlhkost(t_c(i), t_c(i), p_s(i));
+        v_c(i) = Vlhkost(t_c(i), t_wc(i), p_s(i));
     end
 end
 % průměrná teplota
@@ -69,3 +70,20 @@ S0 = load("S0.txt");
 [d0XYZ, d0JTSK] = VzdSouradnice(CB_stroj, CB_cile, hT_s, hT_c, S0);
 % Výsledné redukované délky
 dJTSK = (dmer.*d0JTSK')./d0XYZ';
+delky = [CB_stroj',CB_cile',dJTSK'];
+
+% Extract columns
+col1 = delky(:,1);
+col2 = delky(:,2);
+col3 = delky(:,3);
+
+% Group by col2
+[uniqueVals, ~, idx] = unique(col2);
+meanVals = accumarray(idx, col3, [], @mean);
+
+% Since col1 is always 1004 in your example, we can take the first one
+col1_val = col1(1);
+
+% Build final matrix
+delky = [repmat(col1_val, numel(uniqueVals), 1), uniqueVals, meanVals];
+

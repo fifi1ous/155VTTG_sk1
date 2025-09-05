@@ -1,30 +1,6 @@
 clc; clear; format long G
 %% načtení přibližných souřadnic
 ss = load("pribl_sour_jtsk.txt");
-
-% Předchozí den 13.6.2025
-% S0  h min s
-S0 = [17 26 14.531];
-% Ra    h min s
-Ra = [5 26 15.7];
-% Dec    °   '  "
-Dec = [23 12 42];
-
-% Následující den
-% Ra    h min s
-Ra_ = [5 30 24.9];
-% Dec    °   '  "
-Dec_ = [23 15 50];
-
-% SELČ/SEČ
-sec = 0;
-
-q1 = 1.00273790935;
-n = 37;
-T2TT = 32.184;
-DUT1 = 0;
-
-
 gon2rad = pi/200; 
 
 %% Načtení a zpracování XML souborů s daty
@@ -70,11 +46,9 @@ for k = 1:length(files)
     end
 end
 disp('Soubory načteny a zpracovány');
-%% Redukce délek
 
 
-
-%% Centrace směrů, Redukce úhlů do roviny Křovákova zobrazení a výpočet astronomickéého azimutu
+%% Centrace směrů, Redukce úhlů do roviny Křovákova zobrazení a Redukce délek
 
 pocet_stanovisek = length(variables);
 id_azimut = '';
@@ -90,6 +64,8 @@ end
 
 opravy_smeru = [];
 redukce_JTSK = [];
+Delky1 = [];
+Delky2 = [];
 % ast_azimut = {};
 % ast_azimut2 = {};
 for i = 1:pocet_stanovisek
@@ -227,6 +203,16 @@ for i = 1:pocet_stanovisek
     %         ast_azimut = [ast_azimut;{pom_1.mericka_ceta(1).jmeno,pom_1.mericka_ceta(2).jmeno,pom_1.datum,txt,id_astr{j},angle ,sig_ast/pi*200}];
     %     end
     % end
+
+    % Redukce délek
+    [delky,delky2] = Redukce2(pom_1);
+    [a] = check_stanovisko(pom_1);
+    a1 = a * ones(size(delky,1),1);
+    a2 = a * ones(size(delky2,1),1);
+
+    Delky1 = [Delky1;[delky(:,1),delky(:,2),a1,delky(:,3)]];
+    Delky2 = [Delky2;[delky2(:,1),delky2(:,2),a2,delky2(:,3)]];
+
 end
 
 %% Výpočet astronomických azimutů
@@ -240,10 +226,8 @@ for i = 1 : 2 : size(astro_azimut_1,1)-1
     az2 = str2double(astro_azimut_1.Azimut(i+1));
     avgAz = (az1 + az2) / 2;
 
-    astro_azimut = [astro_azimut;
-                     astro_azimut_1.Stanovisko(i), ...
-                     astro_azimut_1.Cil(i), ...
-                     avgAz];
+    pom = [astro_azimut_1.Stanovisko(i),astro_azimut_1.ID(i),astro_azimut_1.Cil(i),avgAz];
+    astro_azimut = [astro_azimut; pom];
 end
 
 
@@ -258,7 +242,8 @@ for i = 1:pocet_stanovisek
 
     centrace = opravy_smeru(opravy_smeru(:,1) == stanovisko & opravy_smeru(:,2) == a, :);
     red_JTSK = redukce_JTSK(redukce_JTSK(:,1) == stanovisko & redukce_JTSK(:,2) == a, :);
-    astro = astro_azimut(astro_azimut(:,1) == stanovisko,:);
+    distance = Delky2(Delky2(:,1)==stanovisko & Delky2(:,3) == a, :);
+    astro = astro_azimut(astro_azimut(:,1) == stanovisko & astro_azimut(:,2) == a,:);
 
     angle = cell(size(uhly,1), 4);
     for j = 1:size(uhly,2)
@@ -276,16 +261,23 @@ for i = 1:pocet_stanovisek
 
     astr = cell(size(astro,1), 3);
     for j = 1:size(astro,1)
-        id_cil = astro(j,2);
+        id_cil = astro(j,3);
 
         Oprava = centrace(centrace(:,3)==id_cil,4) + red_JTSK(red_JTSK(:,3)==id_cil,4);
 
         astr{j,1} = 'azimuth';
         astr{j,2} = id_cil;
-        astr{j,3} = astro(j,3) + Oprava;
+        astr{j,3} = astro(j,4) + Oprava;
     end
 
-    obsst = {stanovisko,{angle;astr}};
+    dist = cell(size(distance,1), 3);
+    for j = 1:size(dist,1)
+        dist{j,1} = 'distance';
+        dist{j,2} = distance(j,2);
+        dist{j,3} = distance(j,4);
+    end
+
+    obsst = {stanovisko,{angle;dist;astr}};
 
     observace = [observace,{obsst}];
 end
