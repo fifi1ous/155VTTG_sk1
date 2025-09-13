@@ -98,6 +98,10 @@ for i = 1:numel(obsCellArray)
         for k = 1:size(rows,1)
             mk = rows(k,:);   % one measurement row
             el = doc.createElement(mtype);
+
+            if size(mk,2) == 1
+                mk = mk{1};
+            end
     
             switch mtype
                 case 'angle'
