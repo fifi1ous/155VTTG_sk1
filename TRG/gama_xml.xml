@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <!DOCTYPE gama-local SYSTEM "gama-local.dtd">
 <gama-xml version="2.0">
-   <network angles="right-handed" axes-xy="sw">
+   <network angles="left-handed" axes-xy="sw">
       <description>Volná síť, opěrné 1001,1002
 155VTTG - sk1,3 2025</description>
       <parameters conf-pr="0.950" sigma-act="apriori" sigma-apr="1.000" tol-abs="1000.000"/>
@@ -51,7 +51,7 @@
             <angle bs="1001" fs="1004" val="131.2133"/>
             <angle bs="1002" fs="1001" val="103.1451"/>
             <angle bs="1004" fs="1002" val="165.7124"/>
-            <angle bs="1005" fs="1001" val="16.1829"/>
+            <angle bs="1005" fs="1001" val="16.1983"/>
             <distance to="1001" val="4052.0061"/>
             <distance to="1002" val="3221.2431"/>
             <distance to="1004" val="2564.0640"/>
@@ -74,15 +74,15 @@
          </obs>
          <obs from="1005">
             <azimuth to="1003" val="75.3355"/>
-            <azimuth to="1003" val="75.3429"/>
-            <azimuth to="1003" val="75.3450"/>
-            <azimuth to="1003" val="75.4181"/>
+            <azimuth to="1003" val="75.3428"/>
+            <azimuth to="1003" val="75.3449"/>
+            <azimuth to="1003" val="75.4180"/>
             <azimuth to="1003" val="75.3124"/>
             <azimuth to="1003" val="75.3169"/>
             <azimuth to="1003" val="75.3241"/>
             <azimuth to="1003" val="75.3489"/>
-            <azimuth to="1003" val="75.3427"/>
-            <azimuth to="1003" val="76.2367"/>
+            <azimuth to="1003" val="75.3426"/>
+            <azimuth to="1003" val="76.2366"/>
          </obs>
       </points-observations>
    </network>
