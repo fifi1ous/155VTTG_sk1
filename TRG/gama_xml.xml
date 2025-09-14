@@ -1,6 +1,5 @@
 <?xml version="1.0" ?>
 <!DOCTYPE gama-local SYSTEM "gama-local.dtd">
-<?xml version="1.0" encoding="utf-8"?>
 <gama-xml version="2.0">
    <network angles="right-handed" axes-xy="sw">
       <description>Volná síť, opěrné 1001,1002
@@ -11,7 +10,7 @@
          <point adj="XY" id="1002" x="1058509.55" y="560713.10"/>
          <point adj="xy" id="1003" x="1055296.05" y="560933.35"/>
          <point adj="xy" id="1004" x="1053013.57" y="559765.56"/>
-         <point adj="xy" id="1004" x="1055721.09" y="562456.19"/>
+         <point adj="xy" id="1005" x="1055721.09" y="562456.19"/>
          <obs from="1001">
             <angle bs="1003" fs="1002" val="36.6540"/>
             <angle bs="1004" fs="1002" val="59.6047"/>
