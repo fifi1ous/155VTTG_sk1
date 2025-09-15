@@ -9,7 +9,7 @@ function generate_gama_xml(outputFile, descriptionLines, sigma_apr, conf_pr, tol
     %% Síť
     network = doc.createElement('network');
     network.setAttribute('axes-xy', 'sw');
-    network.setAttribute('angles', 'right-handed');
+    network.setAttribute('angles', 'left-handed');
     root.appendChild(network);
 
     %% Popis
@@ -139,6 +139,8 @@ end
 
     %% Přidání hlavičky a DOCTYPE
     lines = fileread(tmpFile);
+    % odstraní XML deklaraci, kterou přidává xmlwrite
+    lines = regexprep(lines, '<\?xml.*?\?>\s*', '', 'once');
     fid = fopen(outputFile, 'w');
     fprintf(fid, '<?xml version="1.0" ?>\n');
     fprintf(fid, '<!DOCTYPE gama-local SYSTEM "gama-local.dtd">\n');
