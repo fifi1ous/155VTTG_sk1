@@ -29,7 +29,7 @@
             <angle bs="1003" fs="1004" val="15.0223"/>
             <distance to="1001" val="5906.0881"/>
             <distance to="1003" val="3221.2546"/>
-            <distance to="1004" val="5577.5376"/>
+            <distance to="1004" val="5577.5373"/>
             <azimuth to="1004" val="208.8853"/>
             <azimuth to="1004" val="209.0087"/>
             <azimuth to="1001" val="133.8107"/>
@@ -41,7 +41,7 @@
             <angle bs="1004" fs="1002" val="165.6288"/>
             <distance to="1001" val="4793.0481"/>
             <distance to="1002" val="3221.2406"/>
-            <distance to="1004" val="2564.0658"/>
+            <distance to="1004" val="2564.0656"/>
             <azimuth to="1001" val="99.5168"/>
             <azimuth to="1001" val="99.4318"/>
             <azimuth to="1001" val="96.8078"/>
@@ -52,9 +52,9 @@
             <angle bs="1002" fs="1001" val="103.1451"/>
             <angle bs="1004" fs="1002" val="165.7124"/>
             <angle bs="1005" fs="1001" val="16.1983"/>
-            <distance to="1001" val="4052.0061"/>
+            <distance to="1001" val="4793.0525"/>
             <distance to="1002" val="3221.2431"/>
-            <distance to="1004" val="2564.0640"/>
+            <distance to="1004" val="2564.0619"/>
             <azimuth to="1001" val="96.9983"/>
             <azimuth to="1001" val="96.9874"/>
             <azimuth to="1001" val="97.0287"/>
@@ -64,9 +64,9 @@
             <angle bs="1002" fs="1001" val="64.9239"/>
             <angle bs="1002" fs="1003" val="19.0934"/>
             <angle bs="1003" fs="1001" val="45.9285"/>
-            <distance to="1001" val="6415.2803"/>
-            <distance to="1002" val="5577.6291"/>
-            <distance to="1003" val="2564.1429"/>
+            <distance to="1001" val="6415.2794"/>
+            <distance to="1002" val="5577.6283"/>
+            <distance to="1003" val="2564.1426"/>
             <azimuth to="1002" val="8.8062"/>
             <azimuth to="1002" val="8.8069"/>
             <azimuth to="1002" val="8.7875"/>

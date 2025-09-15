@@ -283,7 +283,7 @@ for i = 1:pocet_stanovisek
     observace = [observace,{obsst}];
 end
 
-stanovisko = 1005;
+stanovisko = str2double(id_azimut);
 red_JTSK = redukce_JTSK(redukce_JTSK(:,3) == stanovisko,4)*(-1);
 azimut = {gyro_mereni.azimut};
 opravy = {gyro_mereni.oprava};
