@@ -149,7 +149,7 @@ function [theta] = centrace_smeru(ss,st1,st2,st_1_sm_2,st_1_sm_ce,st_1_sm_ci,st_
         dot_val = max(min(dot_val,1),-1);
     
         % Angle in radians with sign
-        angle_rad = atan2(cross_val, dot_val);
+        angle_rad = -atan2(cross_val, dot_val);
     
     end
 end

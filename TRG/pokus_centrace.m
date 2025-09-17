@@ -7,19 +7,29 @@ gon2rad = pi/200;
 [X_1002,Y_1002] = findPoint(ss, 1002);
 [X_1001,Y_1001] = findPoint(ss, 1001);
 
-st_2_sm_1 = 0         * gon2rad;  % směr na druhý bod
+st_2_sm_1 = 60.1846   * gon2rad;  % směr na druhý bod
 st_2_sm_ce = 86.7076  * gon2rad;  % směr na centr
 st_2_d_ce = 5.542;
 
 st_2_sm_ci = 29.7071  * gon2rad;  % směr na cíl
 st_2_d_ci = 5.248;
 
-st_1_sm_2 = 59.6372 * gon2rad;  % směr na první bod
-st_1_sm_ce = 165.0339 * gon2rad;  % směr na centr
-st_1_d_ce = 3.835;
+% % a
+st_1_sm_2 = 296.7300  * gon2rad;  % směr na první bod
+st_1_sm_ce = 118.7939 * gon2rad;  % směr na centr
+st_1_d_ce = 3.905;
 
-st_1_sm_ci = 299.6840 * gon2rad;  % směr na cíl
-st_1_d_ci = 6.904;
+
+st_1_sm_ci = 183.8224 * gon2rad;  % směr na cíl
+st_1_d_ci = 7.367;
+
+% % b
+% st_1_sm_2 = 8.7232  * gon2rad;  % směr na první bod
+% st_1_sm_ce = 361.6803 * gon2rad;  % směr na centr
+% st_1_d_ce = 3.099;
+% 
+% st_1_sm_ci = 341.3881 * gon2rad;  % směr na cíl
+% st_1_d_ci = 9.161;
 
 %% Příprava potřebných bodů
 st_1001 = [ones(3,1)*Y_1001, ones(3,1)*X_1001];
