@@ -66,8 +66,7 @@ opravy_smeru = [];
 redukce_JTSK = [];
 Delky1 = [];
 Delky2 = [];
-% ast_azimut = {};
-% ast_azimut2 = {};
+
 for i = 1:pocet_stanovisek
     pom_1 = data_structs{i};
     st = stanoviska_IDs(i);
