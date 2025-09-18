@@ -26,7 +26,7 @@
          <obs from="1002">
             <angle bs="1001" fs="1003" val="60.4918"/>
             <angle bs="1001" fs="1004" val="75.3424"/>
-            <angle bs="1003" fs="1004" val="15.1728"/>
+            <angle bs="1003" fs="1004" val="15.1729"/>
             <distance to="1001" val="5906.0881"/>
             <distance to="1003" val="3221.2546"/>
             <distance to="1004" val="5577.5373"/>
