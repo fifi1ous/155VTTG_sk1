@@ -311,7 +311,9 @@ for i = 1:pocet_stanovisek
 
         astr{j,1} = 'azimuth';
         astr{j,2} = id_cil;
-        astr{j,3} = astro(j,4) + Oprava;
+        as = astro(j,4) + Oprava -200;
+        as(as<0) = as(as<0) +400;
+        astr{j,3} = as;
     end
 
     dist = cell(size(distance,1), 3);

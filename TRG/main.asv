@@ -66,8 +66,7 @@ opravy_smeru = [];
 redukce_JTSK = [];
 Delky1 = [];
 Delky2 = [];
-% ast_azimut = {};
-% ast_azimut2 = {};
+
 for i = 1:pocet_stanovisek
     pom_1 = data_structs{i};
     st = stanoviska_IDs(i);
@@ -312,6 +311,8 @@ for i = 1:pocet_stanovisek
 
         astr{j,1} = 'azimuth';
         astr{j,2} = id_cil;
+        as = astro(j,4) + Oprava -200;
+        as = a
         astr{j,3} = astro(j,4) + Oprava;
     end
 
@@ -336,7 +337,7 @@ gyro = cell(size(gyro_mereni,2), 3);
 for i = 1:size(gyro_mereni,2)
     gyro{i,1} = 'azimuth';
     gyro{i,2} = 1003;
-    gyro{i,3} = azimut{i}/180*200 + opravy{i} + red_JTSK;
+    gyro{i,3} = azimut{i}/180*200 + opravy{i} + red_JTSK-200;
 end
 obsst = {stanovisko,{gyro}};
 observace = [observace,{obsst}];
