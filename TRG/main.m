@@ -276,6 +276,14 @@ end
 
 
 %% Kompletace dat
+gama_export = 'export_gama.xml';
+if isfile(gama_export)
+    exists = true;
+    gama_export = readExportGamaObservations('export_gama.xml');
+else
+    exists = false;
+end
+
 observace = {};
 for i = 1:pocet_stanovisek
     pom_1 = data_structs{i};
@@ -289,7 +297,17 @@ for i = 1:pocet_stanovisek
     distance = Delky2(Delky2(:,1)==stanovisko & Delky2(:,3) == a, :);
     astro = astro_azimut(astro_azimut(:,1) == stanovisko & astro_azimut(:,2) == a,:);
 
-    angle = cell(size(uhly,1), 4);
+    if exists
+        angle = cell(size(uhly,1), 5);
+        astr = cell(size(astro,1), 4);
+        dist = cell(size(distance,1), 4);
+        angles = round(cell2mat(gama_export(:,5)),4);
+    else
+        angle = cell(size(uhly,1), 4);
+        astr = cell(size(astro,1), 3);
+        dist = cell(size(distance,1), 3);
+    end
+
     for j = 1:size(uhly,2)
        zaz_1 = uhly(j);
        id_l = str2num(zaz_1.id_leva);
@@ -300,10 +318,14 @@ for i = 1:pocet_stanovisek
        angle{j,1} = 'angle';
        angle{j,2} = id_l;
        angle{j,3} = id_p;
+
        angle{j,4} = zaz_1.hodnota + Oprava;
+       if exists
+           index = find(angles==round(angle{j,4},4));
+           angle{j,5} = gama_export{index,6};
+       end
     end
 
-    astr = cell(size(astro,1), 3);
     for j = 1:size(astro,1)
         id_cil = astro(j,3);
 
@@ -314,13 +336,20 @@ for i = 1:pocet_stanovisek
         as = astro(j,4) + Oprava -200;
         as(as<0) = as(as<0) +400;
         astr{j,3} = as;
+        if exists
+           index = find(angles==round(astr{j,3},4));
+           astr{j,4} = gama_export{index,6};
+        end
     end
 
-    dist = cell(size(distance,1), 3);
     for j = 1:size(dist,1)
         dist{j,1} = 'distance';
         dist{j,2} = distance(j,2);
         dist{j,3} = distance(j,4);
+        if exists
+           index = find(angles==round(dist{j,3},4));
+           dist{j,4} = gama_export{index,6};
+        end
     end
 
     obsst = {stanovisko,{angle;dist;astr}};
@@ -334,10 +363,20 @@ azimut = {gyro_mereni.azimut};
 opravy = {gyro_mereni.oprava};
 
 gyro = cell(size(gyro_mereni,2), 3);
+
+if exists
+    gyro = cell(size(gyro_mereni,2), 4);
+else
+    gyro = cell(size(gyro_mereni,2), 3);
+end
 for i = 1:size(gyro_mereni,2)
     gyro{i,1} = 'azimuth';
     gyro{i,2} = 1003;
     gyro{i,3} = azimut{i}/180*200 + opravy{i} + red_JTSK;
+    if exists
+        index = find(angles==round(gyro{i,3},4));
+        gyro{i,4} = gama_export{index,6};
+    end
 end
 obsst = {stanovisko,{gyro}};
 observace = [observace,{obsst}];
