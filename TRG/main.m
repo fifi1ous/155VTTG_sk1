@@ -322,7 +322,11 @@ for i = 1:pocet_stanovisek
        angle{j,4} = zaz_1.hodnota + Oprava;
        if exists
            index = find(angles==round(angle{j,4},4));
-           angle{j,5} = gama_export{index,6};
+           if ~isempty(index)
+               angle{j,5} = gama_export{index,6};
+           else
+               angle{j,5} = 10;
+           end
        end
     end
 
@@ -338,7 +342,11 @@ for i = 1:pocet_stanovisek
         astr{j,3} = as;
         if exists
            index = find(angles==round(astr{j,3},4));
-           astr{j,4} = gama_export{index,6};
+           if ~isempty(index)
+               astr{j,4} = gama_export{index,6};
+           else
+               astr{j,4} = 10;
+           end
         end
     end
 
@@ -348,7 +356,11 @@ for i = 1:pocet_stanovisek
         dist{j,3} = distance(j,4);
         if exists
            index = find(angles==round(dist{j,3},4));
-           dist{j,4} = gama_export{index,6};
+           if ~isempty(index)
+                dist{j,4} = gama_export{index,6};
+           else
+               dist{j,4} = 10;
+           end
         end
     end
 
@@ -375,7 +387,11 @@ for i = 1:size(gyro_mereni,2)
     gyro{i,3} = azimut{i}/180*200 + opravy{i} + red_JTSK;
     if exists
         index = find(angles==round(gyro{i,3},4));
-        gyro{i,4} = gama_export{index,6};
+        if ~isempty(index)
+            gyro{i,4} = gama_export{index,6};
+        else
+            gyro{i,4} = 10;
+        end
     end
 end
 obsst = {stanovisko,{gyro}};
@@ -409,11 +425,11 @@ azimStdev = "10"; % v gradovych vterinach
 % };
 
 points = {
-    {1001,'adj','XY', 1055386.291, 565725.159};
-    {1002,'adj','XY', 1058509.547, 560713.097};
-    {1003,'adj','xy', 1055296.051, 560933.350}; 
-    {1004,'adj','xy', 1053013.574, 559765.560}; 
-    {1005,'adj','xy', 1055721.093, 562456.195};
+    {1001,'adj','XY', 1055385.6, 565724.2};
+    {1002,'adj','XY', 1058508.8, 560712.1};
+    {1003,'adj','xy', 1055295.4, 560932.4}; 
+    {1004,'adj','xy', 1053013.0, 559764.8}; 
+    {1005,'adj','xy', 1055720.5, 562455.4};
 };
 
 % Měření: {typ, kam, hodnota}
