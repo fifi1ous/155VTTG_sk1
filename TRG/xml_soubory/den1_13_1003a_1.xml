@@ -19,8 +19,8 @@
       <centr smer="118.7939" delka="3.905"/>
     </centracni-osnova>
     <!-- prumerna hodnota ze vsech laboratornich jednotek -->
-    <uhel id-leva="1001" id-prava="1004" pocet-lj="3">103.2681</uhel>
-    <uhel id-leva="1002" id-prava="1001" pocet-lj="3">131.0620</uhel>
+    <uhel id-leva="1002" id-prava="1001" pocet-lj="3">103.2681</uhel>
+    <uhel id-leva="1001" id-prava="1004" pocet-lj="3">131.0620</uhel>
     <uhel id-leva="1004" id-prava="1002" pocet-lj="3">165.6710</uhel>
     <!-- mereni na Slunce pro urceni azimutu; leve rameno - cil, prave rameno - Slunce -->
     <azimut id="1001" uhel="264.6891" cas-utc="09:30:05.0"/>

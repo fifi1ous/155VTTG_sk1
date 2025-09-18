@@ -36,8 +36,8 @@
             <azimuth to="1001" val="333.7278"/>
          </obs>
          <obs from="1003">
-            <angle bs="1001" fs="1004" val="103.3781"/>
-            <angle bs="1002" fs="1001" val="131.3046"/>
+            <angle bs="1002" fs="1001" val="103.5107"/>
+            <angle bs="1001" fs="1004" val="131.1720"/>
             <angle bs="1004" fs="1002" val="165.6688"/>
             <distance to="1001" val="4793.0481"/>
             <distance to="1002" val="3221.2406"/>
@@ -48,8 +48,8 @@
             <azimuth to="1001" val="297.2622"/>
          </obs>
          <obs from="1003">
-            <angle bs="1001" fs="1004" val="103.3272"/>
-            <angle bs="1002" fs="1001" val="131.3832"/>
+            <angle bs="1002" fs="1001" val="103.3522"/>
+            <angle bs="1001" fs="1004" val="131.3582"/>
             <angle bs="1004" fs="1002" val="165.6379"/>
             <angle bs="1005" fs="1001" val="16.3524"/>
             <distance to="1001" val="4793.0525"/>
