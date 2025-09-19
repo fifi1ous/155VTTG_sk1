@@ -1,0 +1,60 @@
+
+\subsection{Měření GNSS}
+
+\tab Měření GNSS probíhalo rychlou statickou metodou s použitím referenční stanice ve Starém Městě (TSTA). Data z měření byla exportována do formátu RINEX. Byla použita observační data ze stanice CZEPOS v Šumperku (CSUM).
+
+Zpracování bylo provedeno v programu RTKLib. 
+
+\subsection{Technická nivelace}
+
+\tab Nivelace byla použita pro určení výšky bodu z excentrického stanoviska, s maximem dvou přestav.
+
+Hodnocení přesnosti nivelace porovnáním rozdílů nivelovaných převýšení a mezní odchylkou probíhalo už v terénu podle:
+
+\begin{equation}
+    \Delta M_{[mm]}=0,67*40*\sqrt{R_{[km]}},
+\end{equation}
+
+kde $R_{[km]}$ je délka pořadu v kilometrech.\\
+
+Vyhovující dvojice měření pak byla zprůměrována.\\
+
+Přesnost měření popisuje střední jednotková chyba kilometrová obousměrné nivelace:
+
+\begin{equation}
+    m_{0[mm]}=\frac{1}{2}\sqrt{\frac{\delta h}{R_{[km]}}},
+\end{equation}
+
+směrodatná odchylka nivelovaného převýšení:
+
+\begin{equation}
+    m_{[mm]}=m_0\sqrt{R_{[km]}},
+\end{equation}
+
+a její mezní hodnota:
+
+\begin{equation}
+    m_{[mm]}=1,00 + \frac{1,77}{\sqrt{M}},
+\end{equation}
+
+kde $M$ je počet oddílů v pořadu.
+
+Výšky měřené dvěma skupinami byly zprůměrovány a ze zákona hromadění směrodatných odchylek je směrodatná odchylka průměru:
+
+\begin{equation}
+    \sigma_{\varnothing m}=2\sqrt{\sigma_{m1}^2+\sigma_{m2}^2}.
+\end{equation}
+
+\subsection{Výpočet výškové anomálie}
+
+\tab Výšková anomálie je rozdíl elipsoidické (určené GNSS) a normální Moloděnského výšky (určené nivelací): 
+
+\begin{equation}
+    N=H_{el}-H_{niv}.
+\end{equation}
+
+Její přesnost je ze zákona hromadění směrodatných odchylek:
+
+\begin{equation}
+    \sigma_N=\sqrt{\sigma_{Hel}^2+\sigma_{Hniv}^2}.
+\end{equation}

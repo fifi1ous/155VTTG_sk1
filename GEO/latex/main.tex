@@ -1,0 +1,76 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[a4paper, ]{geometry}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{float}
+
+\usepackage[czech]{babel}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{sectsty}
+\usepackage{gensymb}
+
+\usepackage{subfigure}
+
+\usepackage{matlab-prettifier}
+
+\RequirePackage[inner=1cm,outer=1cm,top=2cm,bottom=1cm]{geometry}
+
+\renewcommand{\baselinestretch}{1.25}
+\newcommand\tab[1][0.7cm]{\hspace*{#1}}
+
+\title{Technická zpráva}
+\date{}
+
+\begin{document}
+
+    \pagestyle{empty}
+    \include{rozpiska}
+    \pagestyle{plain}
+    \setcounter{page}{1}
+    
+    \maketitle
+    
+    \section{Zadání}
+    \input{zadani}
+
+    \newpage
+
+    \section{Pomůcky}
+    \input{pomucky}
+
+    \newpage
+
+    \section{Postup}
+    \input{prac_postup}
+
+    \newpage
+    
+    \section{Výsledky}
+    \input{vysledky}
+
+    \newpage
+
+    \section{Závěr}
+    \input{zaver} 
+
+    \section{Přílohy}
+    \begin{enumerate}
+        \item 
+    \end{enumerate}
+    
+\vspace*{\fill}
+\textbf{V Praze dne: .. 2025\hspace{5cm} M. Kovář, M. Pokorný,}
+
+\textbf{\hspace{9.3cm}F. Roučka, K. Sedlák}
+
+\newpage
+\input{prilohy}
+
+
+\end{document}
+
+
+
