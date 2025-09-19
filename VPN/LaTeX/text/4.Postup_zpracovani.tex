@@ -19,7 +19,7 @@ Dále byl pro každý oddíl vypočten aritmetický průměr převýšení:
 V případě, že rozdíl převýšení ve směrech „tam“ a „zpět“ překročil tuto mezní hodnotu, bylo měření vyhodnoceno jako nevyhovující.\cite{zadani}\\
 Pro posouzení přesnosti nivelace se počítá směrodatná odchylka kilometrová
 \[
-  m_0 = \frac{1}{2}\,\sqrt{\frac{\sum\rho^2}{R}}
+  m_0 = \frac{1}{2}\,\sqrt{\frac{1}{n}\frac{\sum\rho^2}{R}}
 \]
 kde \( R \) je délka oddílu v km a \(\rho\) rozdíly převýšení „tam“ vs. „zpět“ v jednotlivých oddílech.\\
 Směrodatná odchylka celého pořadu podle délky [km]
@@ -78,7 +78,7 @@ Kde \( H_n \) představuje kumulativní součet výšek jednotlivých bodů \( h
 \subsection*{Normální ortometrická korekce \( c_{\gamma AB} \)}
 Normální ortometrická korekce byla vypočtena jako: 
 \[
-c_{\gamma AB} = -0.0000254 \cdot H_s \cdot \Delta B \cdot 0.001
+c_{\gamma AB}[mm] = -0.0000254 \cdot H_s[m] \cdot \Delta B[^"]
 \]
 kde \(H_s\) je střední výška mezi dvěma body a \(\Delta B\) je rozdíl zeměpisné šířky.
 \subsection*{Korekce z tíhových anomálií \( c_{\Delta g AB} \)}
@@ -99,7 +99,7 @@ Korekce z tíhových anomálií byla vypočítána podle následujícího postup
     \]
     \item \textbf{Korekce z tíhové anomálie}:
     \[
-    c_{\Delta g AB} = 0.0010193 \cdot 10^5 \cdot \Delta g_{F_{AB}} \cdot H_{\text{niv}} \cdot 0.001
+    c_{\Delta g AB}[mm] = 0.0010193 \cdot 10^5 \cdot \Delta g_{F_{AB}}[mGal] \cdot H_{\text{niv}}[m]
     \]
 \end{itemize}
 

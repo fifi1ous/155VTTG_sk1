@@ -11,15 +11,65 @@
         \textbf{Oddíl} & \textbf{Sestav} & d [m] & $h_{\text{\tiny{TAM}}}$ [m] & $h_{\text{\tiny{ZPĚT}}}$ [m] & $\Delta$ [mm] & $\Delta_M$ [mm] & $\Delta_M$>$\Delta$ & $h_{\diameter}$ [m] \\
         \hline \hline
         35.1–36.1 & 8  & 294,000 & 12,2223 & -12,2221 & 0,2 & 1,22 & ANO & 12,22220\\ \hline
-        34.1–35.1 & 16 & 596,250 & 21,6124 & -21,6126 & 0,2 & 1,74 & ANO & 21,61250\\ \hline 
-        33.1–34.1 & 16 & 585,750 & 17,4958 & -17,4961 & 0,3 & 1,72 & ANO & 17,49595\\ \hline
+        34–35.1 & 16 & 596,250 & 21,6124 & -21,6126 & 0,2 & 1,74 & ANO & 21,61250\\ \hline 
+        33.1–34 & 16 & 585,750 & 17,4958 & -17,4961 & 0,3 & 1,72 & ANO & 17,49595\\ \hline
     \end{tabular}
 \end{table}
-
-směrodatná odchylka kilometrová
+% --- Posouzení přesnosti nivelace podle Návodu ČÚZK ---
+\textbf{Posouzení přesnosti nivelace}\\
+směrodatná odchylka kilometrová:
 \[
-  m_0 = \frac{1}{2}\,\sqrt{\frac{\sum\rho^2}{R}}= 0,1697 mm
+  m_0 = \frac{1}{2}\,
+         \sqrt{ \frac{1}{n}
+                 \cdot
+                 \frac{ \sum \rho^2 }{ R } }
+      = 0{,}0980\ \mathrm{mm}
 \]
+kde:\\
+$n$ – počet nivelačních oddílů v posuzovaném převýšení,\\
+$\rho$ – rozdíly převýšení „tam“ a „zpět“ v každém oddílu v~mm,\\
+$R$ – délky jednotlivých oddílů v~km\\
+Mezní kilometrová směrodatná odchylka:
+\[
+  \overline{m_0}
+     = 0{,}45 + \frac{0{,}80}{\sqrt{n}}
+     = 0{,}45 + \frac{0{,}80}{\sqrt{3}}
+     = 0{,}912\ \mathrm{mm}
+\]
+\[
+  m_0 = 0{,}0980\ \mathrm{mm}
+        < \overline{m_0} = 0{,}9119\ \mathrm{mm} \implies
+\text{požadavek přesnosti nivelačního pořadu II.~řádu byl splněn.}\]
+Směrodatná odchylka celého pořadu:
+\[
+  m_h = m_0 \sqrt{L}
+       = 0{,}0980 \cdot \sqrt{1{,}476}
+       = 0{,}1190\ \mathrm{mm},
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Směrodatná odchylka oddílu 35.1–36.1 :
+\[
+  m_h = \frac{1}{2}\,
+         \sqrt{
+                 \cdot
+                 \frac{ \rho^2 }{ R } } \sqrt{L} = 0{,}2241\ \mathrm{mm},
+\]
+Směrodatná odchylka oddílu 34–35.1:
+\[
+  m_h = \frac{1}{2}\,
+         \sqrt{
+                 \cdot
+                 \frac{ \rho^2 }{ R } } \sqrt{L} = 0{,}1573\ \mathrm{mm},
+\]
+Směrodatná odchylka oddílu 33.1–34:
+\[
+  m_h = \frac{1}{2}\,
+         \sqrt{
+                 \cdot
+                 \frac{ \rho^2 }{ R } } \sqrt{L} = 0{,}2381\ \mathrm{mm},
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \subsection{Tíhové měření}
 
