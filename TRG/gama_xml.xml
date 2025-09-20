@@ -12,77 +12,77 @@
          <point adj="xy" id="1004" x="1053013.00" y="559764.80"/>
          <point adj="xy" id="1005" x="1055720.50" y="562455.40"/>
          <obs from="1001">
-            <angle bs="1003" fs="1002" val="36.8202"/>
-            <angle bs="1004" fs="1002" val="59.7434"/>
-            <angle bs="1004" fs="1003" val="23.0506"/>
+            <angle bs="1003" fs="1002" val="36.6540"/>
+            <angle bs="1004" fs="1002" val="59.6047"/>
+            <angle bs="1004" fs="1003" val="22.8207"/>
             <distance to="1002" val="5905.8596"/>
             <distance to="1003" val="4793.2673"/>
             <distance to="1004" val="6415.0031"/>
-            <azimuth to="1004" val="76.4103"/>
-            <azimuth to="1004" val="76.2503"/>
-            <azimuth to="1004" val="74.1843"/>
-            <azimuth to="1004" val="73.8136"/>
+            <azimuth to="1004" val="76.3090"/>
+            <azimuth to="1004" val="76.1491"/>
+            <azimuth to="1004" val="74.0831"/>
+            <azimuth to="1004" val="73.7124"/>
          </obs>
          <obs from="1002">
-            <angle bs="1001" fs="1003" val="60.4918"/>
-            <angle bs="1001" fs="1004" val="75.3424"/>
-            <angle bs="1003" fs="1004" val="15.1729"/>
+            <angle bs="1001" fs="1003" val="60.0325"/>
+            <angle bs="1001" fs="1004" val="75.2995"/>
+            <angle bs="1003" fs="1004" val="15.0223"/>
             <distance to="1001" val="5906.0881"/>
             <distance to="1003" val="3221.2546"/>
             <distance to="1004" val="5577.5373"/>
-            <azimuth to="1004" val="8.7524"/>
-            <azimuth to="1004" val="8.8757"/>
-            <azimuth to="1001" val="333.9865"/>
-            <azimuth to="1001" val="333.7278"/>
+            <azimuth to="1004" val="8.8853"/>
+            <azimuth to="1004" val="9.0087"/>
+            <azimuth to="1001" val="333.8107"/>
+            <azimuth to="1001" val="333.5520"/>
          </obs>
          <obs from="1003">
-            <angle bs="1002" fs="1001" val="103.5107"/>
-            <angle bs="1001" fs="1004" val="131.1720"/>
-            <angle bs="1004" fs="1002" val="165.6688"/>
+            <angle bs="1002" fs="1001" val="103.0677"/>
+            <angle bs="1001" fs="1004" val="130.8771"/>
+            <angle bs="1004" fs="1002" val="165.6288"/>
             <distance to="1001" val="4793.0481"/>
             <distance to="1002" val="3221.2406"/>
             <distance to="1004" val="2564.0656"/>
-            <azimuth to="1001" val="299.8657"/>
-            <azimuth to="1001" val="299.7807"/>
-            <azimuth to="1001" val="297.1568"/>
-            <azimuth to="1001" val="297.2622"/>
+            <azimuth to="1001" val="299.5168"/>
+            <azimuth to="1001" val="299.4318"/>
+            <azimuth to="1001" val="296.8078"/>
+            <azimuth to="1001" val="296.9132"/>
          </obs>
          <obs from="1003">
-            <angle bs="1002" fs="1001" val="103.3522"/>
-            <angle bs="1001" fs="1004" val="131.3582"/>
-            <angle bs="1004" fs="1002" val="165.6379"/>
-            <angle bs="1005" fs="1001" val="16.3524"/>
+            <angle bs="1002" fs="1001" val="103.1451"/>
+            <angle bs="1001" fs="1004" val="131.2133"/>
+            <angle bs="1004" fs="1002" val="165.7124"/>
+            <angle bs="1005" fs="1001" val="16.1212"/>
             <distance to="1001" val="4793.0525"/>
             <distance to="1002" val="3221.2431"/>
             <distance to="1004" val="2564.0619"/>
-            <azimuth to="1001" val="297.2116"/>
-            <azimuth to="1001" val="297.2007"/>
-            <azimuth to="1001" val="297.2419"/>
-            <azimuth to="1001" val="297.2574"/>
+            <azimuth to="1001" val="296.9983"/>
+            <azimuth to="1001" val="296.9874"/>
+            <azimuth to="1001" val="297.0287"/>
+            <azimuth to="1001" val="297.0442"/>
          </obs>
          <obs from="1004">
-            <angle bs="1002" fs="1001" val="65.1646"/>
-            <angle bs="1002" fs="1003" val="18.9765"/>
-            <angle bs="1003" fs="1001" val="45.9283"/>
+            <angle bs="1002" fs="1001" val="64.9239"/>
+            <angle bs="1002" fs="1003" val="19.0934"/>
+            <angle bs="1003" fs="1001" val="45.9285"/>
             <distance to="1001" val="6415.2794"/>
             <distance to="1002" val="5577.6283"/>
             <distance to="1003" val="2564.1426"/>
-            <azimuth to="1002" val="208.8682"/>
-            <azimuth to="1002" val="208.8689"/>
-            <azimuth to="1002" val="208.8495"/>
-            <azimuth to="1002" val="208.8033"/>
+            <azimuth to="1002" val="208.8062"/>
+            <azimuth to="1002" val="208.8069"/>
+            <azimuth to="1002" val="208.7875"/>
+            <azimuth to="1002" val="208.7413"/>
          </obs>
          <obs from="1005">
-            <azimuth to="1003" val="75.6452"/>
-            <azimuth to="1003" val="75.6526"/>
-            <azimuth to="1003" val="75.6545"/>
-            <azimuth to="1003" val="75.7276"/>
-            <azimuth to="1003" val="75.5991"/>
-            <azimuth to="1003" val="75.6035"/>
-            <azimuth to="1003" val="75.6107"/>
-            <azimuth to="1003" val="75.6355"/>
-            <azimuth to="1003" val="75.6293"/>
-            <azimuth to="1003" val="76.5218"/>
+            <azimuth to="1003" val="75.3831"/>
+            <azimuth to="1003" val="75.3904"/>
+            <azimuth to="1003" val="75.3926"/>
+            <azimuth to="1003" val="75.4657"/>
+            <azimuth to="1003" val="75.3599"/>
+            <azimuth to="1003" val="75.3643"/>
+            <azimuth to="1003" val="75.3715"/>
+            <azimuth to="1003" val="75.3963"/>
+            <azimuth to="1003" val="75.3901"/>
+            <azimuth to="1003" val="76.2841"/>
          </obs>
       </points-observations>
    </network>
