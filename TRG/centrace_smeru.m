@@ -20,6 +20,13 @@ function [theta] = centrace_smeru(ss,st1,st2,st_1_sm_2,st_1_sm_ce,st_1_sm_ci,st_
     [X_1001,Y_1001] = findPoint(ss, st2);
 
     %% Příprava potřebných bodů
+    % vytvořené umělé souřadnice všech bodů - centr, excentrický cíl a
+    % excentrické stanovisko
+    %
+    % 1. centr                 [y,x;
+    % 2. excentrický cíl        y,x;
+    % 3. excentrické stanovisko y,x]
+    
     st_1001 = [ones(3,1)*Y_1001, ones(3,1)*X_1001];
     st_1002 = [ones(3,1)*Y_1002, ones(3,1)*X_1002];
 
@@ -67,8 +74,8 @@ function [theta] = centrace_smeru(ss,st1,st2,st_1_sm_2,st_1_sm_ce,st_1_sm_ci,st_
         end
         
         % --- Step 2: Distance between st_1001(2,:) and st_1002(1,:) ---
-        delka_ss = sqrt((st_1001(2,1) - st_1002(1,1))^2 + ...
-                        (st_1001(2,2) - st_1002(1,2))^2);
+        delka_ss = sqrt((st_1001(1,1) - st_1002(1,1))^2 + ...
+                        (st_1001(1,2) - st_1002(1,2))^2);
         
         % --- Step 3: Angles w2, w3 ---
         w2 = asin(sin(w1) / delka_ss * st_1_d_ce);

@@ -140,7 +140,8 @@ end
 
 theta = angle_between_lines(st_1001(1,:), st_1002(1,:), st_1001(3,:),st_1002(2,:));
 
-theta 
+theta/pi*200
+
 
 function st_1001 = compute_positions(st_1_sm_ce, st_1_sm_2, st_1_sm_ci, ...
                                      st_1_d_ce, st_1_d_ci, ...
@@ -167,8 +168,8 @@ function st_1001 = compute_positions(st_1_sm_ce, st_1_sm_2, st_1_sm_ci, ...
     w3 = pi - (w1 + w2);
     
     % --- Step 4: First sigma ---
-    sig_1 = atan2(st_1002(1,1) - st_1001(1,1), ...
-                  st_1002(1,2) - st_1001(1,2));
+    sig_1 = atan2(st_1001(1,1) - st_1002(1,1), ...
+                  st_1001(1,2) - st_1002(1,2));
     sig_1(sig_1 < 0) = sig_1(sig_1 < 0) + 2*pi;
     
     % --- Step 5: Adjust sigma depending on t ---
