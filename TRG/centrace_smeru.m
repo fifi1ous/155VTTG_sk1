@@ -74,16 +74,16 @@ function [theta] = centrace_smeru(ss,st1,st2,st_1_sm_2,st_1_sm_ce,st_1_sm_ci,st_
         end
         
         % --- Step 2: Distance between st_1001(2,:) and st_1002(1,:) ---
-        delka_ss = sqrt((st_1001(1,1) - st_1002(1,1))^2 + ...
-                        (st_1001(1,2) - st_1002(1,2))^2);
+        delka_ss = sqrt((st_1001(1,1) - st_1002(2,1))^2 + ...
+                        (st_1001(1,2) - st_1002(2,2))^2);
         
         % --- Step 3: Angles w2, w3 ---
         w2 = asin(sin(w1) / delka_ss * st_1_d_ce);
         w3 = pi - (w1 + w2);
         
         % --- Step 4: First sigma ---
-        sig_1 = atan2(st_1002(1,1) - st_1001(1,1), ...
-                      st_1002(1,2) - st_1001(1,2));
+        sig_1 = atan2(st_1002(2,1) - st_1001(1,1), ...
+                      st_1002(2,2) - st_1001(1,2));
         sig_1(sig_1 < 0) = sig_1(sig_1 < 0) + 2*pi;
         
         % --- Step 5: Adjust sigma depending on t ---
