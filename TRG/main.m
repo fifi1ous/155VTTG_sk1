@@ -400,7 +400,7 @@ observace = [observace,{obsst}];
 %% Vytvoření XML souboru pro vyrovnání v Gamě
 % vstupni parametry - upravit dle potreby
 % popis
-description = {'Volná síť, opěrné 1001,1002', '155VTTG - sk1,3 2025'};
+description = {'Volná síť, opěrné 1002,1004', '155VTTG - sk1,3 2025'};
 % apriorní směrodatná odchylka
 sigma_apr = 1.0;
 % interval spolehlivostiMicrosoft.QuickAction.Bluetooth
@@ -425,11 +425,11 @@ azimStdev = "10"; % v gradovych vterinach
 % };
 
 points = {
-    {1001,'adj','XY', 1055385.6, 565724.2};
-    {1002,'adj','XY', 1058508.8, 560712.1};
-    {1003,'adj','xy', 1055295.4, 560932.4}; 
-    {1004,'adj','xy', 1053013.0, 559764.8}; 
-    {1005,'adj','xy', 1055720.5, 562455.4};
+    {1001,'adj','XY',1055386.291, 565725.159};
+    {1002,'adj','XY',1058509.547, 560713.097};
+    {1003,'adj','xy',1055296.051, 560933.350}; 
+    {1004,'adj','xy',1053013.574, 559765.560}; 
+    {1005,'adj','xy',1055721.093, 562456.195};
 };
 
 % Měření: {typ, kam, hodnota}
