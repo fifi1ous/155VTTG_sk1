@@ -53,16 +53,16 @@
             <distance to="1003" val="2563.8938"/>
          </obs>
          <obs from="1005">
-            <azimuth to="1003" val="75.6646"/>
-            <azimuth to="1003" val="75.6720"/>
-            <azimuth to="1003" val="75.6739"/>
-            <azimuth to="1003" val="75.7470"/>
-            <azimuth to="1003" val="75.6186"/>
-            <azimuth to="1003" val="75.6230"/>
-            <azimuth to="1003" val="75.6302"/>
-            <azimuth to="1003" val="75.6550"/>
-            <azimuth to="1003" val="75.6488"/>
-            <azimuth to="1003" val="76.5412"/>
+            <azimuth to="1003" val="75.4676"/>
+            <azimuth to="1003" val="75.4749"/>
+            <azimuth to="1003" val="75.4772"/>
+            <azimuth to="1003" val="75.5504"/>
+            <azimuth to="1003" val="75.4674"/>
+            <azimuth to="1003" val="75.4719"/>
+            <azimuth to="1003" val="75.4791"/>
+            <azimuth to="1003" val="75.5039"/>
+            <azimuth to="1003" val="75.4977"/>
+            <azimuth to="1003" val="76.3932"/>
          </obs>
       </points-observations>
    </network>

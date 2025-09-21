@@ -376,6 +376,7 @@ opravy = {gyro_mereni.oprava};
 
 gyro = cell(size(gyro_mereni,2), 3);
 
+Pro_F =[];
 if exists
     gyro = cell(size(gyro_mereni,2), 4);
 else
@@ -384,7 +385,9 @@ end
 for i = 1:size(gyro_mereni,2)
     gyro{i,1} = 'azimuth';
     gyro{i,2} = 1003;
-    gyro{i,3} = azimut{i}/180*200 + opravy{i} + red_JTSK;
+    gyro{i,3} = azimut{i}/180*200 - opravy{i} - red_JTSK;
+
+    Pro_F = [Pro_F;stanovisko,1003,azimut{i}/180*200,-opravy{i},-red_JTSK,opravy{i} - red_JTSK,gyro{i,3}];
     if exists
         index = find(angles==round(gyro{i,3},4));
         if ~isempty(index)
