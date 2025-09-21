@@ -25,20 +25,21 @@ Směrová korekce je poté vypočtena z přibližných souřadnic bodů podle vz
 
 
 \subsubsection{Centrace vodorovných směrů}
-\tab Centrace byla provedena iteračním postupem. Zvlášť byla určována centrační změna pro každé
-z ramen měřeného úhlu.
+%\tab Centrace byla provedena iteračním postupem. Zvlášť byla určována centrační změna pro každé
+%z ramen měřeného úhlu.
 
-Pro každé rameno byla zvolena místní soustava souřadnic, jejíž počátek ležel na centrickém sta-
-novisku (T1) a kladná osa +x směřovala do centrického cíle (T2). Vzhledem k velké vzdálenosti
-mezi oběma body mohla být v první iteraci spojnice excentrického stanoviska (S1) s excentrickým
-cílem (C2) považována za totožnou s osou x a tedy její směrník $\sigma_{S1,C2} = 0$. Přičtením příslušného úhlu měřeného v rámci centrační osnovy lze určit směrník mezi excentrickým stanoviskem (S1) a centrickým stanoviskem (T1). Jeho obrácením o 200 gon lze pak při známé hodnotě excentricity
-určit rajonem souřadnice excentrického stanoviska (S1) v místní soustavě. Opětovným přičtením
-příslušného úhlu měřeného v centrační osnově lze určit směrník mezi excentrickým stanoviskem
-(S1) a excentrickým cílem (C1) na témže bodě. Souřadnice excentrického cíle (C1) se při známé
-excentricitě opět určí rajonem. Obdobný postup byl aplikován na bodě 2 a byly tak určeny souřadnice S2, C2. Ze souřadnic v místní soustavě mohl být nově spočten směrník $\sigma_{S1,C2}$ , který byl již různý od 0. Následně byl celý postup opakován a to do té doby, dokud změna směrníku nebyla
-menší než 0,00001 gon. Centrační změna $\delta^1$ směru ramene je pak rovna přímo hodnotě směrníku
-$\sigma_{S1,C2}$.
+%Pro každé rameno byla zvolena místní soustava souřadnic, jejíž počátek ležel na centrickém sta-
+%novisku (T1) a kladná osa +x směřovala do centrického cíle (T2). Vzhledem k velké vzdálenosti
+%mezi oběma body mohla být v první iteraci spojnice excentrického stanoviska (S1) s excentrickým
+%cílem (C2) považována za totožnou s osou x a tedy její směrník $\sigma_{S1,C2} = 0$. Přičtením příslušného úhlu měřeného v rámci centrační osnovy lze určit směrník mezi excentrickým stanoviskem (S1) a centrickým stanoviskem (T1). Jeho obrácením o 200 gon lze pak při známé hodnotě excentricity
+%určit rajonem souřadnice excentrického stanoviska (S1) v místní soustavě. Opětovným přičtením
+%příslušného úhlu měřeného v centrační osnově lze určit směrník mezi excentrickým stanoviskem
+%(S1) a excentrickým cílem (C1) na témže bodě. Souřadnice excentrického cíle (C1) se při známé
+%excentricitě opět určí rajonem. Obdobný postup byl aplikován na bodě 2 a byly tak určeny souřadnice S2, C2. Ze souřadnic v místní soustavě mohl být nově spočten směrník $\sigma_{S1,C2}$ , který byl již různý od 0. Následně byl celý postup opakován a to do té doby, dokud změna směrníku nebyla
+%menší než 0,00001 gon. Centrační změna $\delta^1$ směru ramene je pak rovna přímo hodnotě směrníku
+%$\sigma_{S1,C2}$.
 
 
+\tab Centrace byla provedena iteračním postupem. Pro každé rameno měřeného úhlu byla zvlášť určována centrační změna. V prvním kroku byly vypočteny souřadnice bodů na stanovisku, pro které se určovala centrační. Souřadnice excentrického stanoviska S1 byly v prvním kroku vypočteny pomocí metody rajónu (polární metody) „zpět“, protože v tomto okamžiku nejsou známy souřadnice excentrického cíle Cíl2, a proto byly použity souřadnice středu C2. V následujícím kroku byly souřadnice excentrického cíle Cíl1 určeny pomocí polární metody. Výpočet byl proveden i na stanovisku S2, přičemž se pro jeho výpočet použily již vypočtené souřadnice Cíl1. Celý postup se opakoval, dokud absolutní rozdíl nově vypočtených souřadnic S1, S2, Cíl1 a Cíl2 mezi dvěma po sobě jdoucími iteracemi neklesl pod 0,0001 m. Centrační změna byla vypočtena jako úhel mezi spojnicí S1–Cíl2 a spojnicí C1–C2.
 
 \subsubsection{Vyrovnání sítě}

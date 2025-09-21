@@ -14,9 +14,203 @@
     \item Určená hodnota konstanty gyroteodolitu.
 \end{itemize}
 
+\subsection{Redukce délek}
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c||c||c|c||c|}
+\hline
+St. & Cíl & \makecell{Měřená\\vzdálenost [m]} & \makecell{Fyzikální\\redukce [m]} & \makecell{Matematická\\redukce [m]} & \makecell{Redukovaná\\vzdálenost [m]}\\ \hline
+1001 & 1002 & 5907.4190 & 0.13288 & -2.04409 & 5905.5078 \\ \hline
+1001 & 1003 & 4794.1160 & 0.09660 & -1.53955 & 4792.6730 \\ \hline
+1001 & 1004 & 6415.6470 & 0.16262 & -1.20999 & 6414.5996 \\ \hline
+1002 & 1001 & 5907.4305 & 0.10951 & -2.04373 & 5905.4963 \\ \hline
+1002 & 1003 & 3221.3505 & 0.04337 & -0.42646 & 3220.9674 \\ \hline
+1002 & 1004 & 5581.4355 & 0.11392 & -4.56639 & 5576.9830 \\ \hline
+1003 & 1001 & 4794.0310 & 0.08093 & -1.53915 & 4792.5728 \\ \hline
+1003 & 1002 & 3221.3360 & 0.04426 & -0.42687 & 3220.9534 \\ \hline
+1003 & 1004 & 2570.4370 & 0.05246 & -6.67317 & 2563.8163 \\ \hline
+1003 & 1001 & 4794.0355 & 0.08093 & -1.53917 & 4792.5773 \\ \hline
+1003 & 1002 & 3221.3385 & 0.04426 & -0.42686 & 3220.9559 \\ \hline
+1003 & 1004 & 2570.4390 & 0.04682 & -6.67325 & 2563.8126 \\ \hline
+1004 & 1001 & 6415.6235 & 0.16363 & -1.21034 & 6414.5768 \\ \hline
+1004 & 1002 & 5581.5120 & 0.13086 & -4.56823 & 5577.0746 \\ \hline
+1004 & 1003 & 2570.5165 & 0.05400 & -6.67666 & 2563.8938 \\ 
+\hline
+\end{tabular}
+\caption{Fyzikální a matematická redukce délek}
+\end{table}
 
 
-\begin{table}[h!]
+
+\subsection{Redukce měřených úhlů}
+\subsubsection{měřený úhel a centrace}
+\begin{table}[H]
+    \centering
+    
+    \begin{tabular}{|c|c|c||c|c|c|c|}
+        \hline
+        Stanovisko & \makecell{Levé\\rameno} & \makecell{Pravé\\rameno} & \makecell{Měřený\\úhel} & \makecell{Centrace\\levé rameno} & \makecell{Centrace\\pravé rameno} & \makecell{Centrační\\změna} \\
+        \hline
+        1001 & 1003 & 1002 & 36.6853 & 0.06538 & -0.07415 & -0.00877 \\
+        1001 & 1004 & 1002 & 59.6360 & 0.03767 & -0.07415 & -0.03647 \\
+        1001 & 1004 & 1003 & 22.9514 & 0.03767 & -0.06538 & -0.02770 \\
+        \hline
+        1002 & 1001 & 1003 & 60.1844 & 0.14337 & -0.16080 & -0.01743 \\
+        1002 & 1001 & 1004 & 75.2223 & 0.14337 & 0.02676 & 0.17013 \\
+        1002 & 1003 & 1004 & 15.0373 & 0.16080 & 0.02676 & 0.18756 \\
+        \hline
+        1003 & 1002 & 1001 & 103.2681 & 0.06590 & -0.17549 & -0.10958 \\
+        1003 & 1001 & 1004 & 131.0620 & 0.17549 & 0.06718 & 0.24267 \\
+        1003 & 1004 & 1002 & 165.6710 & -0.06718 & -0.06590 & -0.13309 \\
+        1003 & 1002 & 1001 & 103.2034 & 0.05087 & -0.09687 & -0.04599 \\
+        1003 & 1001 & 1004 & 131.2344 & 0.09687 & -0.02529 & 0.07158 \\
+        1003 & 1004 & 1002 & 165.5629 & 0.02529 & -0.05087 & -0.02558 \\
+        1003 & 1005 & 1001 & 16.3341 & -0.10748 & -0.09687 & -0.20435 \\
+        \hline
+        1004 & 1002 & 1001 & 65.0163 & 0.07076 & -0.07645 & -0.00570 \\
+        1004 & 1002 & 1003 & 19.0362 & 0.07076 & 0.12979 & 0.20054 \\
+        1004 & 1003 & 1001 & 45.9796 & -0.12979 & -0.07645 & -0.20624 \\
+        \hline
+    \end{tabular}
+    \caption{Naměřené úhly a centrační korekce}
+\end{table}
+
+\subsubsection{Směrové korekce}
+\begin{table}[H]
+    \centering
+    
+    \begin{tabular}{|c|c|c||c|c|c|}
+        \hline
+        Stanovisko & \makecell{Levé\\rameno} & \makecell{Pravé\\rameno} & \makecell{Směrová korekce\\levé rameno} & \makecell{Směrová korekce\\pravé rameno} & \makecell{směrová\\korekce} \\
+        \hline
+        1001 & 1003 & 1002 & 0.00189 & -0.00267 & -0.00077 \\
+        1001 & 1004 & 1002 & 0.00187 & -0.00267 & -0.00079 \\
+        1001 & 1004 & 1003 & 0.00187 & -0.00189 & -0.00002 \\
+        \hline
+        1002 & 1001 & 1003 & -0.00267 & 0.00077 & -0.00190 \\
+        1002 & 1001 & 1004 & -0.00267 & 0.00079 & -0.00188 \\
+        1002 & 1003 & 1004 & -0.00077 & 0.00079 & 0.00002 \\
+        \hline
+        1003 & 1002 & 1001 & 0.00077 & 0.00190 & 0.00267 \\
+        1003 & 1001 & 1004 & -0.00190 & 0.00002 & -0.00188 \\
+        1003 & 1004 & 1002 & -0.00002 & -0.00077 & -0.00079 \\
+        1003 & 1002 & 1001 & 0.00077 & 0.00190 & 0.00267 \\
+        1003 & 1001 & 1004 & -0.00190 & 0.00002 & -0.00188 \\
+        1003 & 1004 & 1002 & 0.02529 & -0.05087 & -0.02558 \\
+        1003 & 1005 & 1001 & -0.00052 & 0.00190 & 0.00138 \\
+        \hline
+        1004 & 1002 & 1001 & 0.00079 & 0.00188 & 0.00267 \\
+        1004 & 1002 & 1003 & 0.00079 & -0.00002 & 0.00077 \\
+        1004 & 1003 & 1001 & 0.00002 & 0.00188 & 0.00190 \\
+        \hline
+    \end{tabular}
+    \caption{Směrové korekce k jednotlivým úhlům}
+\end{table}
+
+\subsubsection{Výsledné upravené úhly}
+\begin{table}[H]
+    \centering
+    
+    \begin{tabular}{|c|c|c||c|c|}
+        \hline
+        Stanovisko & \makecell{Levé\\rameno} & \makecell{Pravé\\rameno} & \makecell{Oprava\\směru} & \makecell{Upravený\\úhel} \\
+        \hline
+        1001 & 1003 & 1002 & -0.00954 & 36.67576 \\
+        1001 & 1004 & 1002 & -0.03726 & 59.59874 \\
+        1001 & 1004 & 1003 & -0.02772 & 22.92368 \\
+        \hline
+        1002 & 1001 & 1003 & -0.01933 & 60.16507 \\
+        1002 & 1001 & 1004 & 0.16825 & 75.39055 \\
+        1002 & 1003 & 1004 & 0.18758 & 15.22488 \\
+        \hline
+        1003 & 1002 & 1001 & -0.10691 & 103.16119 \\
+        1003 & 1001 & 1004 & 0.24079 & 131.30279 \\
+        1003 & 1004 & 1002 & -0.13387 & 165.53713 \\
+        1003 & 1002 & 1001 & -0.04333 & 103.16007 \\
+        1003 & 1001 & 1004 & 0.06970 & 131.30410 \\
+        1003 & 1004 & 1002 & -0.02637 & 165.53653 \\
+        1003 & 1005 & 1001 & -0.20297 & 16.13113 \\
+        \hline
+        1004 & 1002 & 1001 & -0.00303 & 65.01327 \\
+        1004 & 1002 & 1003 & 0.20132 & 19.23752 \\
+        1004 & 1003 & 1001 & -0.20434 & 45.77526 \\
+        \hline
+    \end{tabular}
+    \caption{Opravy a finální upravené úhly}
+\end{table}
+
+\subsection{Astronomické měření}
+\begin{table}[H]
+\centering
+\label{tab:vysledky_mereni}
+\begin{tabular}{|l|l|l|l|l|l|l|}
+\hline
+\textbf{Jméno 1} & \textbf{Jméno 2} & \textbf{Datum} & \textbf{Čas} & \textbf{Stanovisko} & \textbf{Cíl} & \textbf{Azimut [g]} \\
+\hline
+Tereza Cernohousova & Matyas Pokorny & 2025-06-13 & 09:37:35.4 & 1001 & 1004 & 276.3985 \\
+\hline
+Tereza Cernohousova & Matyas Pokorny & 2025-06-13 & 09:41:26.7 & 1001 & 1004 & 276.3504 \\
+\hline
+Tereza Cernohousova & Matyas Pokorny & 2025-06-13 & 09:49:09.5 & 1001 & 1004 & 276.2386 \\
+\hline
+Tereza Cernohousova & Matyas Pokorny & 2025-06-13 & 09:52:11.3 & 1001 & 1004 & 276.1903 \\
+\hline
+Tereza Cernohousova & Matyas Pokorny & 2025-06-13 & 11:38:30.8 & 1001 & 1004 & 274.1676 \\
+\hline
+Tereza Cernohousova & Matyas Pokorny & 2025-06-13 & 11:41:24.3 & 1001 & 1004 & 274.1668 \\
+\hline
+Josef Borik & Matej Klimes & 2025-06-13 & 14:26:12.7 & 1003 & 1001 &  96.8991 \\
+\hline
+Josef Borik & Matej Klimes & 2025-06-13 & 14:30:52.2 & 1003 & 1001 &  97.0793 \\
+\hline
+Josef Borik & Matej Klimes & 2025-06-13 & 14:33:11.8 & 1003 & 1001 &  97.0903 \\
+\hline
+Krystof Sedlak & Magda Soukupova & 2025-06-13 & 13:37:39.1 & 1003 & 1001 &  97.1408 \\
+\hline
+Krystof Sedlak & Magda Soukupova & 2025-06-13 & 13:43:46.1 & 1003 & 1001 &  97.0846 \\
+\hline
+Krystof Sedlak & Magda Soukupova & 2025-06-13 & 13:48:42.7 & 1003 & 1001 &  97.0928 \\
+\hline
+\end{tabular}
+\caption{Přehled měření azimutu}
+\end{table}
+
+\subsubsection{Centrace azimutů}
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c||c|c|c||c|}
+\hline
+St. & Cíl & Azimut [gon] & Centrace [gon] & \makecell{Směrová\\korekce [gon]} & \makecell{Korekce\\ celkem  [gon]}& \makecell{Upravený\\ azimut [gon]}\\
+\hline
+1001 & 1004 & 276.37442 & -0.03767 & 0.00187 & -0.03580 & 76.33862 \\ \hline
+1001 & 1004 & 276.21445 & -0.03767 & 0.00187 & -0.03580 & 76.17865 \\ \hline
+1001 & 1004 & 274.14843 & -0.03767 & 0.00187 & -0.03580 & 74.11263 \\ \hline
+1001 & 1004 & 273.77776 & -0.03767 & 0.00187 & -0.03580 & 73.74196 \\ \hline
+1002 & 1004 & 208.77826 & 0.02676 & -0.00079 & 0.02597 & 8.80423 \\ \hline
+1002 & 1004 & 208.90165 & 0.02676 & -0.00079 & 0.02597 & 8.92762 \\ \hline
+1002 & 1001 & 133.84050 & -0.14337 & -0.00267 & -0.14603 & 333.69447 \\ \hline
+1002 & 1001 & 133.58179 & -0.14337 & -0.00267 & -0.14603 & 333.43575 \\ \hline
+1003 & 1001 & 99.68832 & -0.17549 & -0.00190 & -0.17738 & 299.51093 \\ \hline
+1003 & 1001 & 99.60332 & -0.17549 & -0.00190 & -0.17738 & 299.42593 \\ \hline
+1003 & 1001 & 96.97939 & -0.17549 & -0.00190 & -0.17738 & 296.80201 \\ \hline
+1003 & 1001 & 97.08479 & -0.17549 & -0.00190 & -0.17738 & 296.90740 \\ \hline
+1003 & 1001 & 97.11275 & -0.09687 & -0.00190 & -0.09876 & 297.01399 \\ \hline
+1003 & 1001 & 97.10187 & -0.09687 & -0.00190 & -0.09876 & 297.00310 \\ \hline
+1003 & 1001 & 97.14310 & -0.09687 & -0.00190 & -0.09876 & 297.04434 \\ \hline
+1003 & 1001 & 97.15861 & -0.09687 & -0.00190 & -0.09876 & 297.05985 \\ \hline
+1004 & 1002 & 8.79823 & -0.07076 & 0.00079 & -0.06997 & 208.72826 \\ \hline
+1004 & 1002 & 8.79892 & -0.07076 & 0.00079 & -0.06997 & 208.72895 \\ \hline
+1004 & 1002 & 8.77957 & -0.07076 & 0.00079 & -0.06997 & 208.70960 \\ \hline
+1004 & 1002 & 8.73334 & -0.07076 & 0.00079 & -0.06997 & 208.66337 \\
+\hline
+\end{tabular}
+\caption{Centrace astronomického měření}
+\end{table}
+
+
+\subsection{Výsledky GNSS měření}
+
+\begin{table}[H]
 \centering
 
 \label{tab:gnss_coords}
@@ -33,4 +227,231 @@ stanovisko & Zeměpisná šířka [°] & Zeměpisná délka [°] & Výška [m] \
 
 \end{tabular}
 \caption{Souřadnice stanovišť určené z GNSS měření}
+\end{table}
+
+\subsection{Výsledky vyrovnání - GAMA}
+\subsubsection{základní parametry}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{@{} l S[table-format=2.0] l S[table-format=2.0] @{}}
+    \toprule
+    \textbf{Popis} & \textbf{Počet} & \textbf{Popis} & \textbf{Počet} \\
+    \midrule
+    Vyrovnané body & 4 & Vektorové měření & 0 \\
+    Pevné body & 0 & Azimutální měření & 20 \\
+    Podmíněné body & 2 & Měření výšek & 0 \\
+    \bottomrule
+    \end{tabular}
+    \caption{Shrnutí zpracování bodů sítě.}
+    \label{tab:points_summary_vse}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{@{} l S[table-format=2.0] @{}}
+    \toprule
+    \textbf{Pozorování} & \textbf{Počet} \\
+    \midrule
+    Délky & 15 \\
+    Směry & 0 \\
+    Úhly & 15 \\
+    Azimuty & 20 \\
+    \bottomrule
+    \end{tabular}
+    \caption{Shrnutí počtu pozorování.}
+    \label{tab:obs_summary_vse}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{\textwidth}{@{} l X l X @{}}
+    \toprule
+    \textbf{Popis} & \textbf{Hodnota} & \textbf{Popis} & \textbf{Hodnota} \\
+    \midrule
+    Rovnice & 50 & Neznámé & 8 \\
+    Stupně volnosti & 45 & Defekt & 3 \\
+    Suma čtverců & \num{47.324408} & Iterace & 1 \\
+    Apriorní S.O. & \SI{1.000}{mm} & Aposteriorní S.O. & \SI{1.026}{mm} \\
+    Poměr & \num{1.026} & Dolní mez & \num{0.794} \\
+    Horní mez & \num{1.206} & Úroveň spolehlivosti & \num{0.95} \\
+    \bottomrule
+    \end{tabularx}
+    \caption{Shrnutí vyrovnání a statistických údajů.}
+    \label{tab:adjustment_summary_vse}
+\end{table}
+
+\subsection{Souřadnice vyrovnaných bodů}
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{\textwidth}{@{} l S[table-format=10.4] S[table-format=10.4] S[table-format=2.4] S[table-format=2.4] @{}}
+    \toprule
+    \textbf{Bod} & {$X$ [\si{\m}]} & {$Y$ [\si{\m}]} & \textbf{hl. poloosa [\si{\mm}]} & \textbf{vedl. poloosa [\si{\mm}]} \\
+    \midrule
+    \textbf{1001} & \num{1055386.1209} & \num{565725.1145} & \num{34.3016} & \num{31.5160} \\
+    \textbf{1002} & \num{1058509.5130} & \num{560713.0936} & \num{15.1698} & \num{0.0000} \\
+    \textbf{1003} & \num{1055296.0630} & \num{560933.3479} & \num{18.5659} & \num{11.2824} \\
+    \textbf{1004} & \num{1053013.6070} & \num{559765.5664} & \num{15.1698} & \num{0.0000} \\
+    \bottomrule
+    \end{tabularx}
+    \caption{Vyrovnané souřadnice a hlavní poloosy chybových elips.}
+    \label{tab:adjusted_coords_vse}
+\end{table}
+
+\subsection{Detailní výsledky vyrovnání}
+
+\subsubsection{Úhly}
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{\textwidth}{@{} l S[table-format=10.4] S[table-format=10.4] S[table-format=2.4] S[table-format=2.4] @{}}
+    \toprule
+    \textbf{Pozorování} & {měřená hodnota} & {vyrovnaná hodnota} & \textbf{sm. odch. [mgon]} & \textbf{standard. reziduum} \\
+    \midrule
+    \multicolumn{5}{l}{[\si{gon}]} \\
+    \midrule
+    1001: 1003 -- 1002 & \num{36.6758} & \num{36.6745} & \num{3.1110} & 1.431 \\
+    1001: 1004 -- 1002 & \num{59.5987} & \num{59.5978} & \num{3.7428} & 1.053 \\
+    1001: 1004 -- 1003 & \num{22.9237} & \num{22.9233} & \num{2.3795} & 0.464 \\
+    1002: 1001 -- 1003 & \num{60.1651} & \num{60.1652} & \num{3.8987} & 0.087 \\
+    1002: 1001 -- 1004 & \num{75.3905} & \num{75.3907} & \num{3.8693} & 0.229 \\
+    1002: 1003 -- 1004 & \num{15.2249} & \num{15.2255} & \num{2.3882} & 0.673 \\
+    1003: 1002 -- 1001 & \num{103.1612} & \num{103.1603} & \num{4.4725} & 1.032 \\
+    1003: 1001 -- 1004 & \num{131.3028} & \num{131.3028} & \num{4.6005} & 0.007 \\
+    1003: 1004 -- 1002 & \num{165.5371} & \num{165.5369} & \num{4.7891} & 0.276 \\
+    1003: 1002 -- 1001 & \num{103.1601} & \num{103.1603} & \num{4.4725} & 0.263 \\
+    1003: 1001 -- 1004 & \num{131.3041} & \num{131.3028} & \num{4.6005} & 1.535 \\
+    1003: 1004 -- 1002 & \num{165.5365} & \num{165.5369} & \num{4.7891} & 0.445 \\
+    1004: 1002 -- 1001 & \num{65.0133} & \num{65.0115} & \num{3.4892} & 1.980 \\
+    1004: 1002 -- 1003 & \num{19.2375} & \num{19.2376} & \num{2.8754} & 0.114 \\
+    1004: 1003 -- 1001 & \num{45.7753} & \num{45.7739} & \num{3.6014} & 1.545 \\
+    \bottomrule
+    \end{tabularx}
+    \caption{Detailní výsledky vyrovnání úhlů.}
+\end{table}
+
+\subsubsection{Délky}
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{\textwidth}{@{} l S[table-format=10.4] S[table-format=10.4] S[table-format=2.4] S[table-format=2.4] @{}}
+    \toprule
+    \textbf{Pozorování} & {měřená hodnota} & {vyrovnaná hodnota} & \textbf{sm. odch. [mm]} & \textbf{standard. reziduum} \\
+    \midrule
+    \multicolumn{5}{l}{[\si{m}]} \\
+    \midrule
+    1001 -- 1002 & \num{5905.5078} & \num{5905.5847} & \num{33.4678} & 0.890 \\
+    1001 -- 1003 & \num{4792.6730} & \num{4792.6128} & \num{30.7267} & 0.852 \\
+    1001 -- 1004 & \num{6414.5996} & \num{6414.4396} & \num{33.9942} & 1.705 \\
+    1002 -- 1001 & \num{5905.4963} & \num{5905.5847} & \num{33.4678} & 1.023 \\
+    1002 -- 1003 & \num{3220.9674} & \num{3220.9894} & \num{24.8454} & 0.448 \\
+    1002 -- 1004 & \num{5576.9830} & \num{5576.9876} & \num{30.3396} & 0.055 \\
+    1003 -- 1001 & \num{4792.5728} & \num{4792.6128} & \num{30.7267} & 0.565 \\
+    1003 -- 1002 & \num{3220.9534} & \num{3220.9894} & \num{24.8454} & 0.732 \\
+    1003 -- 1004 & \num{2563.8163} & \num{2563.8485} & \num{22.5128} & 0.804 \\
+    1003 -- 1001 & \num{4792.5773} & \num{4792.6128} & \num{30.7267} & 0.502 \\
+    1003 -- 1002 & \num{3220.9559} & \num{3220.9894} & \num{24.8454} & 0.681 \\
+    1003 -- 1004 & \num{2563.8126} & \num{2563.8485} & \num{22.5128} & 0.896 \\
+    1004 -- 1001 & \num{6414.5768} & \num{6414.4396} & \num{33.9942} & 1.462 \\
+    1004 -- 1002 & \num{5577.0746} & \num{5576.9876} & \num{30.3396} & 1.053 \\
+    1004 -- 1003 & \num{2563.8938} & \num{2563.8485} & \num{22.5128} & 1.134 \\
+    \bottomrule
+    \end{tabularx}
+    \caption{Detailní výsledky vyrovnání délek.}
+\end{table}
+
+\subsubsection{Azimuty}
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{\textwidth}{@{} l S[table-format=10.4] S[table-format=10.4] S[table-format=2.4] S[table-format=2.4] @{}}
+    \toprule
+    \textbf{Pozorování} & {měřená hodnota} & {vyrovnaná hodnota} & \textbf{sm. odch. [mgon]} & \textbf{standard. reziduum} \\
+    \midrule
+    \multicolumn{5}{l}{[\si{gon}]} \\
+    \midrule
+    1001 -- 1004 & \num{76.4102} & \num{75.8804} & \num{2.4144} & 0.353 \\
+    1001 -- 1004 & \num{76.2502} & \num{75.8804} & \num{2.4144} & 0.247 \\
+    1001 -- 1004 & \num{74.1842} & \num{75.8804} & \num{2.4144} & 1.131 \\
+    1001 -- 1004 & \num{73.8136} & \num{75.8804} & \num{2.4144} & 1.378 \\
+    1002 -- 1004 & \num{8.7523} & \num{10.8689} & \num{3.7518} & 1.411 \\
+    1002 -- 1004 & \num{8.8757} & \num{10.8689} & \num{3.7518} & 1.329 \\
+    1002 -- 1001 & \num{333.9865} & \num{335.4782} & \num{3.0765} & 0.994 \\
+    1002 -- 1001 & \num{333.7278} & \num{335.4782} & \num{3.0765} & 1.167 \\
+    1003 -- 1001 & \num{299.8657} & \num{298.8037} & \num{0.0767} & 0.708 \\
+    1003 -- 1001 & \num{299.7807} & \num{298.8037} & \num{0.0767} & 0.651 \\
+    1003 -- 1001 & \num{297.1568} & \num{298.8037} & \num{0.0767} & 1.098 \\
+    1003 -- 1001 & \num{297.2622} & \num{298.8037} & \num{0.0767} & 1.028 \\
+    1003 -- 1001 & \num{297.2115} & \num{298.8037} & \num{0.0767} & 1.061 \\
+    1003 -- 1001 & \num{297.2006} & \num{298.8037} & \num{0.0767} & 1.069 \\
+    1003 -- 1001 & \num{297.2419} & \num{298.8037} & \num{0.0767} & 1.041 \\
+    1003 -- 1001 & \num{297.2574} & \num{298.8037} & \num{0.0767} & 1.031 \\
+    1004 -- 1002 & \num{208.8682} & \num{210.8689} & \num{3.7518} & 1.334 \\
+    1004 -- 1002 & \num{208.8689} & \num{210.8689} & \num{3.7518} & 1.333 \\
+    1004 -- 1002 & \num{208.8495} & \num{210.8689} & \num{3.7518} & 1.346 \\
+    1004 -- 1002 & \num{208.8033} & \num{210.8689} & \num{3.7518} & 1.377 \\
+    \bottomrule
+    \end{tabularx}
+    \caption{Detailní výsledky vyrovnání azimutů.}
+\end{table}
+
+\begin{table}[ht]
+\centering
+
+\begin{tabular}{|c|c|c||c|c|c||c|}
+\hline
+St. & Cíl & \makecell{Měřený\\Azimut [g]} & \makecell{Centrace [g]} & \makecell{Směrová\\korekce [g]} & \makecell{Celková\\oprava [g]} & \makecell{Opravený\\azimut [g]} \\
+\hline
+1005 & 1003 & 75.56611 & -0.09904 & 0.00052 & 0.09956 & 75.46759 \\ \hline
+1005 & 1003 & 75.57344 & -0.09907 & 0.00052 & 0.09958 & 75.47490 \\ \hline
+1005 & 1003 & 75.57556 & -0.09889 & 0.00052 & 0.09941 & 75.47719 \\ \hline
+1005 & 1003 & 75.64867 & -0.09883 & 0.00052 & 0.09935 & 75.55035 \\ \hline
+1005 & 1003 & 75.54300 & -0.07609 & 0.00052 & 0.07661 & 75.46742 \\ \hline
+1005 & 1003 & 75.54744 & -0.07608 & 0.00052 & 0.07660 & 75.47189 \\ \hline
+1005 & 1003 & 75.55467 & -0.07606 & 0.00052 & 0.07658 & 75.47913 \\ \hline
+1005 & 1003 & 75.57944 & -0.07604 & 0.00052 & 0.07656 & 75.50392 \\ \hline
+1005 & 1003 & 75.57322 & -0.07605 & 0.00052 & 0.07657 & 75.49769 \\ \hline
+1005 & 1003 & 76.46722 & -0.07454 & 0.00052 & 0.07505 & 76.39321 \\
+\hline
+\end{tabular}
+\caption{Azimuty měřené gyroteodolitem a jejich redukce}
+\end{table}
+
+
+\subsection{Konstanta gyroteodolitu}
+% Do preamble.tex vložit \usepackage{ulem}
+\begin{table}[H]
+    \centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+Hodnota & Průměr & Ze souřadnic & Konstanta gyroteodolitu \\
+\hline
+75.4676 & \multirow{10}{*}{75.4878} & \multirow{10}{*}{82.6722}  & \multirow{10}{*}{7.1844} \\ 
+75.4749 & &  &  \\
+75.4772 & &  &  \\
+75.5504 & &  &  \\
+75.4674 & &  &  \\
+75.4719 & &  &  \\
+75.4791 & &  &  \\
+75.5039 & &  &  \\
+75.4977 & &  &  \\
+\text{\sout{76.3932}} & & &  \\
+\hline
+\end{tabular}
+\caption{Určení konstanty gyroteodolitu}
+\end{table}
+
+
+
+\subsection{Porovnání terestrického měření a GNSS}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c||c|c|c||c|c|c|}
+\hline
+Stanovisko & X vyrovnané & X GNSS & $\Delta X$ & Y vyrovnané & Y GNSS & $\Delta Y$ \\
+\hline
+1001 & 1055386.121 & 1055386.291 & 0.170 & 565725.114 & 565725.159 & 0.045 \\ \hline
+1002 & 1058509.513 & 1058509.547 & 0.034 & 560713.094 & 560713.097 & 0.003 \\ \hline
+1003 & 1055296.063 & 1055296.051 & -0.012 & 560933.348 & 560933.350 & 0.002 \\ \hline
+1004 & 1053013.607 & 1053013.574 & -0.033 & 559765.566 & 559765.560 & -0.006 \\
+\hline
+\end{tabular}
+\caption{Souřadnice a jejich rozdíly v metrech}
 \end{table}
