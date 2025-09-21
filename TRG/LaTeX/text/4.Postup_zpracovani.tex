@@ -1,1 +1,44 @@
 \section{Postup zpracování}
+
+
+\subsubsection{Centrační osnova}
+\tab Každou z měřických čet bylo nejprve zpracováno měření centrační osnovy. Byly tedy vypočteny
+průměry ze dvou skupin, měřené délky byly opraveny o součtovou konstantu podle použitého
+hranolu.
+
+
+\subsubsection{Redukce délek}
+\tab Redukce délek se zkládají ze dvou typů redukcí — fyzikálních a matematických. Fyzikální redukce jsou závislé na hodnotách tlaku, teploty a vlhkosti a jsou počítány pomocí firemních rovnic.\\
+\tab Mluvíme-li o matematických redukcích, jde o opravu z refrakce a převod délky měřené na délku přímé spojnice v rovině kartografického zobrazení. Převod na délku přímé spojnice probíhá tak, že z přibližných elipsoidických souřadnic bodů sítě určíme jejich souřadnice v rovině křovákova zobrazení a z nich délku přímé spojnice obrazu těchto bodů. Po převodu přibližných hodnot na pravoúhlé prostorové souřadnice vypočteme prostorovou vzdálenost. Výslednou délku vypočteme podle vzorce uvedeného v zadání.
+
+\subsubsection{Astronomické azimuty}
+\tab Nejprve byl vypočten průměr z měření na levý a pravý okraj Slunce a také průměr z časů těchto
+měření. Výpočtem průměru byl vodorovný směr vztažen ke středu Slunce. Díky tomu mohla být
+dále použita rektascenze a deklinace v astronomických tabulkách. Následně byl jako rozdíl dvou směrů vypočten vodorovný úhel mezi bodem sítě a středem Slunce.
+
+
+\subsubsection{Redukce měřených směrů do Křovákova zobrazení}
+
+Samotný výpočet probíhá v několika krocích. Nejprve se určí délka spojnice $S_{ij}$ mezi body~A a~B a vypočítá průměrné hodnoty polárního úhlu $\varepsilon_{IJ}$ a průvodiče $\rho_{ij}$. Následně stanoví korekční koeficienty $k_i$ a~$k_j$ na základě kartografických šířek obou bodů, přičemž vychází ze zadané základní kartografické rovnoběžky.
+
+Směrová korekce je poté vypočtena z přibližných souřadnic bodů podle vzorců uvedených v~zadání. Výsledkem jsou hodnoty směrových korekcí pro oba směry ($\delta_{ij}$ a~$\delta_{ji}$).
+
+
+\subsubsection{Centrace vodorovných směrů}
+\tab Centrace byla provedena iteračním postupem. Zvlášť byla určována centrační změna pro každé
+z ramen měřeného úhlu.
+
+Pro každé rameno byla zvolena místní soustava souřadnic, jejíž počátek ležel na centrickém sta-
+novisku (T1) a kladná osa +x směřovala do centrického cíle (T2). Vzhledem k velké vzdálenosti
+mezi oběma body mohla být v první iteraci spojnice excentrického stanoviska (S1) s excentrickým
+cílem (C2) považována za totožnou s osou x a tedy její směrník $\sigma_{S1,C2} = 0$. Přičtením příslušného úhlu měřeného v rámci centrační osnovy lze určit směrník mezi excentrickým stanoviskem (S1) a centrickým stanoviskem (T1). Jeho obrácením o 200 gon lze pak při známé hodnotě excentricity
+určit rajonem souřadnice excentrického stanoviska (S1) v místní soustavě. Opětovným přičtením
+příslušného úhlu měřeného v centrační osnově lze určit směrník mezi excentrickým stanoviskem
+(S1) a excentrickým cílem (C1) na témže bodě. Souřadnice excentrického cíle (C1) se při známé
+excentricitě opět určí rajonem. Obdobný postup byl aplikován na bodě 2 a byly tak určeny souřadnice S2, C2. Ze souřadnic v místní soustavě mohl být nově spočten směrník $\sigma_{S1,C2}$ , který byl již různý od 0. Následně byl celý postup opakován a to do té doby, dokud změna směrníku nebyla
+menší než 0,00001 gon. Centrační změna $\delta^1$ směru ramene je pak rovna přímo hodnotě směrníku
+$\sigma_{S1,C2}$.
+
+
+
+\subsubsection{Vyrovnání sítě}
