@@ -313,7 +313,7 @@ for i = 1:pocet_stanovisek
        id_l = str2num(zaz_1.id_leva);
        id_p = str2num(zaz_1.id_prava);
 
-       Oprava = centrace(centrace(:,3)==id_l,4) - centrace(centrace(:,3)==id_p,4) - red_JTSK(red_JTSK(:,3)==id_l,4) + red_JTSK(red_JTSK(:,3)==id_p,4);
+       Oprava = +centrace(centrace(:,3)==id_l,4) - centrace(centrace(:,3)==id_p,4) - red_JTSK(red_JTSK(:,3)==id_l,4) + red_JTSK(red_JTSK(:,3)==id_p,4);
 
        angle{j,1} = 'angle';
        angle{j,2} = id_l;

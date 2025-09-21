@@ -22,8 +22,8 @@ function D = FyzikalniRedukce(D_mer, p, t, e, typ_pristroje)
         case 'leica'
             alpha = 1 / 276.16;
             delta_D = 280.2096 ...
-                      - 295.8193 .* (p ./ 760) ./ (1 + t .* alpha) ...
-                      - 0.055 .* e ./ (1 + t .* alpha);
+                      - 295.8193 .* (p ./ 760) .* (1./ (1 + t .* alpha)) ...
+                      - (0.055 ./ (1 + t .* alpha)) .* e;
         case 'topcon'
             p = p * 1.33322368;
             delta_D = 279.85 - (79.585 .* p) ./ (273.15 + t);
