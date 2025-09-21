@@ -325,30 +325,30 @@ for i = 1:pocet_stanovisek
            if ~isempty(index)
                angle{j,5} = gama_export{index,6};
            else
-               angle{j,5} = 10;
+               angle{j,5} = 20;
            end
        end
     end
 
-    for j = 1:size(astro,1)
-        id_cil = astro(j,3);
-
-        Oprava = centrace(centrace(:,3)==id_cil,4) + red_JTSK(red_JTSK(:,3)==id_cil,4);
-
-        astr{j,1} = 'azimuth';
-        astr{j,2} = id_cil;
-        as = astro(j,4) + Oprava -200;
-        as(as<0) = as(as<0) +400;
-        astr{j,3} = as;
-        if exists
-           index = find(angles==round(astr{j,3},4));
-           if ~isempty(index)
-               astr{j,4} = gama_export{index,6};
-           else
-               astr{j,4} = 10;
-           end
-        end
-    end
+    % for j = 1:size(astro,1)
+    %     id_cil = astro(j,3);
+    % 
+    %     Oprava = centrace(centrace(:,3)==id_cil,4) + red_JTSK(red_JTSK(:,3)==id_cil,4);
+    % 
+    %     astr{j,1} = 'azimuth';
+    %     astr{j,2} = id_cil;
+    %     as = astro(j,4) + Oprava -200;
+    %     as(as<0) = as(as<0) +400;
+    %     astr{j,3} = as;
+    %     if exists
+    %        index = find(angles==round(astr{j,3},4));
+    %        if ~isempty(index)
+    %            astr{j,4} = gama_export{index,6};
+    %        else
+    %            astr{j,4} = 10;
+    %        end
+    %     end
+    % end
 
     for j = 1:size(dist,1)
         dist{j,1} = 'distance';
@@ -359,12 +359,12 @@ for i = 1:pocet_stanovisek
            if ~isempty(index)
                 dist{j,4} = gama_export{index,6};
            else
-               dist{j,4} = 10;
+               dist{j,4} = '';
            end
         end
     end
-
-    obsst = {stanovisko,{angle;dist;astr}};
+    % obsst = {stanovisko,{angle;dist;astr}};
+    obsst = {stanovisko,{angle;dist}};
 
     observace = [observace,{obsst}];
 end
@@ -413,7 +413,7 @@ sigma_act = 'apriori';
     %bud obecne zde, nebo muze byt upresneno u konkretniho mereni jako
     %volitelny dalsi parametr
 angStdev = "10"; % v gradovych vterinach
-distStdev = "5 3 1"; % a + b*D^c, D je v km
+distStdev = "30 20 1"; % a + b*D^c, D je v km
 azimStdev = "10"; % v gradovych vterinach
 
 % Souřadnice bodů v S-JTSK

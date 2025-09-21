@@ -5,12 +5,12 @@
       <description>Volná síť, opěrné 1001,1002
 155VTTG - sk1,3 2025</description>
       <parameters conf-pr="0.950" sigma-act="apriori" sigma-apr="1.000" tol-abs="1000.000"/>
-      <points-observations angle-stdev="10" azimuth-stdev="10" distance-stdev="5 3 1">
-         <point adj="XY" id="1001" x="1055385.60" y="565724.20"/>
-         <point adj="XY" id="1002" x="1058508.80" y="560712.10"/>
-         <point adj="xy" id="1003" x="1055295.40" y="560932.40"/>
-         <point adj="xy" id="1004" x="1053013.00" y="559764.80"/>
-         <point adj="xy" id="1005" x="1055720.50" y="562455.40"/>
+      <points-observations angle-stdev="10" azimuth-stdev="10" distance-stdev="30 20 1">
+         <point adj="XY" id="1001" x="1055386.29" y="565725.16"/>
+         <point adj="XY" id="1002" x="1058509.55" y="560713.10"/>
+         <point adj="xy" id="1003" x="1055296.05" y="560933.35"/>
+         <point adj="xy" id="1004" x="1053013.57" y="559765.56"/>
+         <point adj="xy" id="1005" x="1055721.09" y="562456.19"/>
          <obs from="1001">
             <angle bs="1003" fs="1002" val="36.6758"/>
             <angle bs="1004" fs="1002" val="59.5987"/>
@@ -51,6 +51,18 @@
             <distance to="1001" val="6415.2794"/>
             <distance to="1002" val="5577.6283"/>
             <distance to="1003" val="2564.1426"/>
+         </obs>
+         <obs from="1005">
+            <azimuth to="1003" val="75.6646"/>
+            <azimuth to="1003" val="75.6720"/>
+            <azimuth to="1003" val="75.6739"/>
+            <azimuth to="1003" val="75.7470"/>
+            <azimuth to="1003" val="75.6186"/>
+            <azimuth to="1003" val="75.6230"/>
+            <azimuth to="1003" val="75.6302"/>
+            <azimuth to="1003" val="75.6550"/>
+            <azimuth to="1003" val="75.6488"/>
+            <azimuth to="1003" val="76.5412"/>
          </obs>
       </points-observations>
    </network>
