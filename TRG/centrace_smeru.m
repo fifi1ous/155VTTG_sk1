@@ -16,8 +16,8 @@ function [theta] = centrace_smeru(ss,st1,st2,st_1_sm_2,st_1_sm_ce,st_1_sm_ci,st_
     % st_2_d_ce - délka na centr (st2)
     % st_2_d_ci - délka na ex-cíl (st2)
     %%
-    [X_1002,Y_1002] = findPoint(ss, st1);
-    [X_1001,Y_1001] = findPoint(ss, st2);
+    [X_1001,Y_1001] = findPoint(ss, st1);
+    [X_1002,Y_1002] = findPoint(ss, st2);
 
     %% Příprava potřebných bodů
     % vytvořené umělé souřadnice všech bodů - centr, excentrický cíl a
@@ -52,7 +52,8 @@ function [theta] = centrace_smeru(ss,st1,st2,st_1_sm_2,st_1_sm_ce,st_1_sm_ci,st_
             break;
         end
     end
-    
+
+
     theta = angle_between_lines(st_1001(1,:), st_1002(1,:), st_1001(3,:),st_1002(2,:));
     
     
