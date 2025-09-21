@@ -75,10 +75,10 @@ function [delky,delky2] = Redukce2(data)
     % Přibližky - jsou X,Y,Z, ne BLH, jako píšou v zadání!
     S0 = load("S0.txt");
     % Výpočet vzdálenosti ze souřadnic
-    [d0XYZ, d0JTSK] = VzdSouradnice(CB_stroj, CB_cile, hT_s, hT_c, S0);
+    [d_vodorovna] = VzdSouradnice(CB_stroj, CB_cile, hT_s, hT_c, S0, dmer);
     % Výsledné redukované délky
-    dJTSK = (dmer.*d0JTSK')./d0XYZ';
-    delky = [CB_stroj',CB_cile',dJTSK'];
+    % dJTSK = (dmer.*d0JTSK')./d0XYZ';
+    delky = [CB_stroj',CB_cile',d_vodorovna];
     % Extract columns
     col1 = delky(:,1);
     col2 = delky(:,2);

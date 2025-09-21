@@ -15,42 +15,42 @@
             <angle bs="1003" fs="1002" val="36.6758"/>
             <angle bs="1004" fs="1002" val="59.5987"/>
             <angle bs="1004" fs="1003" val="22.9237"/>
-            <distance to="1002" val="5905.8596"/>
-            <distance to="1003" val="4793.2673"/>
-            <distance to="1004" val="6415.0031"/>
+            <distance to="1002" val="5905.5078"/>
+            <distance to="1003" val="4792.6730"/>
+            <distance to="1004" val="6414.5996"/>
          </obs>
          <obs from="1002">
             <angle bs="1001" fs="1003" val="60.1651"/>
             <angle bs="1001" fs="1004" val="75.3905"/>
             <angle bs="1003" fs="1004" val="15.2249"/>
-            <distance to="1001" val="5906.0881"/>
-            <distance to="1003" val="3221.2546"/>
-            <distance to="1004" val="5577.5376"/>
+            <distance to="1001" val="5905.4963"/>
+            <distance to="1003" val="3220.9674"/>
+            <distance to="1004" val="5576.9830"/>
          </obs>
          <obs from="1003">
             <angle bs="1002" fs="1001" val="103.1612"/>
             <angle bs="1001" fs="1004" val="131.3028"/>
             <angle bs="1004" fs="1002" val="165.5371"/>
-            <distance to="1001" val="4793.0481"/>
-            <distance to="1002" val="3221.2406"/>
-            <distance to="1004" val="2564.0658"/>
+            <distance to="1001" val="4792.5728"/>
+            <distance to="1002" val="3220.9534"/>
+            <distance to="1004" val="2563.8163"/>
          </obs>
          <obs from="1003">
             <angle bs="1002" fs="1001" val="103.1601"/>
             <angle bs="1001" fs="1004" val="131.3041"/>
             <angle bs="1004" fs="1002" val="165.5365"/>
             <angle bs="1005" fs="1001" val="16.1311"/>
-            <distance to="1001" val="4793.0525"/>
-            <distance to="1002" val="3221.2431"/>
-            <distance to="1004" val="2564.0621"/>
+            <distance to="1001" val="4792.5773"/>
+            <distance to="1002" val="3220.9559"/>
+            <distance to="1004" val="2563.8126"/>
          </obs>
          <obs from="1004">
             <angle bs="1002" fs="1001" val="65.0133"/>
             <angle bs="1002" fs="1003" val="19.2375"/>
             <angle bs="1003" fs="1001" val="45.7753"/>
-            <distance to="1001" val="6415.2803"/>
-            <distance to="1002" val="5577.6291"/>
-            <distance to="1003" val="2564.1429"/>
+            <distance to="1001" val="6414.5768"/>
+            <distance to="1002" val="5577.0746"/>
+            <distance to="1003" val="2563.8938"/>
          </obs>
          <obs from="1005">
             <azimuth to="1003" val="75.6646"/>
