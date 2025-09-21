@@ -276,7 +276,7 @@ end
 
 
 %% Kompletace dat
-gama_export = 'export_gama.xml';
+gama_export = 'export_gama1.xml';
 if isfile(gama_export)
     exists = true;
     gama_export = readExportGamaObservations('export_gama.xml');
@@ -412,8 +412,8 @@ sigma_act = 'apriori';
 % sm. och. merenych velicin
     %bud obecne zde, nebo muze byt upresneno u konkretniho mereni jako
     %volitelny dalsi parametr
-angStdev = "10"; % v gradovych vterinach
-distStdev = "30 20 1"; % a + b*D^c, D je v km
+angStdev = "9.6"; % v gradovych vterinach
+distStdev = "10 14 1"; % a + b*D^c, D je v km
 azimStdev = "10"; % v gradovych vterinach
 
 % Souřadnice bodů v S-JTSK

@@ -5,7 +5,7 @@
       <description>Volná síť, opěrné 1001,1002
 155VTTG - sk1,3 2025</description>
       <parameters conf-pr="0.950" sigma-act="apriori" sigma-apr="1.000" tol-abs="1000.000"/>
-      <points-observations angle-stdev="10" azimuth-stdev="10" distance-stdev="30 20 1">
+      <points-observations angle-stdev="9.6" azimuth-stdev="10" distance-stdev="10 14 1">
          <point adj="XY" id="1001" x="1055385.60" y="565724.20"/>
          <point adj="XY" id="1002" x="1058508.80" y="560712.10"/>
          <point adj="xy" id="1003" x="1055295.40" y="560932.40"/>
