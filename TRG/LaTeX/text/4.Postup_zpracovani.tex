@@ -43,3 +43,31 @@ Směrová korekce je poté vypočtena z přibližných souřadnic bodů podle vz
 \tab Centrace byla provedena iteračním postupem. Pro každé rameno měřeného úhlu byla zvlášť určována centrační změna. V prvním kroku byly vypočteny souřadnice bodů na stanovisku, pro které se určovala centrační. Souřadnice excentrického stanoviska S1 byly v prvním kroku vypočteny pomocí metody rajónu (polární metody) „zpět“, protože v tomto okamžiku nejsou známy souřadnice excentrického cíle Cíl2, a proto byly použity souřadnice středu C2. V následujícím kroku byly souřadnice excentrického cíle Cíl1 určeny pomocí polární metody. Výpočet byl proveden i na stanovisku S2, přičemž se pro jeho výpočet použily již vypočtené souřadnice Cíl1. Celý postup se opakoval, dokud absolutní rozdíl nově vypočtených souřadnic S1, S2, Cíl1 a Cíl2 mezi dvěma po sobě jdoucími iteracemi neklesl pod 0,0001 m. Centrační změna byla vypočtena jako úhel mezi spojnicí S1–Cíl2 a spojnicí C1–C2.
 
 \subsubsection{Vyrovnání sítě}
+
+Síť byla vyrovnána jako volná s opěrnými body $1001$ a $1002$. 
+Vyrovnání proběhlo pomocí softwaru \texttt{Gama}, konkrétně \texttt{qgama 2.08}. 
+Váhy jednotlivých měření byly v nulté iteraci stanoveny odborným odhadem. 
+Následně byly váhy upravovány tak, aby platilo
+\[
+\frac{m_0}{m_0'} = 1 ,
+\]
+\[
+\begin{array}{ll}
+\text{kde:}& \\
+m_0' & \text{- apriorní směrodatná odchylka jednotková}, \\[6pt]
+m_0  & \text{- aposteriorní směrodatná odchylka jednotková}.
+\end{array}
+\]
+
+Tato podmínka byla kontrolována separátně pro úhly a pro délky. 
+Přesnost měření délek byla charakterizována trojicí čísel $(a,b,c)$, 
+přičemž směrodatná odchylka měřené vzdálenosti je definována vztahem
+\[
+\sigma_D = a + b \cdot D^c ,
+\]
+\[
+\begin{array}{ll}
+\text{kde:}& \\
+D & \text{- délka v kilometrech}.
+\end{array}
+\]
