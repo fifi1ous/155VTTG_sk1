@@ -3,9 +3,10 @@
 \tab V rámci zpracování byla nejprve vyhodnocena centrační osnova, z níž byly stanoveny průměry a opraveny délky o součtovou konstantu hranolu. Následně proběhla redukce délek, zahrnující fyzikální redukce podle meteorologických veličin a matematické redukce zohledňující refrakci a převod do roviny Křovákova zobrazení. Pro astronomické měření byly vypočteny průměry směrů na levý a pravý okraj Slunce i odpovídající časy, čímž byl získán směr ke středu slunečního kotouče a z tabulek určena rektascenze a deklinace pro výpočet azimutu. Současně byly stanoveny směrové korekce do rovinného zobrazení a iteračním postupem byly určeny centrační změny vodorovných směrů na všech stanoviscích. Dále proběhlo vyrovnání sítě v programu GAMA, kde byly pro vyrovnání použito 15 směrů, 15 délek a 20 azimutů. Výsledné vyrovnané souřadnice jsou patrné v následující tabulce.
 \begin{table}[H]
 \centering
+\caption{Vyrovnané souřadnice bodů.}
 \begin{tabular}{c S[table-format=7.4] S[table-format=7.4]}
 \toprule
-\textbf{Bod} & {$X$ [m]} & {$Y$ [m]} \\
+\textbf{Bod} & {$\mathbf{X}$ \textbf{[m]}} & {$\mathbf{Y}$ \textbf{[m]}} \\
 \midrule
 1001 & 1055386.1209 & 565725.1145 \\
 1002 & 1058509.5130 & 560713.0936 \\
@@ -13,23 +14,22 @@
 1004 & 1053013.6070 & 559765.5664 \\
 \bottomrule
 \end{tabular}
-\caption{Vyrovnané souřadnice bodů.}
 \label{tab:adjusted_coords_vse}
 \end{table}
 \tab Z dostupných RINEX dat byly vypočítány souřadnice z GNSS, které byly porovnány s terestrickým měřením. Porovnání je uvedeno v následující tabulce.
 \begin{table}[H]
 \centering
+\caption{Souřadnice a jejich rozdíly v metrech}
 \begin{tabular}{|c||c|c|c||c|c|c|}
 \hline
-Stanovisko & X vyrovnané & X GNSS & $\Delta X$ & Y vyrovnané & Y GNSS & $\Delta Y$ \\
-\hline
+\textbf{Stanovisko} & \textbf{X vyrovnané} & \textbf{X GNSS} & $\mathbf{\Delta X}$ & \textbf{Y vyrovnané} & \textbf{Y GNSS} & $\mathbf{\Delta Y}$ \\
+\hline\hline
 1001 & 1055386.121 & 1055386.291 & 0.170 & 565725.114 & 565725.159 & 0.045 \\ \hline
 1002 & 1058509.513 & 1058509.547 & 0.034 & 560713.094 & 560713.097 & 0.003 \\ \hline
 1003 & 1055296.063 & 1055296.051 & -0.012 & 560933.348 & 560933.350 & 0.002 \\ \hline
 1004 & 1053013.607 & 1053013.574 & -0.033 & 559765.566 & 559765.560 & -0.006 \\
 \hline
 \end{tabular}
-\caption{Souřadnice a jejich rozdíly v metrech}
 \end{table}
 \tab Dalším výstupem je určení konstanty gyroteodolitu, která činí \textbf{7,1844}.
 
